@@ -1292,6 +1292,28 @@ body {
   background-size: 100% 100%;
 }
 
+.class-tab {
+  font-family: var(--display-font);
+  font-style: normal;
+  font-size: 14px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--leather);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(156,107,47,0.35);
+}
+.class-tab:hover {
+  background: rgba(156,107,47,0.1);
+}
+.class-tab.active {
+  text-decoration-color: var(--leather);
+  background: rgba(156,107,47,0.18);
+}
+
 .back-btn {
   font-family: var(--display-font);
   cursor: pointer;

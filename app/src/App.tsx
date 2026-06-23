@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
 import { fileToGlyphSrc } from './alphabet/glyphImage';
-import { PSIONIC_SCHOOLS, SOURCE_CONFIG, SPELLS, groupSpells, toAttributes, toSoundInput, type Spell } from './data/spells';
+import { PSIONIC_SCHOOLS, SOURCE_CONFIG, SPELLS, groupSpells, toAttributes, toSoundInput, versionTabsFor, type Spell } from './data/spells';
 import { RuneView } from './components/RuneView';
 import { SealView } from './components/SealView';
 import { SpectrumView } from './components/SpectrumView';
@@ -213,6 +213,10 @@ export default function App() {
     [spellGroup, spellVersionSource],
   );
   const fallbackSpell = spell ?? activeSpellGroups[0]?.versions[0] ?? spellGroups[0]?.versions[0] ?? SPELLS[0];
+  const versionTabs = useMemo(
+    () => (spellGroup ? versionTabsFor(spellGroup.versions) : []),
+    [spellGroup],
+  );
 
   const attrs = useMemo(() => toAttributes(fallbackSpell), [fallbackSpell]);
   const sound = useMemo(() => toSoundInput(fallbackSpell), [fallbackSpell]);
@@ -707,23 +711,28 @@ export default function App() {
                           center image
                         </button>
                         {activeCenterGlyph?.src && (
-                          <label className="center-size">
-                            size
-                            <input
-                              type="range"
-                              min={0.3}
-                              max={4}
-                              step={0.05}
-                              value={activeCenterGlyph.scale ?? 1}
-                              onChange={(e) =>
-                                setCenterScale(
-                                  activeCenterMode,
-                                  activeCenterGlyph,
-                                  Number(e.target.value),
-                                )
-                              }
-                            />
-                          </label>
+                          <>
+                            <button onClick={() => removeGlyph(activeCenterMode, 'center')}>
+                              reset to default
+                            </button>
+                            <label className="center-size">
+                              size
+                              <input
+                                type="range"
+                                min={0.3}
+                                max={4}
+                                step={0.05}
+                                value={activeCenterGlyph.scale ?? 1}
+                                onChange={(e) =>
+                                  setCenterScale(
+                                    activeCenterMode,
+                                    activeCenterGlyph,
+                                    Number(e.target.value),
+                                  )
+                                }
+                              />
+                            </label>
+                          </>
                         )}
                         <input
                           ref={sorcererCenterInput}
@@ -816,20 +825,17 @@ export default function App() {
               </section>
 
               <section className="statblock">
-                {spellGroup && spellGroup.versions.length > 1 && (
+                {spellGroup && versionTabs.length > 1 && (
                   <div className="version-tabs draw-item" style={{ animationDelay: '200ms' }}>
-                    {spellGroup.versions.map((version) => {
-                      const cfg = SOURCE_CONFIG.find((source) => source.id === version.source);
-                      return (
-                        <button
-                          key={version.source}
-                          className={`version-tab${version.source === spellVersionSource ? ' active' : ''}`}
-                          onClick={() => chooseVersion(version.source)}
-                        >
-                          {cfg?.label ?? version.source}
-                        </button>
-                      );
-                    })}
+                    {versionTabs.map((tab) => (
+                      <button
+                        key={tab.source}
+                        className={`version-tab${tab.source === fallbackSpell.source ? ' active' : ''}`}
+                        onClick={() => chooseVersion(tab.source)}
+                      >
+                        {tab.label}
+                      </button>
+                    ))}
                   </div>
                 )}
                 <h2 className="draw-item" style={{ animationDelay: '3520ms' }}>{fallbackSpell.name}</h2>
@@ -873,7 +879,21 @@ export default function App() {
                     <em>At Higher Levels.</em> {fallbackSpell.atHigherLevels}
                   </p>
                 )}
-                <p className="source">{fallbackSpell.source} · classes: {fallbackSpell.classes.join(', ')}</p>
+                <p className="source">
+                  {fallbackSpell.source} · classes:
+                  {fallbackSpell.classes.map((cls) => {
+                    const clean = classNameClean(cls);
+                    return (
+                      <button
+                        key={cls}
+                        className={`class-tab${classFilter === clean ? ' active' : ''}`}
+                        onClick={() => setClassFilter(clean)}
+                      >
+                        {clean}
+                      </button>
+                    );
+                  })}
+                </p>
               </section>
             </main>
           )}

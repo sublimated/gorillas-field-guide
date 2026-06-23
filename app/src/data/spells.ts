@@ -58,11 +58,10 @@ export const SOURCE_CONFIG: Array<{
   { id: 'ScienceSpellbook', label: 'Science', group: 'addon', defaultOn: false },
 ];
 
+// Default representative version per spell: the player's-handbook editions come first
+// (2024, then 2014), then 3.5, then the author's own class compendiums last — those only
+// become the default when a spell has no edition (SRD) version at all.
 export const SOURCE_PRIORITY: string[] = [
-  'Wizard Compendium V7',
-  'Druid Book',
-  'Warlock Spell Compendium v1.3',
-  'Sorcerer Compendium',
   'SRD 5.2',
   'SRD 5.1',
   'D&D 3.5 SRD',
@@ -71,8 +70,42 @@ export const SOURCE_PRIORITY: string[] = [
   'Dragon Magic (3.5)',
   'Complete Mage (3.5)',
   'Spell Compendium (3.5)',
+  'Wizard Compendium V7',
+  'Druid Book',
+  'Warlock Spell Compendium v1.3',
+  'Sorcerer Compendium',
   'ScienceSpellbook',
 ];
+
+// The three "main category" editions shown as version tabs. Any 3.5-era source (core or
+// supplement) collapses into one "3.5 Rules" tab; the highest-priority 3.5 source present
+// is the one actually selected. A spell with no edition version at all falls back to
+// showing its own originating compendium as a single tab (handled by versionTabsFor).
+const THREE_FIVE_SOURCES = [
+  'D&D 3.5 SRD',
+  'D&D 3.5 SRD Psionics',
+  'Complete Psionic (3.5)',
+  'Dragon Magic (3.5)',
+  'Complete Mage (3.5)',
+  'Spell Compendium (3.5)',
+];
+
+export type VersionTab = { label: string; source: string };
+
+export function versionTabsFor(versions: Spell[]): VersionTab[] {
+  const bySource = new Map(versions.map((v) => [v.source, v] as const));
+  const srd2024 = bySource.get('SRD 5.2');
+  const srd2014 = bySource.get('SRD 5.1');
+  const threeFive = THREE_FIVE_SOURCES.map((s) => bySource.get(s)).find(Boolean);
+  const editionTabs: VersionTab[] = [
+    ...(srd2024 ? [{ label: '2024 Rules', source: srd2024.source }] : []),
+    ...(srd2014 ? [{ label: '2014 Rules', source: srd2014.source }] : []),
+    ...(threeFive ? [{ label: '3.5 Rules', source: threeFive.source }] : []),
+  ];
+  if (editionTabs.length > 0) return editionTabs;
+  // No edition (PHB) version exists at all — show the originating book(s) directly.
+  return versions.map((v) => ({ label: SOURCE_CONFIG.find((s) => s.id === v.source)?.label ?? v.source, source: v.source }));
+}
 
 export type SpellGroup = {
   key: string;

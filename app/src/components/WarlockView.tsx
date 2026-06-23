@@ -52,7 +52,7 @@ export function WarlockView({
   // Per-segment ink so spectroscopy / custom modes can colour each attribute distinctly.
   const inkFor = (key: AttributeKey) =>
     resolveAttrColor(key, mode, custom, WARLOCK_INK, spectrumColorFor(key));
-  const centerSrc = centerGlyph?.src ?? '/glyphs/warlock/Warlock_Center_Clean.png';
+  const centerSrc = centerGlyph?.src ?? '/glyphs/warlock/Warlock_Center_Default.png';
   const centerScale = centerGlyph?.scale ?? 1;
   const pt = (angle: number, r: number) => ({ x: center.x + r * Math.cos(angle), y: center.y + r * Math.sin(angle) });
   const wedgePath = (seg: { a0: number; a1: number }) => {
