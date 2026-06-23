@@ -1,0 +1,2810 @@
+# New Spell Values
+
+This report records values introduced by the imported open-rule spell batches that current notation lookups do not support. `areaNotation` is stored in the existing JSON shape as `areaSound`.
+
+Licensing attributions live in `NOTICE.md`.
+
+## Schema Notes
+
+- `atHigherLevels` is an intentional optional field. When scaling text is extracted reliably it is stored separately; otherwise it remains inside `description`.
+- 3.5 class lists are retained in full. Because the current record model has one `level`, it stores the lowest listed class level.
+
+## Imported Records
+
+- SRD 5.1: 271
+- SRD 5.2: 339
+- D&D 3.5 SRD: 605
+- Spell Compendium (3.5): 902
+- D&D 3.5 SRD Psionics: 287
+- Complete Psionic (3.5): 72
+- Dragon Magic (3.5): 38
+- Complete Mage (3.5): 118
+
+## Supplemental 3.5 / Psionics Notation Gaps
+
+The supplemental 3.5 and psionic records retain source values exactly. Values without
+an existing renderer mapping are deliberately left unsupported until their notation is
+designed; they are not coerced into a different school, range, duration, or area.
+
+- Psionic disciplines introduced: `Clairsentience`, `Metacreativity`,
+  `Psychokinesis`, `Psychometabolism`, `Psychoportation`, and `Telepathy`.
+- Psionic classes introduced: `Psion`, `Psychic Warrior`, `Wilder`, `Lurk`,
+  `Ardent`, and `Divine Mind`.
+- Supplemental 3.5 ranges, durations, and area phrases are preserved as printed and
+  appear in the data audit's unsupported-value output. This is intentional pending a
+  later notation pass.
+
+## SRD 5.1: Values Outside Current Engine Lookups
+
+### school
+
+- None
+
+### damage
+
+- None
+
+### range
+
+- None
+
+### duration
+
+- None
+
+### areaShape
+
+- None
+
+### areaNotation (stored as areaSound)
+
+- `undefined`: 271
+
+
+## SRD 5.2: Values Outside Current Engine Lookups
+
+### school
+
+- None
+
+### damage
+
+- None
+
+### range
+
+- `15 feet`: 1
+
+### duration
+
+- `1 day`: 1
+- `Concentration, up to 1 day`: 2
+- `Concentration, up to 1 hour`: 24
+- `Concentration, up to 1 minute`: 66
+- `Concentration, up to 10 minutes`: 37
+- `Concentration, up to 2 hours`: 1
+- `Concentration, up to 6 rounds`: 1
+- `Concentration, up to 8 hours`: 2
+- `Until dispelled or triggered`: 2
+
+### areaShape
+
+- `Emanation`: 11
+
+### areaNotation (stored as areaSound)
+
+- `emanation (10)`: 5
+- `emanation (15)`: 2
+- `emanation (30)`: 4
+
+
+## D&D 3.5 SRD: Values Outside Current Engine Lookups
+
+### school
+
+- `Universal`: 5
+
+### damage
+
+- None
+
+### range
+
+- `1 mile/level`: 1
+- `10 ft.`: 11
+- `120 ft.`: 1
+- `15 ft.`: 2
+- `2 miles`: 1
+- `20 ft.`: 6
+- `30 ft.`: 5
+- `40 ft.`: 6
+- `40 ft./level`: 1
+- `5 miles`: 1
+- `50 ft.`: 2
+- `60 ft.`: 17
+- `Anywhere within the area to be warded`: 1
+- `Close (25 ft. + 5 ft./2 levels)`: 161
+- `Close (25 ft. + 5 ft./2 levels) or see text`: 1
+- `Close (25 ft. + 5 ft./2 levels); see text`: 3
+- `Close (25 ft. + 5 ft./2 levels)/ 100 ft.; see text`: 1
+- `Long (400 ft. + 40 ft./level)`: 38
+- `Medium (100 ft. + 10 ft. level)`: 2
+- `Medium (100 ft. + 10 ft./level)`: 85
+- `One mile`: 2
+- `Personal`: 47
+- `Personal and touch`: 2
+- `Personal or close (25 ft. + 5 ft./2 levels)`: 1
+- `Personal or touch`: 6
+- `Personal; see text`: 1
+- `See text`: 17
+- `Touch; see text`: 1
+- `Up to 10 ft./level`: 1
+
+### duration
+
+- `1 full round`: 1
+- `1 hour or less`: 1
+- `1 hour plus 12 hours; see text`: 1
+- `1 hour/caster level or until discharged, then 1 round/caster level; see text`: 1
+- `1 hour/level`: 15
+- `1 hour/level (D)`: 19
+- `1 hour/level (D); see text`: 1
+- `1 hour/level or until completed`: 2
+- `1 hour/level or until discharged`: 2
+- `1 hour/level or until discharged; see text`: 1
+- `1 hour/level or until expended; see text`: 1
+- `1 hour/level or until you return to your body`: 1
+- `1 hour/level; see text (D)`: 2
+- `1 min.`: 1
+- `1 min./level`: 55
+- `1 min./level (D)`: 40
+- `1 minute (D)`: 1
+- `1 minute or until discharged`: 1
+- `1 round /level (D)`: 1
+- `1 round + 1 round per three levels`: 1
+- `1 round per three levels; see text`: 1
+- `1 round; see text`: 2
+- `1 round/level`: 25
+- `1 round/level (D)`: 46
+- `1 round/level (D) and concentration + 3 rounds; see text`: 1
+- `1 round/level (D); see text`: 5
+- `1 round/level or 1 hour/level; see text`: 1
+- `1 round/level or 1 round; see text`: 1
+- `1 round/level or 1 round; see text for cause fear`: 1
+- `1 round/level or until all beams are exhausted`: 1
+- `1 round/level or until discharged, whichever comes first`: 4
+- `10 min./level`: 28
+- `10 min./level (D)`: 23
+- `10 min./level or until discharged`: 2
+- `10 min./level or until used`: 1
+- `10 minutes; see text`: 1
+- `12 hours (D)`: 1
+- `1d4 rounds or 1 round; see text`: 1
+- `1d4+1 rounds`: 1
+- `1d4+1 rounds (apparent time); see text`: 1
+- `1d4+1 rounds, or 1d4+1 rounds after creatures leave the smoke cloud; see text`: 1
+- `1d6+2 rounds`: 1
+- `2 hours/level`: 2
+- `2 hours/level (D)`: 10
+- `2 hours/level; see text`: 1
+- `2 min./level (D)`: 1
+- `24 hours (D)`: 1
+- `24 hours; see text`: 1
+- `2d4 rounds (D)`: 1
+- `30 minutes and 2d6 rounds; see text`: 1
+- `30 minutes or until discharged`: 1
+- `4d12 hours; see text`: 1
+- `5 rounds or less; see text`: 1
+- `7 rounds`: 2
+- `8 hours (D)`: 1
+- `Concentration`: 4
+- `Concentration (maximum 10 rounds) (D)`: 1
+- `Concentration (up to 1 round/ level) or instantaneous; see text`: 1
+- `Concentration (up to 4 rounds)`: 1
+- `Concentration + 1 hour/level (D)`: 1
+- `Concentration + 1 round/level`: 1
+- `Concentration + 1 round/level (D)`: 2
+- `Concentration + 2 rounds`: 3
+- `Concentration + 3 rounds`: 1
+- `Concentration +1 hour/ level (D)`: 1
+- `Concentration +1 round/ level (D)`: 1
+- `Concentration +2 rounds`: 1
+- `Concentration, up to 1 min./level (D)`: 3
+- `Concentration, up to 1 minute/ level (D)`: 1
+- `Concentration, up to 1 round/level`: 1
+- `Concentration, up to 1 round/level (D)`: 1
+- `Concentration, up to 10 min./ level (D)`: 4
+- `Concentration, up to 10 min./level (D)`: 2
+- `Instantaneous ( 1d4 rounds); see text`: 1
+- `Instantaneous ( 1d6 rounds); see text`: 1
+- `Instantaneous (1 round); see text`: 2
+- `Instantaneous or 1 round/level; see text`: 1
+- `Instantaneous or concentration (up to 1 round/level); see text`: 1
+- `Instantaneous; see text`: 3
+- `Instantaneous/1 hour; see text`: 1
+- `Instantaneous/10 minutes per HD of subject; see text`: 1
+- `No more than 1 hour/level or until discharged (destination is reached)`: 1
+- `One day/level`: 10
+- `One day/level (D)`: 6
+- `One day/level (D) or until discharged`: 1
+- `One day/level or until discharged (D)`: 2
+- `One day/level; see text`: 1
+- `One usage per two levels`: 1
+- `Permanent`: 12
+- `Permanent (D)`: 3
+- `Permanent or until discharged; until released or 1d4 days + one day/level; see text`: 1
+- `Permanent until discharged`: 3
+- `Permanent until discharged (D)`: 6
+- `Permanent until triggered, then 1 round/level`: 1
+- `Permanent; see text`: 4
+- `See text`: 27
+- `See text (D)`: 1
+- `Seven days or seven months (D); see text`: 1
+- `Sixty days or until discharged`: 1
+- `Until expended or 10 min./level`: 1
+- `Until landing or 1 round/level`: 1
+- `Until triggered or broken`: 1
+- `Up to 1 round/level`: 1
+
+### areaShape
+
+- None
+
+### areaNotation (stored as areaSound)
+
+- `1-ft.-diameter/level sphere, centered around a creature`: 1
+- `1-ft.-diameter/level sphere, centered around creatures or objects`: 1
+- `10-ft. hand`: 1
+- `10-ft. square/level; see text`: 1
+- `2-mile-radius circle, centered on you; see text`: 1
+- `20-ft.-square structure`: 1
+- `3-ft.-diameter disk of force`: 1
+- `30-ft. cube/level (S)`: 2
+- `40 ft./level radius cylinder 40 ft. high`: 1
+- `5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels`: 1
+- `5-ft.-diameter sphere`: 1
+- `60-ft. cube/level (S)`: 1
+- `All allies and foes within a 40-ft.-radius burst centered on you`: 1
+- `All enemies within 50 ft.`: 1
+- `All magical effects and magic items within a 40-ft.-radius burst`: 1
+- `All metal objects within a 40-ft.-radius burst`: 1
+- `An ironwood object weighing up to 5 lb./level`: 1
+- `Anchored plane of ice, up to one 10-ft. square/level, or hemisphere of ice with a radius of up to 3 ft. + 1 ft./level`: 1
+- `Barred cage (20-ft. cube) or windowless cell (10-ft. cube)`: 1
+- `Burst of light`: 1
+- `Circle, centered on you, with a radius of 400 ft. + 40 ft./level`: 1
+- `Cloud spreads in 20-ft. radius from you, 20 ft. high`: 1
+- `Cloud spreads in 20-ft. radius, 20 ft. high`: 3
+- `Colorful lights in a 10-ft.-radius spread`: 1
+- `Colorful lights in a 20-ft.-radius spread`: 1
+- `Colorful lights with a 20-ft.-radius spread`: 1
+- `Cone-shaped burst`: 9
+- `Cone-shaped emanation`: 8
+- `Creatures and objects within 10-ft.-radius spread`: 1
+- `Creatures and objects within a 5-ft.-radius burst`: 1
+- `Creatures in a 20-ft.-radius spread`: 1
+- `Creatures within a 20-ft.-radius spread`: 1
+- `Cyclone 10 ft. wide at base, 30 ft. wide at top, and 30 ft. tall`: 1
+- `Dirt in an area up to 750 ft. square and up to 10 ft. deep (S)`: 1
+- `Ethereal 5 ft. by 8 ft. opening, 10 ft. deep + 5 ft. deep per three levels`: 1
+- `Extradimensional mansion, up to three 10-ft. cubes/level (S)`: 1
+- `Feast for one creature/level`: 1
+- `Figment that cannot extend beyond a 20-ft. cube + one 10-ft. cube/level (S)`: 1
+- `Flame in your palm`: 1
+- `Fog spreads in 20-ft. radius, 20 ft. high`: 3
+- `Food and water to sustain three humans or one horse/level for 24 hours`: 1
+- `Four 40-ft.-radius spreads; see text`: 1
+- `Ghostly hand`: 1
+- `Illusory sounds`: 1
+- `Image 1 ft. by 10 ft. by 10 ft.`: 1
+- `Intelligible sound, usually speech`: 1
+- `Iron wall whose area is up to one 5-ft. square/level; see text`: 1
+- `line (120)`: 1
+- `Line from your hand`: 1
+- `Line-shaped gust of severe wind emanating out from you to the extreme of the range`: 1
+- `Living creatures within a 10-ft.-radius burst`: 1
+- `Magic weapon of force`: 1
+- `Magical sensor`: 3
+- `Magical, heatless flame`: 1
+- `Nonchaotic creatures in a 40-ft.- radius spread centered on you`: 1
+- `Nonevil creatures in a 40-ft.-radius spread centered on you`: 1
+- `Nongood creatures in a 40-ft.-radius spread centered on you`: 1
+- `Nonlawful creatures in a 40-ft.-radius spread centered on you`: 1
+- `Nonlawful creatures within a burst that fills a 30-ft. cube`: 1
+- `One 20-ft. cube/level (S)`: 1
+- `One 20-ft. square/level`: 2
+- `One 30-ft. cube/level (S)`: 1
+- `One arrow of acid`: 1
+- `One called elemental or outsider of 6 HD or less`: 1
+- `One clone`: 1
+- `One duplicate creature`: 1
+- `One invisible, mindless, shapeless servant`: 1
+- `One living creature/level within a 40-ft.-radius spread`: 1
+- `One missile of acid`: 1
+- `One mount`: 1
+- `One or more 30-ft.-long vertical lines of lightning`: 1
+- `One or more creatures, no two of which can be more than 30 ft. apart`: 8
+- `One or more living creatures within a 10-ft.-radius burst`: 1
+- `One or more rays`: 1
+- `One or more summoned creatures, no two of which can be more than 30 ft. apart`: 5
+- `One or two called elementals or outsiders , totaling no more than 12 HD, which cannot be more than 30 ft. apart when they appear`: 1
+- `One personal rune or mark, all of which must fit within 1 sq. ft.`: 1
+- `One quasi-real, horselike creature`: 1
+- `One shadow duplicate`: 1
+- `One spectral hand`: 1
+- `One summoned creature`: 2
+- `One summoned handheld musical instrument`: 1
+- `One swarm of bats, rats, or spiders`: 1
+- `One swarm of centipedes per two levels`: 1
+- `One swarm of locusts per three levels, each of which must be adjacent to at least one other swarm`: 1
+- `One sword`: 1
+- `One symbol`: 1
+- `Opaque sheet of flame up to 20 ft. long/level or a ring of fire with a radius of up to 5 ft. per two levels; either form 20 ft. high`: 1
+- `Phantom watchdog`: 1
+- `Plants in a 40-ft.-radius spread`: 1
+- `Ray`: 8
+- `Ray of negative energy`: 1
+- `See text`: 3
+- `Several living creatures within a 40-ft.-radius burst`: 1
+- `Several living creatures, no two of which may be more than 30 ft. apart`: 1
+- `Several undead creatures within a 40-ft.-radius burst`: 1
+- `sphere (80)`: 2
+- `Stone wall whose area is up to one 5-ft. square/level (S)`: 1
+- `Sword-like beam`: 1
+- `Ten or more levitating eyes`: 1
+- `The caster and all allies within a 50-ft. burst, centered on the caster`: 1
+- `Three or more shambling mounds, no two of which can be more than 30 ft. apart; see text`: 1
+- `Two 10-ft. cubes per level (S)`: 1
+- `Two or more summoned creatures, no two of which can be more than 30 ft. apart`: 1
+- `Unattended, nonmagical object of nonliving plant matter, up to 1 cu. ft./level`: 1
+- `Up to 10-ft.-radius/level emanation centered on you`: 1
+- `Up to 2 gallons of water/level`: 1
+- `Up to 200 sq. ft./level (S)`: 1
+- `Up to four lights, all within a 10-ft.-radius area`: 1
+- `Up to one 10-ft. cube per two levels (S)`: 1
+- `Up to three called elementals or outsiders , totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.`: 1
+- `Up to two 10-ft. cubes/level (S)`: 2
+- `Visual figment that cannot extend beyond a 20-ft. cube + one 10-ft. cube/level (S)`: 1
+- `Visual figment that cannot extend beyond four 10-ft. cubes + one 10-ft. cube/level (S)`: 1
+- `Wall 4 ft./level wide, 2 ft./level high`: 1
+- `Wall of thorny brush, up to one 10-ft. cube/level (S)`: 1
+- `Wall of whirling blades up to 20 ft. long/ level, or a ringed wall of whirling blades with a radius of up to 5 ft. per two levels; either form 20 ft. high`: 1
+- `Wall up to 10 ft./level long and 5 ft./level high (S)`: 1
+- `Wall whose area is up to one 10-ft. square/level`: 1
+- `Water in a volume of 10 ft./level by 10 ft./level by 2 ft./level (S)`: 1
+- `Webs in a 20-ft.-radius spread`: 1
+
+## Source Values That Disagree With Existing Records
+
+Each entry compares an imported source value with a same-named record that existed before these two import batches. It is intentionally a flag for review, not an automatic correction.
+
+### SRD 5.1 (275 differences)
+
+- **Acid Arrow** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Acid Splash** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Alarm** - `areaSound`: existing Wizard Compendium V7: "cube (20)"; imported SRD 5.1: undefined
+- **Alter Self** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Animal Friendship** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Animal Messenger** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Animal Shapes** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Animate Dead** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Animate Objects** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Antilife Shell** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Antimagic Field** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Antipathy / Sympathy** - `areaSound`: existing Wizard Compendium V7: "cube (200)"; imported SRD 5.1: undefined
+- **Arcane Eye** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Arcane Hand** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Arcane Lock** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Arcane Sword** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Arcanist ’s Magic Aura** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Astral Projection** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Awaken** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Banishment** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Barkskin** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Bestow Curse** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Black Tentacles** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Blight** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Blindness / Deafness** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Blink** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Blur** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Burning Hands** - `areaSound`: existing Wizard Compendium V7: "cone (15)"; imported SRD 5.1: undefined
+- **Call Lightning** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Chain Lightning** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Charm Person** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Chill Touch** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Circle Of Death** - `areaSound`: existing Wizard Compendium V7: "sphere (60)"; imported SRD 5.1: undefined
+- **Clairvoyance** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Clone** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Cloudkill** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Color Spray** - `areaSound`: existing Wizard Compendium V7: "cone (15)"; imported SRD 5.1: undefined
+- **Commune With Nature** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Comprehend Languages** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Cone Of Cold** - `areaSound`: existing Wizard Compendium V7: "cone (60)"; imported SRD 5.1: undefined
+- **Confusion** - `areaSound`: existing Wizard Compendium V7: "sphere (10)"; imported SRD 5.1: undefined
+- **Conjure Animals** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Conjure Elemental** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported SRD 5.1: undefined
+- **Conjure Fey** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Conjure Minor Elementals** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Conjure Woodland Beings** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Contact Other Plane** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Contagion** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Contingency** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Continual Flame** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Control Water** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Control Weather** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Counterspell** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Create Food And Water** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Create Or Destroy Water** - `areaSound`: existing Druid Book: "cube (30)"; imported SRD 5.1: undefined
+- **Create Undead** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Creation** - `areaSound`: existing Wizard Compendium V7: "cube (5)"; imported SRD 5.1: undefined
+- **Cure Wounds** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Dancing Lights** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Darkness** - `areaSound`: existing Wizard Compendium V7: "sphere (15)"; imported SRD 5.1: undefined
+- **Darkvision** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Daylight** - `areaSound`: existing Sorcerer Compendium: "sphere (60)"; imported SRD 5.1: undefined
+- **Delayed Blast Fireball** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Demiplane** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Detect Magic** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Detect Poison And Disease** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Detect Thoughts** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Dimension Door** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Disguise Self** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Disintegrate** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Dispel Magic** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Divination** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Dominate Beast** - `areaSound`: existing Sorcerer Compendium: "None"; imported SRD 5.1: undefined
+- **Dominate Monster** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Dominate Person** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Dream** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Druidcraft** - `areaSound`: existing Druid Book: "cube (5)"; imported SRD 5.1: undefined
+- **Earthquake** - `areaSound`: existing Sorcerer Compendium: "None"; imported SRD 5.1: undefined
+- **Eldritch Blast** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Enhance Ability** - `areaSound`: existing Sorcerer Compendium: "None"; imported SRD 5.1: undefined
+- **Enlarge / Reduce** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Entangle** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Enthrall** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Etherealness** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Expeditious Retreat** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Eyebite** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fabricate** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported SRD 5.1: undefined
+- **Faerie Fire** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Faithful Hound** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **False Life** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fear** - `areaSound`: existing Wizard Compendium V7: "cone (30)"; imported SRD 5.1: undefined
+- **Feather Fall** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Feeblemind** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Find Familiar** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Find The Path** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Find Traps** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Finger Of Death** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fire Bolt** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fire Shield** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fire Storm** - `areaSound`: existing Sorcerer Compendium: "cube (10)"; imported SRD 5.1: undefined
+- **Fireball** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Flame Blade** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Flaming Sphere** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Flesh To Stone** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Floating Disk** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fly** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Fog Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Forcecage** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Foresight** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Freedom Of Movement** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Freezing Sphere** - `areaSound`: existing Wizard Compendium V7: "sphere (60)"; imported SRD 5.1: undefined
+- **From Evil And Good** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Gaseous Form** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Gate** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Geas** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Gentle Repose** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Giant Insect** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Glibness** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Globe Of Invulnerability** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Glyph Of Warding** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Goodberry** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Grease** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Greater Invisibility** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Greater Restoration** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Guards And Wards** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Guidance** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Gust Of Wind** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Hallucinatory Terrain** - `areaSound`: existing Wizard Compendium V7: "cube (150)"; imported SRD 5.1: undefined
+- **Haste** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Heal** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Healing Word** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Heat Metal** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Hellish Rebuke** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Heroes ’ Feast** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Hideous Laughter** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Hold Monster** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Hold Person** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Hypnotic Pattern** - `areaSound`: existing Wizard Compendium V7: "cube (30)"; imported SRD 5.1: undefined
+- **Ice Storm** - `areaSound`: existing Wizard Compendium V7: "cylinder (20)"; imported SRD 5.1: undefined
+- **Identify** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Illusory Script** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Imprisonment** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Incendiary Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Insect Plague** - `areaSound`: existing Sorcerer Compendium: "sphere (20)"; imported SRD 5.1: undefined
+- **Instant Summons** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Invisibility** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Irresistible Dance** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Jump** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Knock** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Legend Lore** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Lesser Restoration** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Levitate** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Light** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Lightning Bolt** - `areaSound`: existing Wizard Compendium V7: "line (100)"; imported SRD 5.1: undefined
+- **Locate Animals Or Plants** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Locate Creature** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Locate Object** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Longstrider** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Mage Armor** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Mage Hand** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Magic Circle** - `areaSound`: existing Wizard Compendium V7: "cylinder (10)"; imported SRD 5.1: undefined
+- **Magic Jar** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Magic Missile** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Magic Mouth** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Magic Weapon** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Magnificent Mansion** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Major Image** - `areaSound`: existing Wizard Compendium V7: "cube (20)"; imported SRD 5.1: undefined
+- **Mass Cure Wounds** - `areaSound`: existing Druid Book: "sphere (30)"; imported SRD 5.1: undefined
+- **Mass Suggestion** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Maze** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Mending** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Message** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Meteor Swarm** - `areaSound`: existing Wizard Compendium V7: "sphere (40)"; imported SRD 5.1: undefined
+- **Mind Blank** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Minor Illusion** - `areaSound`: existing Wizard Compendium V7: "cube (5)"; imported SRD 5.1: undefined
+- **Mirage Arcane** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Mirror Image** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Mislead** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Misty Step** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Modify Memory** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Moonbeam** - `areaSound`: existing Druid Book: "cylinder (5)"; imported SRD 5.1: undefined
+- **Move Earth** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Nondetection** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Pass Without Trace** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Passwall** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Phantasmal Killer** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Phantom Steed** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Planar Binding** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Plane Shift** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Plant Growth** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Poison Spray** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Polymorph** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Power Word Kill** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Power Word Stun** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Prestidigitation** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Prismatic Spray** - `areaSound`: existing Wizard Compendium V7: "cone (60)"; imported SRD 5.1: undefined
+- **Prismatic Wall** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Private Sanctum** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Produce Flame** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Programmed Illusion** - `areaSound`: existing Wizard Compendium V7: "cube (30)"; imported SRD 5.1: undefined
+- **Project Image** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Protection From Energy** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Protection From Evil And Good** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Protection From Poison** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Purify Food And Drink** - `areaSound`: existing Druid Book: "sphere (5)"; imported SRD 5.1: undefined
+- **Ray Of Enfeeblement** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Ray Of Frost** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Regenerate** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Reincarnate** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Remove Curse** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Resilient Sphere** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Resistance** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Reverse Gravity** - `areaSound`: existing Wizard Compendium V7: "cylinder (50)"; imported SRD 5.1: undefined
+- **Rope Trick** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Scorching Ray** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Scrying** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Secret Chest** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **See Invisibility** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Seeming** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Sending** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Sequester** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Shapechange** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Shatter** - `areaSound`: existing Wizard Compendium V7: "sphere (10)"; imported SRD 5.1: undefined
+- **Shield** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Shillelagh** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Shocking Grasp** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Silent Image** - `areaSound`: existing Wizard Compendium V7: "cube (15)"; imported SRD 5.1: undefined
+- **Simulacrum** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Sleep** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Sleet Storm** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Slow** - `areaSound`: existing Wizard Compendium V7: "cube (40)"; imported SRD 5.1: undefined
+- **Speak With Animals** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Speak With Plants** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Spider Climb** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Spike Growth** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Stinking Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.1: undefined
+- **Stone Shape** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Stoneskin** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Storm Of Vengeance** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Suggestion** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Sunbeam** - `areaSound`: existing Wizard Compendium V7: "line (60)"; imported SRD 5.1: undefined
+- **Sunburst** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Symbol** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Telekinesis** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Telepathic Bond** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Teleport** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported SRD 5.1: undefined
+- **Teleportation Circle** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Thunderwave** - `areaSound`: existing Wizard Compendium V7: "cube (15)"; imported SRD 5.1: undefined
+- **Time Stop** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Tiny Hut** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Tongues** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Transport Via Plants** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Tree Stride** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **True Polymorph** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **True Resurrection** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **True Seeing** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **True Strike** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Unseen Servant** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Vampiric Touch** - `damage`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: "Necrotic"
+- **Vampiric Touch** - `areaSound`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.1: undefined
+- **Vampiric Touch** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported SRD 5.1: ["Warlock","Wizard"]
+- **Vampiric Touch** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Vampiric Touch** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.1: ["Warlock","Wizard"]
+- **Wall Of Fire** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Wall Of Force** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Wall Of Ice** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Wall Of Stone** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Wall Of Thorns** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Water Breathing** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Water Walk** - `areaSound`: existing Sorcerer Compendium: "None"; imported SRD 5.1: undefined
+- **Web** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+- **Weird** - `areaSound`: existing Wizard Compendium V7: "sphere (30)"; imported SRD 5.1: undefined
+- **Wind Walk** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Wind Wall** - `areaSound`: existing Druid Book: "None"; imported SRD 5.1: undefined
+- **Wish** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.1: undefined
+
+### SRD 5.2 (953 differences)
+
+- **Acid Arrow** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Acid"
+- **Acid Arrow** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Acid Arrow** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (powdered rhubarb leaf)"
+- **Acid Splash** - `school`: existing Wizard Compendium V7: "Conjuration"; imported SRD 5.2: "Evocation"
+- **Acid Splash** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Sphere"
+- **Acid Splash** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "sphere (5)"
+- **Acid Splash** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Alarm** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Alarm** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Alarm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bell and silver wire)"
+- **Alarm** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Ranger","Wizard"]
+- **Alter Self** - `damage`: existing Wizard Compendium V7: "Bludgeoning"; imported SRD 5.2: "None"
+- **Alter Self** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Alter Self** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Animal Friendship** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Animal Friendship** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a morsel of food)"
+- **Animal Friendship** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger"]
+- **Animal Messenger** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Animal Messenger** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Animal Messenger** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a morsel of food)"
+- **Animal Messenger** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger"]
+- **Animal Shapes** - `duration`: existing Druid Book: "Up to 24 hours"; imported SRD 5.2: "24 hours"
+- **Animal Shapes** - `concentration`: existing Druid Book: true; imported SRD 5.2: false
+- **Animal Shapes** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Animate Dead** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Animate Dead** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)"
+- **Animate Dead** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Cleric","Wizard"]
+- **Animate Objects** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Animate Objects** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Animate Objects** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Antilife Shell** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Emanation"
+- **Antilife Shell** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "emanation (10)"
+- **Antilife Shell** - `duration`: existing Druid Book: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Antilife Shell** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Antimagic Field** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Emanation"
+- **Antimagic Field** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "emanation (10)"
+- **Antimagic Field** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Antimagic Field** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Antimagic Field** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (iron filings)"
+- **Antimagic Field** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Cleric","Wizard"]
+- **Antipathy/Sympathy** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported SRD 5.2: "None"
+- **Antipathy/Sympathy** - `areaSound`: existing Wizard Compendium V7: "cube (200)"; imported SRD 5.2: "None"
+- **Antipathy/Sympathy** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Antipathy/Sympathy** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a mix of vinegar and honey)"
+- **Antipathy/Sympathy** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Druid","Wizard"]
+- **Arcane Eye** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Arcane Eye** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Arcane Eye** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of bat fur)"
+- **Arcane Hand** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Arcane Hand** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Arcane Hand** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (an eggshell and a glove)"
+- **Arcane Hand** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Sorcerer","Wizard"]
+- **Arcane Lock** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Arcane Lock** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (gold dust worth 25+ GP, which the spell consumes)"
+- **Arcane Sword** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Force"
+- **Arcane Sword** - `range`: existing Wizard Compendium V7: "60 feet"; imported SRD 5.2: "90 feet"
+- **Arcane Sword** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Arcane Sword** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Arcane Sword** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a miniature sword worth 250+ GP)"
+- **Arcane Sword** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Astral Projection** - `duration`: existing Wizard Compendium V7: "Special"; imported SRD 5.2: "Until dispelled"
+- **Astral Projection** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Astral Projection** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (for each of the spell's targets, one jacinth worth 1,000+ GP and one silver bar worth 100+ GP, all of which the spell consumes)"
+- **Astral Projection** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Warlock","Wizard"]
+- **Awaken** - `castingTime`: existing Druid Book: "8 Hours"; imported SRD 5.2: "8 hours"
+- **Awaken** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (an agate worth 1,000+ GP, which the spell consumes)"
+- **Awaken** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid"]
+- **Banishment** - `range`: existing Wizard Compendium V7: "60 feet"; imported SRD 5.2: "30 feet"
+- **Banishment** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Banishment** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Banishment** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pentacle)"
+- **Banishment** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Paladin","Sorcerer","Warlock","Wizard"]
+- **Barkskin** - `duration`: existing Druid Book: "Up to 1 hour"; imported SRD 5.2: "1 hour"
+- **Barkskin** - `concentration`: existing Druid Book: true; imported SRD 5.2: false
+- **Barkskin** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Bonus Action"
+- **Barkskin** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a handful of bark)"
+- **Barkskin** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Bestow Curse** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Bestow Curse** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Bestow Curse** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Cleric","Wizard"]
+- **Black Tentacles** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Bludgeoning"
+- **Black Tentacles** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Black Tentacles** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Black Tentacles** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a tentacle)"
+- **Blight** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Blindness/Deafness** - `school`: existing Wizard Compendium V7: "Necromancy"; imported SRD 5.2: "Transmutation"
+- **Blindness/Deafness** - `range`: existing Wizard Compendium V7: "30 feet"; imported SRD 5.2: "120 feet"
+- **Blindness/Deafness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Blindness/Deafness** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Blink** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Blur** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Blur** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Burning Hands** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Call Lightning** - `areaShape`: existing Druid Book: "Cylinder"; imported SRD 5.2: "None"
+- **Call Lightning** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Call Lightning** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Chain Lightning** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Chain Lightning** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (three silver pins)"
+- **Charm Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Charm Person** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Warlock","Wizard"]
+- **Chill Touch** - `range`: existing Wizard Compendium V7: "120 feet"; imported SRD 5.2: "Touch"
+- **Chill Touch** - `duration`: existing Wizard Compendium V7: "1 round"; imported SRD 5.2: "Instantaneous"
+- **Chill Touch** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Circle of Death** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Circle of Death** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (the powder of a crushed black pearl worth 500+ GP)"
+- **Clairvoyance** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Clairvoyance** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Clairvoyance** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a focus worth 100+ GP, either a jeweled horn for hearing or a glass eye for seeing)"
+- **Clairvoyance** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Clone** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Clone** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a diamond worth 1,000+ GP, which the spell consumes, and a sealable vessel worth 2,000+ GP that is large enough to hold the creature being cloned)"
+- **Cloudkill** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Cloudkill** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Color Spray** - `duration`: existing Wizard Compendium V7: "1 round"; imported SRD 5.2: "Instantaneous"
+- **Color Spray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Color Spray** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of colorful sand)"
+- **Color Spray** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Commune with Nature** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Commune with Nature** - `castingTime`: existing Druid Book: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Commune with Nature** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Comprehend Languages** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Comprehend Languages** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Comprehend Languages** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of soot and salt)"
+- **Comprehend Languages** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Cone of Cold** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Cone of Cold** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a small crystal or glass cone)"
+- **Cone of Cold** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Confusion** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Confusion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Confusion** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (three nut shells)"
+- **Confusion** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Wizard"]
+- **Conjure Animals** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Slashing"
+- **Conjure Animals** - `duration`: existing Druid Book: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Conjure Animals** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Conjure Animals** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Conjure Elemental** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported SRD 5.2: "None"
+- **Conjure Elemental** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported SRD 5.2: "None"
+- **Conjure Elemental** - `range`: existing Wizard Compendium V7: "90 feet"; imported SRD 5.2: "60 feet"
+- **Conjure Elemental** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Conjure Elemental** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "Action"
+- **Conjure Elemental** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S"
+- **Conjure Fey** - `damage`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.2: "Psychic"
+- **Conjure Fey** - `range`: existing Warlock Spell Compendium v1.3: "90 feet"; imported SRD 5.2: "60 feet"
+- **Conjure Fey** - `duration`: existing Warlock Spell Compendium v1.3: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Conjure Fey** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Minute"; imported SRD 5.2: "Action"
+- **Conjure Fey** - `classes`: existing Warlock Spell Compendium v1.3: ["Druid","Warlock"]; imported SRD 5.2: ["Druid"]
+- **Conjure Minor Elementals** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Emanation"
+- **Conjure Minor Elementals** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "emanation (15)"
+- **Conjure Minor Elementals** - `range`: existing Wizard Compendium V7: "90 feet"; imported SRD 5.2: "Self"
+- **Conjure Minor Elementals** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Conjure Minor Elementals** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "Action"
+- **Conjure Woodland Beings** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Force"
+- **Conjure Woodland Beings** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Emanation"
+- **Conjure Woodland Beings** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "emanation (10)"
+- **Conjure Woodland Beings** - `range`: existing Druid Book: "60 feet"; imported SRD 5.2: "Self"
+- **Conjure Woodland Beings** - `duration`: existing Druid Book: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Conjure Woodland Beings** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Conjure Woodland Beings** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S"
+- **Conjure Woodland Beings** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Contact Other Plane** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Contact Other Plane** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Contagion** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Necrotic"
+- **Contagion** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Contagion** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **Contingency** - `school`: existing Wizard Compendium V7: "Evocation"; imported SRD 5.2: "Abjuration"
+- **Contingency** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Contingency** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a gem-encrusted statuette of yourself worth 1,500+ GP)"
+- **Continual Flame** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Continual Flame** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (ruby dust worth 50+ GP, which the spell consumes)"
+- **Continual Flame** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Cleric","Druid","Wizard"]
+- **Control Water** - `damage`: existing Wizard Compendium V7: "Bludgeoning"; imported SRD 5.2: "None"
+- **Control Water** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Control Water** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Control Water** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Control Water** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a mixture of water and dust)"
+- **Control Water** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Wizard"]
+- **Control Weather** - `duration`: existing Wizard Compendium V7: "Up to 8 hours"; imported SRD 5.2: "Concentration, up to 8 hours"
+- **Control Weather** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Control Weather** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (burning incense)"
+- **Control Weather** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Wizard"]
+- **Counterspell** - `castingTime`: existing Wizard Compendium V7: "1 Reaction"; imported SRD 5.2: "Reaction, which you take when you see a creature within 60 feet of yourself casting a spell with Verbal, Somatic, or Material components"
+- **Create Food and Water** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Create Food and Water** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Paladin"]
+- **Create or Destroy Water** - `areaShape`: existing Druid Book: "Cube"; imported SRD 5.2: "None"
+- **Create or Destroy Water** - `areaSound`: existing Druid Book: "cube (30)"; imported SRD 5.2: "None"
+- **Create or Destroy Water** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Create or Destroy Water** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a mix of water and sand)"
+- **Create or Destroy Water** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **Create Undead** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Create Undead** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (one 150+ GP black onyx stone for each corpse)"
+- **Create Undead** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Warlock","Wizard"]
+- **Creation** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Creation** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a paintbrush)"
+- **Cure Wounds** - `school`: existing Druid Book: "Evocation"; imported SRD 5.2: "Abjuration"
+- **Cure Wounds** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Cure Wounds** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger"]
+- **Dancing Lights** - `school`: existing Wizard Compendium V7: "Evocation"; imported SRD 5.2: "Illusion"
+- **Dancing Lights** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Dancing Lights** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Dancing Lights** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of phosphorus)"
+- **Dancing Lights** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Darkness** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Darkness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Darkness** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (bat fur and a piece of coal)"
+- **Darkvision** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Darkvision** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a dried carrot)"
+- **Darkvision** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Daylight** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Daylight** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Cleric","Druid","Paladin","Ranger","Sorcerer"]
+- **Delayed Blast Fireball** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Delayed Blast Fireball** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Delayed Blast Fireball** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a ball of bat guano and sulfur)"
+- **Demiplane** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Demiplane** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Sorcerer","Warlock","Wizard"]
+- **Detect Magic** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Detect Magic** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Detect Magic** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Detect Magic** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger","Sorcerer","Warlock","Wizard"]
+- **Detect Poison and Disease** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Detect Poison and Disease** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Detect Poison and Disease** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Detect Poison and Disease** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a yew leaf)"
+- **Detect Poison and Disease** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid","Paladin","Ranger"]
+- **Detect Thoughts** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Detect Thoughts** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Detect Thoughts** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (1 Copper Piece)"
+- **Detect Thoughts** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Dimension Door** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Dimension Door** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Disguise Self** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Disguise Self** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Disintegrate** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Disintegrate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Disintegrate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a lodestone and dust)"
+- **Dispel Magic** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Dispel Magic** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger","Sorcerer","Warlock","Wizard"]
+- **Divination** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Divination** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Divination** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (incense worth 25+ GP, which the spell consumes)"
+- **Divination** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid","Wizard"]
+- **Dominate Beast** - `duration`: existing Sorcerer Compendium: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Dominate Beast** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Dominate Beast** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer"]
+- **Dominate Monster** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Dominate Monster** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Dominate Monster** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Dominate Person** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Dominate Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Dominate Person** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Dream** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Dream** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a handful of sand)"
+- **Dream** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Druidcraft** - `areaShape`: existing Druid Book: "Cube"; imported SRD 5.2: "None"
+- **Druidcraft** - `areaSound`: existing Druid Book: "cube (5)"; imported SRD 5.2: "None"
+- **Druidcraft** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Earthquake** - `school`: existing Sorcerer Compendium: "Evocation"; imported SRD 5.2: "Transmutation"
+- **Earthquake** - `areaShape`: existing Sorcerer Compendium: "Circle"; imported SRD 5.2: "None"
+- **Earthquake** - `duration`: existing Sorcerer Compendium: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Earthquake** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Earthquake** - `components`: existing Sorcerer Compendium: "V, S, M"; imported SRD 5.2: "V, S, M (a fractured rock)"
+- **Earthquake** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer"]
+- **Eldritch Blast** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported SRD 5.2: "Action"
+- **Enhance Ability** - `duration`: existing Sorcerer Compendium: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Enhance Ability** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Enhance Ability** - `components`: existing Sorcerer Compendium: "V, S, M"; imported SRD 5.2: "V, S, M (fur or a feather)"
+- **Enhance Ability** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Bard","Cleric","Druid","Ranger","Sorcerer","Wizard"]
+- **Enlarge/Reduce** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Enlarge/Reduce** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Enlarge/Reduce** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of powdered iron)"
+- **Enlarge/Reduce** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Wizard"]
+- **Entangle** - `areaShape`: existing Druid Book: "Square"; imported SRD 5.2: "None"
+- **Entangle** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Entangle** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Entangle** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Enthrall** - `duration`: existing Warlock Spell Compendium v1.3: "1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Enthrall** - `concentration`: existing Warlock Spell Compendium v1.3: false; imported SRD 5.2: true
+- **Enthrall** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported SRD 5.2: "Action"
+- **Enthrall** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported SRD 5.2: ["Bard","Warlock"]
+- **Etherealness** - `school`: existing Wizard Compendium V7: "Transmutation"; imported SRD 5.2: "Conjuration"
+- **Etherealness** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Force"
+- **Etherealness** - `duration`: existing Wizard Compendium V7: "8 hours"; imported SRD 5.2: "Up to 8 hours"
+- **Etherealness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Etherealness** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Warlock","Wizard"]
+- **Expeditious Retreat** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Expeditious Retreat** - `castingTime`: existing Wizard Compendium V7: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Eyebite** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Eyebite** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Eyebite** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Fabricate** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Faerie Fire** - `areaShape`: existing Druid Book: "Line"; imported SRD 5.2: "Cube"
+- **Faerie Fire** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "cube (20)"
+- **Faerie Fire** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Faerie Fire** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Faerie Fire** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid"]
+- **Faithful Hound** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Force"
+- **Faithful Hound** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Faithful Hound** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a silver whistle)"
+- **False Life** - `duration`: existing Wizard Compendium V7: "1 hour"; imported SRD 5.2: "Instantaneous"
+- **False Life** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **False Life** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of alcohol)"
+- **Fear** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Fear** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fear** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a white feather)"
+- **Fear** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Feather Fall** - `castingTime`: existing Wizard Compendium V7: "1 Reaction"; imported SRD 5.2: "Reaction, which you take when you or a creature you can see within 60 feet of you falls"
+- **Feather Fall** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (a small feather or piece of down)"
+- **Feather Fall** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Find Familiar** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Find Familiar** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour or Ritual"
+- **Find Familiar** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (burning incense worth 10+ GP, which the spell consumes)"
+- **Find the Path** - `duration`: existing Druid Book: "Up to 24 hours"; imported SRD 5.2: "Concentration, up to 1 day"
+- **Find the Path** - `castingTime`: existing Druid Book: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Find the Path** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a set of divination tools—such as cards or runes—worth 100+ GP)"
+- **Find the Path** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid"]
+- **Find Traps** - `areaShape`: existing Druid Book: "Line"; imported SRD 5.2: "None"
+- **Find Traps** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Find Traps** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid","Ranger"]
+- **Finger of Death** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fire Bolt** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fire Shield** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fire Shield** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of phosphorus or a firefly)"
+- **Fire Shield** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Fire Storm** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Fire Storm** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer"]
+- **Fireball** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fireball** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a ball of bat guano and sulfur)"
+- **Flame Blade** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Flame Blade** - `castingTime`: existing Druid Book: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Flame Blade** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a sumac leaf)"
+- **Flame Blade** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Sorcerer"]
+- **Flaming Sphere** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported SRD 5.2: "None"
+- **Flaming Sphere** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported SRD 5.2: "None"
+- **Flaming Sphere** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Flaming Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Flaming Sphere** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a ball of wax)"
+- **Flaming Sphere** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Flesh to Stone** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Flesh to Stone** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Flesh to Stone** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a cockatrice feather)"
+- **Flesh to Stone** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Floating Disk** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Floating Disk** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Floating Disk** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of mercury)"
+- **Fly** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Fly** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fly** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a feather)"
+- **Fog Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Fog Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Fog Cloud** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Forcecage** - `duration`: existing Wizard Compendium V7: "1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Forcecage** - `concentration`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Forcecage** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Forcecage** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (ruby dust worth 1,500+ GP, which the spell consumes)"
+- **Forcecage** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Foresight** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Foresight** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a hummingbird feather)"
+- **Foresight** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Druid","Warlock","Wizard"]
+- **Freedom of Movement** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Freedom of Movement** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a leather strap)"
+- **Freedom of Movement** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid","Ranger"]
+- **Freezing Sphere** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Cold"
+- **Freezing Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Freezing Sphere** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a miniature crystal sphere)"
+- **Freezing Sphere** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Sorcerer","Wizard"]
+- **Gaseous Form** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Slashing"
+- **Gaseous Form** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Gaseous Form** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Gaseous Form** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of gauze)"
+- **Gate** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Gate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Gate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a diamond worth 5,000+ GP)"
+- **Gate** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Cleric","Sorcerer","Warlock","Wizard"]
+- **Geas** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Geas** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Wizard"]
+- **Gentle Repose** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Gentle Repose** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Gentle Repose** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (2 Copper Pieces, which the spell consumes)"
+- **Gentle Repose** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Cleric","Paladin","Wizard"]
+- **Giant Insect** - `school`: existing Druid Book: "Transmutation"; imported SRD 5.2: "Conjuration"
+- **Giant Insect** - `range`: existing Druid Book: "30 feet"; imported SRD 5.2: "60 feet"
+- **Giant Insect** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Giant Insect** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Glibness** - `school`: existing Warlock Spell Compendium v1.3: "Transmutation"; imported SRD 5.2: "Enchantment"
+- **Glibness** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported SRD 5.2: "Action"
+- **Glibness** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported SRD 5.2: ["Bard","Warlock"]
+- **Globe of Invulnerability** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Emanation"
+- **Globe of Invulnerability** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "emanation (10)"
+- **Globe of Invulnerability** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Globe of Invulnerability** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Globe of Invulnerability** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a glass bead)"
+- **Glyph of Warding** - `damage`: existing Wizard Compendium V7: "Cold"; imported SRD 5.2: "None"
+- **Glyph of Warding** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Glyph of Warding** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported SRD 5.2: "Until dispelled or triggered"
+- **Glyph of Warding** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Glyph of Warding** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (powdered diamond worth 200+ GP, which the spell consumes)"
+- **Glyph of Warding** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Cleric","Wizard"]
+- **Goodberry** - `school`: existing Druid Book: "Transmutation"; imported SRD 5.2: "Conjuration"
+- **Goodberry** - `range`: existing Druid Book: "Touch"; imported SRD 5.2: "Self"
+- **Goodberry** - `duration`: existing Druid Book: "Instantaneous"; imported SRD 5.2: "24 hours"
+- **Goodberry** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Goodberry** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a sprig of mistletoe)"
+- **Goodberry** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Grease** - `areaShape`: existing Wizard Compendium V7: "Square"; imported SRD 5.2: "None"
+- **Grease** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Grease** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of pork rind or butter)"
+- **Grease** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Sorcerer","Wizard"]
+- **Greater Invisibility** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Greater Invisibility** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Greater Invisibility** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Greater Restoration** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Greater Restoration** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (diamond dust worth 100+ GP, which the spell consumes)"
+- **Greater Restoration** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger"]
+- **Guards and Wards** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Guards and Wards** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "1 hour"
+- **Guards and Wards** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a silver rod worth 10+ GP)"
+- **Guards and Wards** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Guidance** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Guidance** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Guidance** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **Gust of Wind** - `areaShape`: existing Wizard Compendium V7: "Line"; imported SRD 5.2: "None"
+- **Gust of Wind** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Gust of Wind** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Gust of Wind** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a legume seed)"
+- **Gust of Wind** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Hallucinatory Terrain** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Hallucinatory Terrain** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a mushroom)"
+- **Hallucinatory Terrain** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Druid","Warlock","Wizard"]
+- **Haste** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Haste** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Haste** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a shaving of licorice root)"
+- **Heal** - `school`: existing Druid Book: "Evocation"; imported SRD 5.2: "Abjuration"
+- **Heal** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Heal** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **Healing Word** - `school`: existing Druid Book: "Evocation"; imported SRD 5.2: "Abjuration"
+- **Healing Word** - `castingTime`: existing Druid Book: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Healing Word** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid"]
+- **Heat Metal** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Heat Metal** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Heat Metal** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of iron and a flame)"
+- **Heat Metal** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid"]
+- **Hellish Rebuke** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Reaction"; imported SRD 5.2: "Reaction, which you take in response to taking damage from a creature that you can see within 60 feet of yourself"
+- **Heroes' Feast** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Poison"
+- **Heroes' Feast** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Cube"
+- **Heroes' Feast** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "cube (10)"
+- **Heroes' Feast** - `range`: existing Druid Book: "30 feet"; imported SRD 5.2: "Self"
+- **Heroes' Feast** - `castingTime`: existing Druid Book: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Heroes' Feast** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a gem-encrusted bowl worth 1,000+ GP, which the spell consumes)"
+- **Heroes' Feast** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid"]
+- **Hideous Laughter** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Hideous Laughter** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Hideous Laughter** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a tart and a feather)"
+- **Hideous Laughter** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Hold Monster** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Hold Monster** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Hold Monster** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a straight piece of iron)"
+- **Hold Monster** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Hold Person** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Hold Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Hold Person** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a straight piece of iron)"
+- **Hold Person** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Sorcerer","Warlock","Wizard"]
+- **Hypnotic Pattern** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Hypnotic Pattern** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Hypnotic Pattern** - `components`: existing Wizard Compendium V7: "S, M"; imported SRD 5.2: "S, M (a pinch of confetti)"
+- **Hypnotic Pattern** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Ice Knife** - `level`: existing Spell Compendium (3.5): 2; imported SRD 5.2: 1
+- **Ice Knife** - `areaSound`: existing Spell Compendium (3.5): undefined; imported SRD 5.2: "None"
+- **Ice Knife** - `range`: existing Spell Compendium (3.5): "Long (400 ft. + 40 ft./level)"; imported SRD 5.2: "60 feet"
+- **Ice Knife** - `castingTime`: existing Spell Compendium (3.5): "1 standard action"; imported SRD 5.2: "Action"
+- **Ice Knife** - `components`: existing Spell Compendium (3.5): "S, M"; imported SRD 5.2: "S, M (a drop of water or a piece of ice)"
+- **Ice Knife** - `classes`: existing Spell Compendium (3.5): ["Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Ice Storm** - `areaShape`: existing Wizard Compendium V7: "Cylinder"; imported SRD 5.2: "None"
+- **Ice Storm** - `areaSound`: existing Wizard Compendium V7: "cylinder (20)"; imported SRD 5.2: "None"
+- **Ice Storm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Ice Storm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a mitten)"
+- **Identify** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Identify** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Identify** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pearl worth 100+ GP)"
+- **Identify** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Illusory Script** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Illusory Script** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Illusory Script** - `components`: existing Wizard Compendium V7: "S, M"; imported SRD 5.2: "S, M (ink worth 10+ GP, which the spell consumes)"
+- **Illusory Script** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Imprisonment** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Imprisonment** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a statuette of the target worth 5,000+ GP)"
+- **Incendiary Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Incendiary Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Incendiary Cloud** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Sorcerer","Wizard"]
+- **Insect Plague** - `damage`: existing Sorcerer Compendium: "None"; imported SRD 5.2: "Piercing"
+- **Insect Plague** - `duration`: existing Sorcerer Compendium: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Insect Plague** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action"
+- **Insect Plague** - `components`: existing Sorcerer Compendium: "V, S, M"; imported SRD 5.2: "V, S, M (a locust)"
+- **Insect Plague** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer"]
+- **Instant Summons** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Instant Summons** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Instant Summons** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a sapphire worth 1,000+ GP)"
+- **Invisibility** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Invisibility** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Invisibility** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (an eyelash in gum arabic)"
+- **Invisibility** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Irresistible Dance** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Irresistible Dance** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Irresistible Dance** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Jump** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Bonus Action"
+- **Jump** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a grasshopper's hind leg)"
+- **Jump** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Knock** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Knock** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Legend Lore** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Legend Lore** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (incense worth 250+ GP, which the spell consumes, and four ivory strips worth 50+ GP each)"
+- **Legend Lore** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Cleric","Wizard"]
+- **Lesser Restoration** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Bonus Action"
+- **Lesser Restoration** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger"]
+- **Levitate** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Levitate** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Levitate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Levitate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a metal spring)"
+- **Light** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Light** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (a firefly or phosphorescent moss)"
+- **Light** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Lightning Bolt** - `areaShape`: existing Wizard Compendium V7: "Line"; imported SRD 5.2: "None"
+- **Lightning Bolt** - `areaSound`: existing Wizard Compendium V7: "line (100)"; imported SRD 5.2: "None"
+- **Lightning Bolt** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Lightning Bolt** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of fur and a crystal rod)"
+- **Locate Animals or Plants** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Locate Animals or Plants** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Locate Animals or Plants** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (fur from a bloodhound)"
+- **Locate Animals or Plants** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger"]
+- **Locate Creature** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Locate Creature** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Locate Creature** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (fur from a bloodhound)"
+- **Locate Creature** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger","Wizard"]
+- **Locate Object** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Locate Object** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Locate Object** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a forked twig)"
+- **Locate Object** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Paladin","Ranger","Wizard"]
+- **Longstrider** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Longstrider** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of dirt)"
+- **Longstrider** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Druid","Ranger","Wizard"]
+- **Mage Armor** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mage Armor** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of cured leather)"
+- **Mage Hand** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mage Hand** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Magic Circle** - `areaShape`: existing Wizard Compendium V7: "Cylinder"; imported SRD 5.2: "None"
+- **Magic Circle** - `areaSound`: existing Wizard Compendium V7: "cylinder (10)"; imported SRD 5.2: "None"
+- **Magic Circle** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Magic Circle** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (salt and powdered silver worth 100+ GP, which the spell consumes)"
+- **Magic Circle** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Paladin","Warlock","Wizard"]
+- **Magic Jar** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported SRD 5.2: "None"
+- **Magic Jar** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Magic Jar** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a gem, crystal, or reliquary worth 500+ GP)"
+- **Magic Missile** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Magic Mouth** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Magic Mouth** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Magic Mouth** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (jade dust worth 10+ GP, which the spell consumes)"
+- **Magic Mouth** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Magic Weapon** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "1 hour"
+- **Magic Weapon** - `concentration`: existing Wizard Compendium V7: true; imported SRD 5.2: false
+- **Magic Weapon** - `castingTime`: existing Wizard Compendium V7: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Magic Weapon** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Paladin","Ranger","Sorcerer","Wizard"]
+- **Magnificent Mansion** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Cube"
+- **Magnificent Mansion** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "cube (10)"
+- **Magnificent Mansion** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Magnificent Mansion** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a miniature door worth 15+ GP)"
+- **Magnificent Mansion** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Major Image** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Major Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Major Image** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of fleece)"
+- **Major Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Mass Cure Wounds** - `school`: existing Druid Book: "Conjuration"; imported SRD 5.2: "Abjuration"
+- **Mass Cure Wounds** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Mass Cure Wounds** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid"]
+- **Mass Suggestion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mass Suggestion** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (a snake's tongue)"
+- **Mass Suggestion** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Maze** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Maze** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mending** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Mending** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (two lodestones)"
+- **Mending** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Sorcerer","Wizard"]
+- **Message** - `areaShape`: existing Wizard Compendium V7: "Line"; imported SRD 5.2: "None"
+- **Message** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Message** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "S, M (a copper wire)"
+- **Message** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Wizard"]
+- **Meteor Swarm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mind Blank** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Psychic"
+- **Mind Blank** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mind Blank** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Minor Illusion** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported SRD 5.2: "None"
+- **Minor Illusion** - `areaSound`: existing Wizard Compendium V7: "cube (5)"; imported SRD 5.2: "None"
+- **Minor Illusion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Minor Illusion** - `components`: existing Wizard Compendium V7: "S, M"; imported SRD 5.2: "S, M (a bit of fleece)"
+- **Minor Illusion** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Mirage Arcane** - `areaShape`: existing Wizard Compendium V7: "Square"; imported SRD 5.2: "None"
+- **Mirage Arcane** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Mirage Arcane** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Druid","Wizard"]
+- **Mirror Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mirror Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Mislead** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Mislead** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Mislead** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Misty Step** - `castingTime`: existing Wizard Compendium V7: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Modify Memory** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Modify Memory** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Modify Memory** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Moonbeam** - `areaShape`: existing Druid Book: "Cylinder"; imported SRD 5.2: "None"
+- **Moonbeam** - `areaSound`: existing Druid Book: "cylinder (5)"; imported SRD 5.2: "None"
+- **Moonbeam** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Moonbeam** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Moonbeam** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a moonseed leaf)"
+- **Move Earth** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Move Earth** - `duration`: existing Wizard Compendium V7: "Up to 2 hours"; imported SRD 5.2: "Concentration, up to 2 hours"
+- **Move Earth** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Move Earth** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a miniature shovel)"
+- **Nondetection** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Nondetection** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of diamond dust worth 25+ GP, which the spell consumes)"
+- **Nondetection** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Ranger","Wizard"]
+- **Pass without Trace** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Emanation"
+- **Pass without Trace** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "emanation (30)"
+- **Pass without Trace** - `duration`: existing Druid Book: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Pass without Trace** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Pass without Trace** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (ashes from burned mistletoe)"
+- **Pass without Trace** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Passwall** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Passwall** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Passwall** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of sesame seeds)"
+- **Phantasmal Killer** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Phantasmal Killer** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Phantasmal Killer** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Phantom Steed** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Phantom Steed** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Planar Binding** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported SRD 5.2: "None"
+- **Planar Binding** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Planar Binding** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a jewel worth 1,000+ GP, which the spell consumes)"
+- **Planar Binding** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Warlock","Wizard"]
+- **Plane Shift** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported SRD 5.2: "None"
+- **Plane Shift** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Plane Shift** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a forked, metal rod worth 250+ GP and attuned to a plane of existence)"
+- **Plane Shift** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer","Warlock","Wizard"]
+- **Plant Growth** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action (Overgrowth) or 8 hours (Enrichment)"
+- **Plant Growth** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger"]
+- **Poison Spray** - `school`: existing Wizard Compendium V7: "Conjuration"; imported SRD 5.2: "Necromancy"
+- **Poison Spray** - `range`: existing Wizard Compendium V7: "10 feet"; imported SRD 5.2: "30 feet"
+- **Poison Spray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Polymorph** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Polymorph** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Polymorph** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a caterpillar cocoon)"
+- **Polymorph** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Wizard"]
+- **Power Word Kill** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Psychic"
+- **Power Word Kill** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Power Word Kill** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Power Word Stun** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Power Word Stun** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Prestidigitation** - `duration`: existing Wizard Compendium V7: "1 hour"; imported SRD 5.2: "Up to 1 hour"
+- **Prestidigitation** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Prestidigitation** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Prismatic Spray** - `damage`: existing Wizard Compendium V7: "Cold"; imported SRD 5.2: "Acid"
+- **Prismatic Spray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Prismatic Spray** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Prismatic Wall** - `damage`: existing Wizard Compendium V7: "Cold"; imported SRD 5.2: "Acid"
+- **Prismatic Wall** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Prismatic Wall** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Prismatic Wall** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Private Sanctum** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Private Sanctum** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a thin sheet of lead)"
+- **Produce Flame** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Bonus Action"
+- **Programmed Illusion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Programmed Illusion** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (jade dust worth 25+ GP)"
+- **Programmed Illusion** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Project Image** - `duration`: existing Wizard Compendium V7: "Up to 24 hours"; imported SRD 5.2: "Concentration, up to 1 day"
+- **Project Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Project Image** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a statuette of yourself worth 5+ GP)"
+- **Project Image** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Protection from Energy** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Protection from Energy** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Protection from Energy** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Ranger","Sorcerer","Wizard"]
+- **Protection from Evil and Good** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Protection from Evil and Good** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Protection from Evil and Good** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a flask of Holy Water worth 25+ GP, which the spell consumes)"
+- **Protection from Evil and Good** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Cleric","Druid","Paladin","Warlock","Wizard"]
+- **Protection from Poison** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Poison"
+- **Protection from Poison** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Protection from Poison** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid","Paladin","Ranger"]
+- **Purify Food and Drink** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Purify Food and Drink** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Purify Food and Drink** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid","Paladin"]
+- **Ray of Enfeeblement** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Ray of Enfeeblement** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Ray of Frost** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Ray of Sickness** - `level`: existing Spell Compendium (3.5): 2; imported SRD 5.2: 1
+- **Ray of Sickness** - `damage`: existing Spell Compendium (3.5): "None"; imported SRD 5.2: "Poison"
+- **Ray of Sickness** - `areaSound`: existing Spell Compendium (3.5): undefined; imported SRD 5.2: "None"
+- **Ray of Sickness** - `range`: existing Spell Compendium (3.5): "Special"; imported SRD 5.2: "60 feet"
+- **Ray of Sickness** - `duration`: existing Spell Compendium (3.5): "1 round/level"; imported SRD 5.2: "Instantaneous"
+- **Ray of Sickness** - `castingTime`: existing Spell Compendium (3.5): "Special"; imported SRD 5.2: "Action"
+- **Regenerate** - `castingTime`: existing Druid Book: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Regenerate** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a prayer wheel)"
+- **Regenerate** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Cleric","Druid"]
+- **Reincarnate** - `school`: existing Druid Book: "Transmutation"; imported SRD 5.2: "Necromancy"
+- **Reincarnate** - `castingTime`: existing Druid Book: "1 Hour"; imported SRD 5.2: "1 hour"
+- **Reincarnate** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (rare oils worth 1,000+ GP, which the spell consumes)"
+- **Remove Curse** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Remove Curse** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Cleric","Paladin","Warlock","Wizard"]
+- **Resilient Sphere** - `school`: existing Wizard Compendium V7: "Evocation"; imported SRD 5.2: "Abjuration"
+- **Resilient Sphere** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Resilient Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Resilient Sphere** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a glass sphere)"
+- **Resistance** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Resistance** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Resistance** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S"
+- **Resistance** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **Reverse Gravity** - `areaShape`: existing Wizard Compendium V7: "Cylinder"; imported SRD 5.2: "None"
+- **Reverse Gravity** - `areaSound`: existing Wizard Compendium V7: "cylinder (50)"; imported SRD 5.2: "None"
+- **Reverse Gravity** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Reverse Gravity** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Reverse Gravity** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a lodestone and iron filings)"
+- **Revivify** - `level`: existing Spell Compendium (3.5): 5; imported SRD 5.2: 3
+- **Revivify** - `school`: existing Spell Compendium (3.5): "Conjuration"; imported SRD 5.2: "Necromancy"
+- **Revivify** - `areaSound`: existing Spell Compendium (3.5): undefined; imported SRD 5.2: "None"
+- **Revivify** - `castingTime`: existing Spell Compendium (3.5): "1 standard action"; imported SRD 5.2: "Action"
+- **Revivify** - `components`: existing Spell Compendium (3.5): "V, S, M"; imported SRD 5.2: "V, S, M (a diamond worth 300+ GP, which the spell consumes)"
+- **Revivify** - `classes`: existing Spell Compendium (3.5): ["Cleric"]; imported SRD 5.2: ["Cleric","Druid","Paladin","Ranger"]
+- **Rope Trick** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Rope Trick** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a segment of rope)"
+- **Scorching Ray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Scrying** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Scrying** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported SRD 5.2: "10 minutes"
+- **Scrying** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a focus worth 1,000+ GP, such as a crystal ball, mirror, or water-filled font)"
+- **Scrying** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Warlock","Wizard"]
+- **Secret Chest** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported SRD 5.2: "Until dispelled"
+- **Secret Chest** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Secret Chest** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth 5,000+ GP, and a Tiny replica of the chest made from the same materials worth 50+ GP)"
+- **See Invisibility** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **See Invisibility** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of talc)"
+- **See Invisibility** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Seeming** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Seeming** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Sending** - `school`: existing Wizard Compendium V7: "Evocation"; imported SRD 5.2: "Divination"
+- **Sending** - `duration`: existing Wizard Compendium V7: "1 round"; imported SRD 5.2: "Instantaneous"
+- **Sending** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sending** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a copper wire)"
+- **Sending** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Cleric","Wizard"]
+- **Sequester** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sequester** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (gem dust worth 5,000+ GP, which the spell consumes)"
+- **Shapechange** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Shapechange** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Shapechange** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a jade circlet worth 1,500+ GP)"
+- **Shatter** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Shatter** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a chip of mica)"
+- **Shatter** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Shield** - `castingTime`: existing Wizard Compendium V7: "1 Reaction"; imported SRD 5.2: "Reaction, which you take when you are hit by an attack roll or targeted by the Magic Missile spell"
+- **Shillelagh** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Force"
+- **Shillelagh** - `range`: existing Druid Book: "Touch"; imported SRD 5.2: "Self"
+- **Shillelagh** - `castingTime`: existing Druid Book: "1 Bonus Action"; imported SRD 5.2: "Bonus Action"
+- **Shillelagh** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (mistletoe)"
+- **Shocking Grasp** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Silent Image** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Silent Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Silent Image** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of fleece)"
+- **Silent Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Simulacrum** - `castingTime`: existing Wizard Compendium V7: "12 Hours"; imported SRD 5.2: "12 hours"
+- **Simulacrum** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (powdered ruby worth 1,500+ GP, which the spell consumes)"
+- **Sleep** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Sphere"
+- **Sleep** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "sphere (5)"
+- **Sleep** - `range`: existing Wizard Compendium V7: "90 feet"; imported SRD 5.2: "60 feet"
+- **Sleep** - `duration`: existing Wizard Compendium V7: "1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Sleep** - `concentration`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Sleep** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sleep** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a pinch of sand or rose petals)"
+- **Sleep** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Sleet Storm** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "cylinder (20)"
+- **Sleet Storm** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Sleet Storm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sleet Storm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a miniature umbrella)"
+- **Slow** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Slow** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Slow** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of molasses)"
+- **Slow** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Speak with Animals** - `ritual`: existing Druid Book: false; imported SRD 5.2: true
+- **Speak with Animals** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Speak with Animals** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger","Warlock"]
+- **Speak with Plants** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Emanation"
+- **Speak with Plants** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "emanation (30)"
+- **Speak with Plants** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Speak with Plants** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Bard","Druid","Ranger"]
+- **Spider Climb** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Spider Climb** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Spider Climb** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of bitumen and a spider)"
+- **Spike Growth** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Piercing"
+- **Spike Growth** - `areaShape`: existing Druid Book: "None"; imported SRD 5.2: "Sphere"
+- **Spike Growth** - `areaSound`: existing Druid Book: "None"; imported SRD 5.2: "sphere (20)"
+- **Spike Growth** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Spike Growth** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Spike Growth** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (seven thorns)"
+- **Spike Growth** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Stinking Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Stinking Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Stinking Cloud** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a rotten egg)"
+- **Stinking Cloud** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Stone Shape** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Stone Shape** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Stone Shape** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (soft clay)"
+- **Stone Shape** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Wizard"]
+- **Stoneskin** - `school`: existing Wizard Compendium V7: "Abjuration"; imported SRD 5.2: "Transmutation"
+- **Stoneskin** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Slashing"
+- **Stoneskin** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Stoneskin** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Stoneskin** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (diamond dust worth 100+ GP, which the spell consumes)"
+- **Stoneskin** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Storm of Vengeance** - `damage`: existing Druid Book: "Bludgeoning"; imported SRD 5.2: "Thunder"
+- **Storm of Vengeance** - `range`: existing Druid Book: "Sight"; imported SRD 5.2: "1 mile"
+- **Storm of Vengeance** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Storm of Vengeance** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Suggestion** - `duration`: existing Wizard Compendium V7: "Up to 8 hours"; imported SRD 5.2: "Concentration, up to 8 hours"
+- **Suggestion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Suggestion** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (a drop of honey)"
+- **Suggestion** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Sunbeam** - `areaShape`: existing Wizard Compendium V7: "Line"; imported SRD 5.2: "None"
+- **Sunbeam** - `areaSound`: existing Wizard Compendium V7: "line (60)"; imported SRD 5.2: "None"
+- **Sunbeam** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Sunbeam** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sunbeam** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a magnifying glass)"
+- **Sunbeam** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Sunburst** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Sphere"
+- **Sunburst** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "sphere (60)"
+- **Sunburst** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Sunburst** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of sunstone)"
+- **Sunburst** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Symbol** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported SRD 5.2: "None"
+- **Symbol** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "Sphere"
+- **Symbol** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "sphere (60)"
+- **Symbol** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported SRD 5.2: "Until dispelled or triggered"
+- **Symbol** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Symbol** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (powdered diamond worth 1,000+ GP, which the spell consumes)"
+- **Symbol** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Cleric","Druid","Wizard"]
+- **Telekinesis** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Telekinesis** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Telepathic Bond** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Telepathic Bond** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Telepathic Bond** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (two eggs)"
+- **Telepathic Bond** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Teleport** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported SRD 5.2: "None"
+- **Teleport** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported SRD 5.2: "None"
+- **Teleport** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Teleport** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Wizard"]
+- **Teleportation Circle** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported SRD 5.2: "None"
+- **Teleportation Circle** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Teleportation Circle** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (rare inks worth 50+ GP, which the spell consumes)"
+- **Teleportation Circle** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Thunderwave** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Thunderwave** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Bard","Druid","Sorcerer","Wizard"]
+- **Time Stop** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Tiny Hut** - `areaShape`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Emanation"
+- **Tiny Hut** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "emanation (10)"
+- **Tiny Hut** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Tiny Hut** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported SRD 5.2: "1 minute or Ritual"
+- **Tiny Hut** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a crystal bead)"
+- **Tiny Hut** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Bard","Wizard"]
+- **Tongues** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Tongues** - `components`: existing Wizard Compendium V7: "V, M"; imported SRD 5.2: "V, M (a miniature ziggurat)"
+- **Tongues** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Warlock","Wizard"]
+- **Transport via Plants** - `duration`: existing Druid Book: "1 round"; imported SRD 5.2: "1 minute"
+- **Transport via Plants** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Tree Stride** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Tree Stride** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Tree Stride** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **True Polymorph** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **True Polymorph** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **True Polymorph** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a drop of mercury, a dollop of gum arabic, and a wisp of smoke)"
+- **True Polymorph** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **True Resurrection** - `castingTime`: existing Druid Book: "1 Hour"; imported SRD 5.2: "1 hour"
+- **True Resurrection** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (diamonds worth 25,000+ GP, which the spell consumes)"
+- **True Resurrection** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Cleric","Druid"]
+- **True Seeing** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **True Seeing** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (mushroom powder worth 25+ GP, which the spell consumes)"
+- **True Seeing** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Cleric","Sorcerer","Warlock","Wizard"]
+- **True Strike** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Radiant"
+- **True Strike** - `range`: existing Wizard Compendium V7: "30 feet"; imported SRD 5.2: "Self"
+- **True Strike** - `duration`: existing Wizard Compendium V7: "Up to 1 round"; imported SRD 5.2: "Instantaneous"
+- **True Strike** - `concentration`: existing Wizard Compendium V7: true; imported SRD 5.2: false
+- **True Strike** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **True Strike** - `components`: existing Wizard Compendium V7: "S"; imported SRD 5.2: "S, M (a weapon with which you have proficiency and that is worth 1+ CP)"
+- **True Strike** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported SRD 5.2: ["Bard","Sorcerer","Warlock","Wizard"]
+- **Tsunami** - `level`: existing Spell Compendium (3.5): 9; imported SRD 5.2: 8
+- **Tsunami** - `damage`: existing Spell Compendium (3.5): "None"; imported SRD 5.2: "Bludgeoning"
+- **Tsunami** - `areaSound`: existing Spell Compendium (3.5): undefined; imported SRD 5.2: "None"
+- **Tsunami** - `range`: existing Spell Compendium (3.5): "Long (400 ft. + 40 ft./level)"; imported SRD 5.2: "1 mile"
+- **Tsunami** - `duration`: existing Spell Compendium (3.5): "Concentration, up to"; imported SRD 5.2: "Concentration, up to 6 rounds"
+- **Tsunami** - `castingTime`: existing Spell Compendium (3.5): "1 round"; imported SRD 5.2: "1 minute"
+- **Tsunami** - `components`: existing Spell Compendium (3.5): "V, S, M"; imported SRD 5.2: "V, S"
+- **Unseen Servant** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Unseen Servant** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Unseen Servant** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of string and of wood)"
+- **Unseen Servant** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported SRD 5.2: ["Bard","Warlock","Wizard"]
+- **Vampiric Touch** - `damage`: existing Warlock Spell Compendium v1.3: "None"; imported SRD 5.2: "Necrotic"
+- **Vampiric Touch** - `duration`: existing Warlock Spell Compendium v1.3: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Vampiric Touch** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported SRD 5.2: "Action"
+- **Vampiric Touch** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported SRD 5.2: ["Sorcerer","Warlock","Wizard"]
+- **Vampiric Touch** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Vampiric Touch** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Vampiric Touch** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Sorcerer","Warlock","Wizard"]
+- **Vitriolic Sphere** - `level`: existing Spell Compendium (3.5): 5; imported SRD 5.2: 4
+- **Vitriolic Sphere** - `school`: existing Spell Compendium (3.5): "Conjuration"; imported SRD 5.2: "Evocation"
+- **Vitriolic Sphere** - `areaSound`: existing Spell Compendium (3.5): undefined; imported SRD 5.2: "sphere (20)"
+- **Vitriolic Sphere** - `range`: existing Spell Compendium (3.5): "Long (400 ft. + 40 ft./level)"; imported SRD 5.2: "150 feet"
+- **Vitriolic Sphere** - `duration`: existing Spell Compendium (3.5): "Instantaneous; see text"; imported SRD 5.2: "Instantaneous"
+- **Vitriolic Sphere** - `castingTime`: existing Spell Compendium (3.5): "1 standard action"; imported SRD 5.2: "Action"
+- **Vitriolic Sphere** - `components`: existing Spell Compendium (3.5): "V, S, M"; imported SRD 5.2: "V, S, M (a drop of bile)"
+- **Wall of Fire** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Wall of Fire** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Wall of Fire** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Wall of Fire** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of charcoal)"
+- **Wall of Force** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Wall of Force** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Wall of Force** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a shard of glass)"
+- **Wall of Ice** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Wall of Ice** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Wall of Ice** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Wall of Ice** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of quartz)"
+- **Wall of Stone** - `damage`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "Psychic"
+- **Wall of Stone** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "None"
+- **Wall of Stone** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Wall of Stone** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Wall of Stone** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a cube of granite)"
+- **Wall of Thorns** - `damage`: existing Druid Book: "Slashing"; imported SRD 5.2: "Piercing"
+- **Wall of Thorns** - `areaShape`: existing Druid Book: "Wall"; imported SRD 5.2: "None"
+- **Wall of Thorns** - `duration`: existing Druid Book: "Up to 10 minutes"; imported SRD 5.2: "Concentration, up to 10 minutes"
+- **Wall of Thorns** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Wall of Thorns** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a handful of thorns)"
+- **Water Breathing** - `ritual`: existing Wizard Compendium V7: false; imported SRD 5.2: true
+- **Water Breathing** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Water Breathing** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a short reed)"
+- **Water Breathing** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported SRD 5.2: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Water Walk** - `ritual`: existing Sorcerer Compendium: false; imported SRD 5.2: true
+- **Water Walk** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported SRD 5.2: "Action or Ritual"
+- **Water Walk** - `components`: existing Sorcerer Compendium: "V, S, M"; imported SRD 5.2: "V, S, M (a piece of cork)"
+- **Water Walk** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported SRD 5.2: ["Cleric","Druid","Ranger","Sorcerer"]
+- **Web** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported SRD 5.2: "Cube"
+- **Web** - `areaSound`: existing Wizard Compendium V7: "None"; imported SRD 5.2: "cube (20)"
+- **Web** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported SRD 5.2: "Concentration, up to 1 hour"
+- **Web** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Web** - `components`: existing Wizard Compendium V7: "V, S, M"; imported SRD 5.2: "V, S, M (a bit of spiderweb)"
+- **Weird** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Weird** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+- **Weird** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported SRD 5.2: ["Warlock","Wizard"]
+- **Wind Walk** - `damage`: existing Druid Book: "None"; imported SRD 5.2: "Slashing"
+- **Wind Walk** - `castingTime`: existing Druid Book: "1 Minute"; imported SRD 5.2: "1 minute"
+- **Wind Walk** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a candle)"
+- **Wind Wall** - `areaShape`: existing Druid Book: "Wall"; imported SRD 5.2: "None"
+- **Wind Wall** - `duration`: existing Druid Book: "Up to 1 minute"; imported SRD 5.2: "Concentration, up to 1 minute"
+- **Wind Wall** - `castingTime`: existing Druid Book: "1 Action"; imported SRD 5.2: "Action"
+- **Wind Wall** - `components`: existing Druid Book: "V, S, M"; imported SRD 5.2: "V, S, M (a fan and a feather)"
+- **Wind Wall** - `classes`: existing Druid Book: ["Druid"]; imported SRD 5.2: ["Druid","Ranger"]
+- **Wish** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported SRD 5.2: "Action"
+
+### D&D 3.5 SRD (1194 differences)
+
+- **Acid Arrow** - `school`: existing Wizard Compendium V7: "Evocation"; imported D&D 3.5 SRD: "Conjuration"
+- **Acid Arrow** - `damage`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Acid"
+- **Acid Arrow** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One arrow of acid"
+- **Acid Arrow** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Acid Arrow** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "1 round + 1 round per three levels"
+- **Acid Arrow** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Acid Arrow** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, F"
+- **Acid Arrow** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Acid Splash** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One missile of acid"
+- **Acid Splash** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Acid Splash** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Alarm** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "None"
+- **Alarm** - `areaSound`: existing Wizard Compendium V7: "cube (20)"; imported D&D 3.5 SRD: "sphere (20)"
+- **Alarm** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Alarm** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "2 hours/level (D)"
+- **Alarm** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Alarm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F/DF"
+- **Alarm** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Ranger","Sorcerer","Wizard"]
+- **Alter Self** - `damage`: existing Wizard Compendium V7: "Bludgeoning"; imported D&D 3.5 SRD: "None"
+- **Alter Self** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Alter Self** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Alter Self** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Alter Self** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Alter Self** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Animal Messenger** - `level`: existing Druid Book: 2; imported D&D 3.5 SRD: 1
+- **Animal Messenger** - `range`: existing Druid Book: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Animal Messenger** - `duration`: existing Druid Book: "24 hours"; imported D&D 3.5 SRD: "One day/level"
+- **Animal Messenger** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Animal Messenger** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Druid","Ranger"]
+- **Animal Shapes** - `level`: existing Druid Book: 8; imported D&D 3.5 SRD: 7
+- **Animal Shapes** - `range`: existing Druid Book: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Animal Shapes** - `duration`: existing Druid Book: "Up to 24 hours"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Animal Shapes** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Animal Shapes** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Animal Shapes** - `components`: existing Druid Book: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Animate Dead** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "Touch"
+- **Animate Dead** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Animate Dead** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Animate Objects** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 6
+- **Animate Objects** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Animate Objects** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Animate Objects** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Animate Objects** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Animate Objects** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric"]
+- **Antilife Shell** - `level`: existing Druid Book: 5; imported D&D 3.5 SRD: 6
+- **Antilife Shell** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "sphere (10)"
+- **Antilife Shell** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "10 ft."
+- **Antilife Shell** - `duration`: existing Druid Book: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Antilife Shell** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Antilife Shell** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Antilife Shell** - `components`: existing Druid Book: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Antilife Shell** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Antimagic Field** - `level`: existing Wizard Compendium V7: 8; imported D&D 3.5 SRD: 6
+- **Antimagic Field** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "sphere (10)"
+- **Antimagic Field** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "10 ft."
+- **Antimagic Field** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Antimagic Field** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Antimagic Field** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Antimagic Field** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Antimagic Field** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Arcane Eye** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Magical sensor"
+- **Arcane Eye** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Unlimited"
+- **Arcane Eye** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Arcane Eye** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Arcane Eye** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "10 minutes"
+- **Arcane Eye** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Arcane Lock** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Permanent"
+- **Arcane Lock** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Arcane Lock** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Astral Projection** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "Touch"
+- **Astral Projection** - `duration`: existing Wizard Compendium V7: "Special"; imported D&D 3.5 SRD: "See text"
+- **Astral Projection** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported D&D 3.5 SRD: "30 minutes"
+- **Astral Projection** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Awaken** - `castingTime`: existing Druid Book: "8 Hours"; imported D&D 3.5 SRD: "24 hours"
+- **Awaken** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF, XP"
+- **Banishment** - `level`: existing Wizard Compendium V7: 4; imported D&D 3.5 SRD: 6
+- **Banishment** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Banishment** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous"
+- **Banishment** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Banishment** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Banishment** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Banishment** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Barkskin** - `duration`: existing Druid Book: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Barkskin** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Barkskin** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Barkskin** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Barkskin** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Bestow Curse** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Bestow Curse** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Permanent"
+- **Bestow Curse** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Bestow Curse** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Bestow Curse** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Black Tentacles** - `damage`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Bludgeoning"
+- **Black Tentacles** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Sphere"
+- **Black Tentacles** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "sphere (20)"
+- **Black Tentacles** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Black Tentacles** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Black Tentacles** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Black Tentacles** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Black Tentacles** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Blight** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Blight** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Blight** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Blight** - `components`: existing Wizard Compendium V7: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Blight** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Blindness/Deafness** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Blindness/Deafness** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "Permanent (D)"
+- **Blindness/Deafness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Blindness/Deafness** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Blink** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Blink** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Blink** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Blink** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Blur** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Touch"
+- **Blur** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Blur** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Blur** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Blur** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Burning Hands** - `areaSound`: existing Wizard Compendium V7: "cone (15)"; imported D&D 3.5 SRD: "Cone-shaped burst"
+- **Burning Hands** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "15 ft."
+- **Burning Hands** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Call Lightning** - `school`: existing Druid Book: "Conjuration"; imported D&D 3.5 SRD: "Evocation"
+- **Call Lightning** - `damage`: existing Druid Book: "Lightning"; imported D&D 3.5 SRD: "None"
+- **Call Lightning** - `areaShape`: existing Druid Book: "Cylinder"; imported D&D 3.5 SRD: "Line"
+- **Call Lightning** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "One or more 30-ft.-long vertical lines of lightning"
+- **Call Lightning** - `range`: existing Druid Book: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Call Lightning** - `duration`: existing Druid Book: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Call Lightning** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Call Lightning** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Chain Lightning** - `damage`: existing Wizard Compendium V7: "Lightning"; imported D&D 3.5 SRD: "None"
+- **Chain Lightning** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Chain Lightning** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Chain Lightning** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Charm Person** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Charm Person** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level"
+- **Charm Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Charm Person** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Chill Touch** - `level`: existing Wizard Compendium V7: 0; imported D&D 3.5 SRD: 1
+- **Chill Touch** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Chill Touch** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Touch"
+- **Chill Touch** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "Instantaneous"
+- **Chill Touch** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Chill Touch** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Circle of Death** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Circle of Death** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Circle of Death** - `areaSound`: existing Wizard Compendium V7: "sphere (60)"; imported D&D 3.5 SRD: "Several living creatures within a 40-ft.-radius burst"
+- **Circle of Death** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Circle of Death** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Circle of Death** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Clone** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One clone"
+- **Clone** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Self"
+- **Clone** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported D&D 3.5 SRD: "10 minutes"
+- **Clone** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, F"
+- **Clone** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Cloudkill** - `damage`: existing Wizard Compendium V7: "Poison"; imported D&D 3.5 SRD: "None"
+- **Cloudkill** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "Cloud spreads in 20-ft. radius, 20 ft. high"
+- **Cloudkill** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Cloudkill** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Cloudkill** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Cloudkill** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Color Spray** - `areaSound`: existing Wizard Compendium V7: "cone (15)"; imported D&D 3.5 SRD: "Cone-shaped burst"
+- **Color Spray** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "15 ft."
+- **Color Spray** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "Instantaneous; see text"
+- **Color Spray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Commune with Nature** - `level`: existing Druid Book: 5; imported D&D 3.5 SRD: 4
+- **Commune with Nature** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Commune with Nature** - `castingTime`: existing Druid Book: "1 Minute"; imported D&D 3.5 SRD: "10 minutes"
+- **Commune with Nature** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Comprehend Languages** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Comprehend Languages** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Comprehend Languages** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Comprehend Languages** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Comprehend Languages** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Cone of Cold** - `areaSound`: existing Wizard Compendium V7: "cone (60)"; imported D&D 3.5 SRD: "Cone-shaped burst"
+- **Cone of Cold** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Cone of Cold** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Cone of Cold** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Confusion** - `level`: existing Wizard Compendium V7: 4; imported D&D 3.5 SRD: 3
+- **Confusion** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Confusion** - `areaSound`: existing Wizard Compendium V7: "sphere (10)"; imported D&D 3.5 SRD: "None"
+- **Confusion** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Confusion** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Confusion** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Confusion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Confusion** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Confusion** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Contact Other Plane** - `damage`: existing Wizard Compendium V7: "Psychic"; imported D&D 3.5 SRD: "None"
+- **Contact Other Plane** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Contact Other Plane** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "Concentration"
+- **Contact Other Plane** - `concentration`: existing Wizard Compendium V7: false; imported D&D 3.5 SRD: true
+- **Contact Other Plane** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "10 minutes"
+- **Contact Other Plane** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Contagion** - `level`: existing Druid Book: 5; imported D&D 3.5 SRD: 3
+- **Contagion** - `duration`: existing Druid Book: "7 days"; imported D&D 3.5 SRD: "Instantaneous"
+- **Contagion** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Contagion** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Contingency** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Contingency** - `duration`: existing Wizard Compendium V7: "10 days"; imported D&D 3.5 SRD: "One day/level (D) or until discharged"
+- **Contingency** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "At least 10 minutes; see text"
+- **Contingency** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, F"
+- **Contingency** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Continual Flame** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Magical, heatless flame"
+- **Continual Flame** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Permanent"
+- **Continual Flame** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Continual Flame** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Control Water** - `damage`: existing Wizard Compendium V7: "Bludgeoning"; imported D&D 3.5 SRD: "None"
+- **Control Water** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Control Water** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Water in a volume of 10 ft./level by 10 ft./level by 2 ft./level (S)"
+- **Control Water** - `range`: existing Wizard Compendium V7: "300 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Control Water** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Control Water** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Control Water** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Control Water** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Control Water** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Control Weather** - `level`: existing Wizard Compendium V7: 8; imported D&D 3.5 SRD: 7
+- **Control Weather** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "2-mile-radius circle, centered on you; see text"
+- **Control Weather** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "2 miles"
+- **Control Weather** - `duration`: existing Wizard Compendium V7: "Up to 8 hours"; imported D&D 3.5 SRD: "4d12 hours; see text"
+- **Control Weather** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Control Weather** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "10 minutes; see text"
+- **Control Weather** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Control Weather** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Create Food and Water** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Food and water to sustain three humans or one horse/level for 24 hours"
+- **Create Food and Water** - `range`: existing Druid Book: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Create Food and Water** - `duration`: existing Druid Book: "Instantaneous"; imported D&D 3.5 SRD: "24 hours; see text"
+- **Create Food and Water** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "10 minutes"
+- **Create Food and Water** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric"]
+- **Create Undead** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Create Undead** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 hour"
+- **Create Undead** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Dancing Lights** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Up to four lights, all within a 10-ft.-radius area"
+- **Dancing Lights** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Dancing Lights** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 minute (D)"
+- **Dancing Lights** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Dancing Lights** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Dancing Lights** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Dancing Lights** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Darkness** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Darkness** - `areaSound`: existing Wizard Compendium V7: "sphere (15)"; imported D&D 3.5 SRD: "None"
+- **Darkness** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Touch"
+- **Darkness** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Darkness** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Darkness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Darkness** - `components`: existing Wizard Compendium V7: "V, M"; imported D&D 3.5 SRD: "V, M/DF"
+- **Darkness** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Darkvision** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "1 hour/level"
+- **Darkvision** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Darkvision** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Ranger","Sorcerer","Wizard"]
+- **Daylight** - `areaShape`: existing Sorcerer Compendium: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Daylight** - `areaSound`: existing Sorcerer Compendium: "sphere (60)"; imported D&D 3.5 SRD: "None"
+- **Daylight** - `range`: existing Sorcerer Compendium: "60 feet"; imported D&D 3.5 SRD: "Touch"
+- **Daylight** - `duration`: existing Sorcerer Compendium: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Daylight** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Daylight** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Paladin","Sorcerer","Wizard"]
+- **Delayed Blast Fireball** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Delayed Blast Fireball** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "None"
+- **Delayed Blast Fireball** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Delayed Blast Fireball** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "5 rounds or less; see text"
+- **Delayed Blast Fireball** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Delayed Blast Fireball** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Detect Magic** - `level`: existing Wizard Compendium V7: 1; imported D&D 3.5 SRD: 0
+- **Detect Magic** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cone"
+- **Detect Magic** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cone-shaped emanation"
+- **Detect Magic** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Detect Magic** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "Concentration, up to 1 min./level (D)"
+- **Detect Magic** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Detect Magic** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Sorcerer","Wizard"]
+- **Detect Thoughts** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cone"
+- **Detect Thoughts** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cone-shaped emanation"
+- **Detect Thoughts** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Detect Thoughts** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Concentration, up to 1 min./level (D)"
+- **Detect Thoughts** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Detect Thoughts** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F/DF"
+- **Detect Thoughts** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Dimension Door** - `damage`: existing Wizard Compendium V7: "Force"; imported D&D 3.5 SRD: "None"
+- **Dimension Door** - `range`: existing Wizard Compendium V7: "500 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Dimension Door** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Dimension Door** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Disguise Self** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Disguise Self** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Disguise Self** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Disguise Self** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Disintegrate** - `damage`: existing Wizard Compendium V7: "Force"; imported D&D 3.5 SRD: "None"
+- **Disintegrate** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "Single target"
+- **Disintegrate** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Ray"
+- **Disintegrate** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Disintegrate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Disintegrate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Dispel Magic** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Dispel Magic** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Dispel Magic** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Paladin","Sorcerer","Wizard"]
+- **Divination** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Divination** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "10 minutes"
+- **Divination** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric"]
+- **Dominate Monster** - `level`: existing Wizard Compendium V7: 8; imported D&D 3.5 SRD: 9
+- **Dominate Monster** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Dominate Monster** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "One day/level"
+- **Dominate Monster** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Dominate Monster** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Dominate Monster** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Dominate Person** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 4
+- **Dominate Person** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Dominate Person** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "One day/level"
+- **Dominate Person** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Dominate Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Dominate Person** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Dream** - `damage`: existing Wizard Compendium V7: "Psychic"; imported D&D 3.5 SRD: "None"
+- **Dream** - `range`: existing Wizard Compendium V7: "Special"; imported D&D 3.5 SRD: "Unlimited"
+- **Dream** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "See text"
+- **Dream** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 minute"
+- **Dream** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Dream** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Earthquake** - `level`: existing Sorcerer Compendium: 8; imported D&D 3.5 SRD: 7
+- **Earthquake** - `damage`: existing Sorcerer Compendium: "Bludgeoning"; imported D&D 3.5 SRD: "None"
+- **Earthquake** - `areaShape`: existing Sorcerer Compendium: "Circle"; imported D&D 3.5 SRD: "Sphere"
+- **Earthquake** - `areaSound`: existing Sorcerer Compendium: "None"; imported D&D 3.5 SRD: "sphere (80)"
+- **Earthquake** - `range`: existing Sorcerer Compendium: "500 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Earthquake** - `duration`: existing Sorcerer Compendium: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round"
+- **Earthquake** - `concentration`: existing Sorcerer Compendium: true; imported D&D 3.5 SRD: false
+- **Earthquake** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Earthquake** - `components`: existing Sorcerer Compendium: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Earthquake** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Entangle** - `school`: existing Druid Book: "Conjuration"; imported D&D 3.5 SRD: "Transmutation"
+- **Entangle** - `areaShape`: existing Druid Book: "Square"; imported D&D 3.5 SRD: "Sphere"
+- **Entangle** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Plants in a 40-ft.-radius spread"
+- **Entangle** - `range`: existing Druid Book: "90 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Entangle** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Entangle** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Entangle** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Entangle** - `components`: existing Druid Book: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Entangle** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Enthrall** - `range`: existing Warlock Spell Compendium v1.3: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Enthrall** - `duration`: existing Warlock Spell Compendium v1.3: "1 minute"; imported D&D 3.5 SRD: "1 hour or less"
+- **Enthrall** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Enthrall** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported D&D 3.5 SRD: ["Bard","Cleric"]
+- **Etherealness** - `level`: existing Wizard Compendium V7: 7; imported D&D 3.5 SRD: 9
+- **Etherealness** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Touch; see text"
+- **Etherealness** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Etherealness** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Etherealness** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Expeditious Retreat** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Expeditious Retreat** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Expeditious Retreat** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Expeditious Retreat** - `castingTime`: existing Wizard Compendium V7: "1 Bonus Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Expeditious Retreat** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Eyebite** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Eyebite** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round per three levels; see text"
+- **Eyebite** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Eyebite** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Eyebite** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Fabricate** - `level`: existing Wizard Compendium V7: 4; imported D&D 3.5 SRD: 5
+- **Fabricate** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "None"
+- **Fabricate** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported D&D 3.5 SRD: "None"
+- **Fabricate** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Fabricate** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "See text"
+- **Fabricate** - `components`: existing Wizard Compendium V7: "V, S"; imported D&D 3.5 SRD: "V, S, M"
+- **Fabricate** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Faerie Fire** - `areaShape`: existing Druid Book: "Line"; imported D&D 3.5 SRD: "None"
+- **Faerie Fire** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Creatures and objects within a 5-ft.-radius burst"
+- **Faerie Fire** - `range`: existing Druid Book: "60 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Faerie Fire** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Faerie Fire** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Faerie Fire** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Faerie Fire** - `components`: existing Druid Book: "V"; imported D&D 3.5 SRD: "V, S, DF"
+- **False Life** - `level`: existing Wizard Compendium V7: 1; imported D&D 3.5 SRD: 2
+- **False Life** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **False Life** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level or until discharged; see text"
+- **False Life** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Fear** - `school`: existing Wizard Compendium V7: "Illusion"; imported D&D 3.5 SRD: "Necromancy"
+- **Fear** - `areaSound`: existing Wizard Compendium V7: "cone (30)"; imported D&D 3.5 SRD: "Cone-shaped burst"
+- **Fear** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "30 ft."
+- **Fear** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level or 1 round; see text"
+- **Fear** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Fear** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Fear** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Feather Fall** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Feather Fall** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "Until landing or 1 round/level"
+- **Feather Fall** - `castingTime`: existing Wizard Compendium V7: "1 Reaction"; imported D&D 3.5 SRD: "1 immediate action"
+- **Feather Fall** - `components`: existing Wizard Compendium V7: "V, M"; imported D&D 3.5 SRD: "V"
+- **Feather Fall** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Feeblemind** - `level`: existing Wizard Compendium V7: 8; imported D&D 3.5 SRD: 5
+- **Feeblemind** - `damage`: existing Wizard Compendium V7: "Psychic"; imported D&D 3.5 SRD: "None"
+- **Feeblemind** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Feeblemind** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Feeblemind** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Find the Path** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal or touch"
+- **Find the Path** - `duration`: existing Druid Book: "Up to 24 hours"; imported D&D 3.5 SRD: "10 min./level"
+- **Find the Path** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Find the Path** - `castingTime`: existing Druid Book: "1 Minute"; imported D&D 3.5 SRD: "3 rounds"
+- **Find the Path** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Find the Path** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid"]
+- **Find Traps** - `areaShape`: existing Druid Book: "Line"; imported D&D 3.5 SRD: "None"
+- **Find Traps** - `range`: existing Druid Book: "120 feet"; imported D&D 3.5 SRD: "Personal"
+- **Find Traps** - `duration`: existing Druid Book: "Instantaneous"; imported D&D 3.5 SRD: "1 min./level"
+- **Find Traps** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Find Traps** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric"]
+- **Finger of Death** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Finger of Death** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Finger of Death** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Finger of Death** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Fire Shield** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Fire Shield** - `duration`: existing Wizard Compendium V7: "10 minutes"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Fire Shield** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Fire Shield** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Fire Shield** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Fire Storm** - `areaSound`: existing Sorcerer Compendium: "cube (10)"; imported D&D 3.5 SRD: "Two 10-ft. cubes per level (S)"
+- **Fire Storm** - `range`: existing Sorcerer Compendium: "150 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Fire Storm** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Fire Storm** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Fireball** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Fireball** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Flame Blade** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Sword-like beam"
+- **Flame Blade** - `duration`: existing Druid Book: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Flame Blade** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Flame Blade** - `castingTime`: existing Druid Book: "1 Bonus Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Flame Blade** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Flaming Sphere** - `school`: existing Wizard Compendium V7: "Conjuration"; imported D&D 3.5 SRD: "Evocation"
+- **Flaming Sphere** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "5-ft.-diameter sphere"
+- **Flaming Sphere** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Flaming Sphere** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Flaming Sphere** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Flaming Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Flaming Sphere** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Flaming Sphere** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Flesh to Stone** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Flesh to Stone** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous"
+- **Flesh to Stone** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Flesh to Stone** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Flesh to Stone** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Floating Disk** - `school`: existing Wizard Compendium V7: "Conjuration"; imported D&D 3.5 SRD: "Evocation"
+- **Floating Disk** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "3-ft.-diameter disk of force"
+- **Floating Disk** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Floating Disk** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level"
+- **Floating Disk** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Floating Disk** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Fly** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Fly** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Fly** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Fly** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F/DF"
+- **Fly** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Fog Cloud** - `level`: existing Wizard Compendium V7: 1; imported D&D 3.5 SRD: 2
+- **Fog Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "Fog spreads in 20-ft. radius, 20 ft. high"
+- **Fog Cloud** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft. level)"
+- **Fog Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Fog Cloud** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Fog Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Forcecage** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cube"
+- **Forcecage** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Barred cage (20-ft. cube) or windowless cell (10-ft. cube)"
+- **Forcecage** - `range`: existing Wizard Compendium V7: "100 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Forcecage** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "2 hours/level (D)"
+- **Forcecage** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Forcecage** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Foresight** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Personal or touch"
+- **Foresight** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "10 min./level"
+- **Foresight** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Foresight** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Foresight** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Freedom of Movement** - `range`: existing Druid Book: "Touch"; imported D&D 3.5 SRD: "Personal or touch"
+- **Freedom of Movement** - `duration`: existing Druid Book: "1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Freedom of Movement** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Freedom of Movement** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, DF"
+- **Freedom of Movement** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Ranger"]
+- **Freezing Sphere** - `damage`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Cold"
+- **Freezing Sphere** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Freezing Sphere** - `areaSound`: existing Wizard Compendium V7: "sphere (60)"; imported D&D 3.5 SRD: "None"
+- **Freezing Sphere** - `range`: existing Wizard Compendium V7: "300 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Freezing Sphere** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "Instantaneous or 1 round/level; see text"
+- **Freezing Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Freezing Sphere** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Freezing Sphere** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Gaseous Form** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "2 min./level (D)"
+- **Gaseous Form** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Gaseous Form** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Gaseous Form** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "S, M/DF"
+- **Gaseous Form** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Gate** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "See text"
+- **Gate** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Gate** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous or concentration (up to 1 round/level); see text"
+- **Gate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Gate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, XP; see text"
+- **Gate** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Gentle Repose** - `duration`: existing Wizard Compendium V7: "10 days"; imported D&D 3.5 SRD: "One day/level"
+- **Gentle Repose** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Gentle Repose** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Gentle Repose** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Glibness** - `level`: existing Warlock Spell Compendium v1.3: 8; imported D&D 3.5 SRD: 3
+- **Glibness** - `range`: existing Warlock Spell Compendium v1.3: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Glibness** - `duration`: existing Warlock Spell Compendium v1.3: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Glibness** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Glibness** - `components`: existing Warlock Spell Compendium v1.3: "V"; imported D&D 3.5 SRD: "S"
+- **Glibness** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported D&D 3.5 SRD: ["Bard"]
+- **Globe of Invulnerability** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "10 ft."
+- **Globe of Invulnerability** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Globe of Invulnerability** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Globe of Invulnerability** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Glyph of Warding** - `damage`: existing Wizard Compendium V7: "Cold"; imported D&D 3.5 SRD: "None"
+- **Glyph of Warding** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Glyph of Warding** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Permanent until discharged (D)"
+- **Glyph of Warding** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported D&D 3.5 SRD: "10 minutes"
+- **Glyph of Warding** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric"]
+- **Goodberry** - `duration`: existing Druid Book: "Instantaneous"; imported D&D 3.5 SRD: "One day/level"
+- **Goodberry** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Goodberry** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Grease** - `areaShape`: existing Wizard Compendium V7: "Square"; imported D&D 3.5 SRD: "None"
+- **Grease** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Grease** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Grease** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Grease** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Guards and Wards** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Guards and Wards** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Up to 200 sq. ft./level (S)"
+- **Guards and Wards** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Anywhere within the area to be warded"
+- **Guards and Wards** - `duration`: existing Wizard Compendium V7: "24 hours"; imported D&D 3.5 SRD: "2 hours/level (D)"
+- **Guards and Wards** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "30 minutes"
+- **Guards and Wards** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, F"
+- **Guards and Wards** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Guidance** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 minute or until discharged"
+- **Guidance** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Guidance** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Guidance** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Gust of Wind** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Line-shaped gust of severe wind emanating out from you to the extreme of the range"
+- **Gust of Wind** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Gust of Wind** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round"
+- **Gust of Wind** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Gust of Wind** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Gust of Wind** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Hallucinatory Terrain** - `areaSound`: existing Wizard Compendium V7: "cube (150)"; imported D&D 3.5 SRD: "One 30-ft. cube/level (S)"
+- **Hallucinatory Terrain** - `range`: existing Wizard Compendium V7: "300 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Hallucinatory Terrain** - `duration`: existing Wizard Compendium V7: "24 hours"; imported D&D 3.5 SRD: "2 hours/level (D)"
+- **Hallucinatory Terrain** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "10 minutes"
+- **Hallucinatory Terrain** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Haste** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Haste** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Haste** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Haste** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Haste** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Heal** - `school`: existing Druid Book: "Evocation"; imported D&D 3.5 SRD: "Conjuration"
+- **Heal** - `range`: existing Druid Book: "60 feet"; imported D&D 3.5 SRD: "Touch"
+- **Heal** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Heal** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Heat Metal** - `range`: existing Druid Book: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Heat Metal** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "7 rounds"
+- **Heat Metal** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Heat Metal** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Heat Metal** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Heroes’ Feast** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Feast for one creature/level"
+- **Heroes’ Feast** - `range`: existing Druid Book: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Heroes’ Feast** - `duration`: existing Druid Book: "Instantaneous"; imported D&D 3.5 SRD: "1 hour plus 12 hours; see text"
+- **Heroes’ Feast** - `castingTime`: existing Druid Book: "10 Minutes"; imported D&D 3.5 SRD: "10 minutes"
+- **Heroes’ Feast** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Heroes’ Feast** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Cleric"]
+- **Hideous Laughter** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Hideous Laughter** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Hideous Laughter** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Hideous Laughter** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Hideous Laughter** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Hold Monster** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 4
+- **Hold Monster** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Hold Monster** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level (D); see text"
+- **Hold Monster** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Hold Monster** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Hold Monster** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Hold Monster** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Hold Person** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Hold Person** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level (D); see text"
+- **Hold Person** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Hold Person** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Hold Person** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F/DF"
+- **Hold Person** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Hypnotic Pattern** - `level`: existing Wizard Compendium V7: 3; imported D&D 3.5 SRD: 2
+- **Hypnotic Pattern** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "Sphere"
+- **Hypnotic Pattern** - `areaSound`: existing Wizard Compendium V7: "cube (30)"; imported D&D 3.5 SRD: "Colorful lights in a 10-ft.-radius spread"
+- **Hypnotic Pattern** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Hypnotic Pattern** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Concentration + 2 rounds"
+- **Hypnotic Pattern** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Hypnotic Pattern** - `components`: existing Wizard Compendium V7: "S, M"; imported D&D 3.5 SRD: "V (Brd only), S, M; see text"
+- **Hypnotic Pattern** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Ice Storm** - `range`: existing Wizard Compendium V7: "300 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Ice Storm** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "1 full round"
+- **Ice Storm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Ice Storm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Identify** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 hour"
+- **Identify** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Identify** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Illusory Script** - `level`: existing Wizard Compendium V7: 1; imported D&D 3.5 SRD: 3
+- **Illusory Script** - `duration`: existing Wizard Compendium V7: "10 days"; imported D&D 3.5 SRD: "One day/level (D)"
+- **Illusory Script** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 minute or longer; see text"
+- **Illusory Script** - `components`: existing Wizard Compendium V7: "S, M"; imported D&D 3.5 SRD: "V, S, M"
+- **Illusory Script** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Imprisonment** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Imprisonment** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Instantaneous"
+- **Imprisonment** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Imprisonment** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Imprisonment** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Incendiary Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "Cloud spreads in 20-ft. radius, 20 ft. high"
+- **Incendiary Cloud** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Incendiary Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Incendiary Cloud** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Incendiary Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Insanity** - `school`: existing D&D 3.5 SRD Psionics: "Telepathy ( Compulsion )"; imported D&D 3.5 SRD: "Enchantment"
+- **Insanity** - `areaSound`: existing D&D 3.5 SRD Psionics: undefined; imported D&D 3.5 SRD: "None"
+- **Insanity** - `components`: existing D&D 3.5 SRD Psionics: "None"; imported D&D 3.5 SRD: "V, S"
+- **Insanity** - `classes`: existing D&D 3.5 SRD Psionics: ["Psion","Wilder"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Insect Plague** - `areaShape`: existing Sorcerer Compendium: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Insect Plague** - `areaSound`: existing Sorcerer Compendium: "sphere (20)"; imported D&D 3.5 SRD: "One swarm of locusts per three levels, each of which must be adjacent to at least one other swarm"
+- **Insect Plague** - `range`: existing Sorcerer Compendium: "300 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Insect Plague** - `duration`: existing Sorcerer Compendium: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Insect Plague** - `concentration`: existing Sorcerer Compendium: true; imported D&D 3.5 SRD: false
+- **Insect Plague** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Insect Plague** - `components`: existing Sorcerer Compendium: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Insect Plague** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Instant Summons** - `level`: existing Wizard Compendium V7: 6; imported D&D 3.5 SRD: 7
+- **Instant Summons** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "See text"
+- **Instant Summons** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Permanent until discharged"
+- **Instant Summons** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Instant Summons** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Invisibility** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Personal or touch"
+- **Invisibility** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Invisibility** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Invisibility** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Invisibility** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Invisibility** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Irresistible Dance** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Irresistible Dance** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1d4+1 rounds"
+- **Irresistible Dance** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Irresistible Dance** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Irresistible Dance** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Jump** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Jump** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Jump** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Druid","Ranger","Sorcerer","Wizard"]
+- **Knock** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Knock** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "Instantaneous; see text"
+- **Knock** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Legend Lore** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 4
+- **Legend Lore** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Legend Lore** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "See text"
+- **Legend Lore** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "See text"
+- **Legend Lore** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, F"
+- **Legend Lore** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Levitate** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Levitate** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Personal or close (25 ft. + 5 ft./2 levels)"
+- **Levitate** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Levitate** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Levitate** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Levitate** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Light** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Light** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Light** - `components`: existing Wizard Compendium V7: "V, M"; imported D&D 3.5 SRD: "V, M/DF"
+- **Light** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Sorcerer","Wizard"]
+- **Lightning Bolt** - `damage`: existing Wizard Compendium V7: "Lightning"; imported D&D 3.5 SRD: "None"
+- **Lightning Bolt** - `areaSound`: existing Wizard Compendium V7: "line (100)"; imported D&D 3.5 SRD: "line (120)"
+- **Lightning Bolt** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "120 ft."
+- **Lightning Bolt** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Locate Creature** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Locate Creature** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Locate Creature** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Locate Creature** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Locate Creature** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Locate Object** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Circle, centered on you, with a radius of 400 ft. + 40 ft./level"
+- **Locate Object** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Locate Object** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Locate Object** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Locate Object** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Locate Object** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F/DF"
+- **Locate Object** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Longstrider** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Personal"
+- **Longstrider** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Longstrider** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Longstrider** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Mage Armor** - `school`: existing Wizard Compendium V7: "Abjuration"; imported D&D 3.5 SRD: "Conjuration"
+- **Mage Armor** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Mage Armor** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mage Armor** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Mage Hand** - `school`: existing Wizard Compendium V7: "Conjuration"; imported D&D 3.5 SRD: "Transmutation"
+- **Mage Hand** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Mage Hand** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "Concentration"
+- **Mage Hand** - `concentration`: existing Wizard Compendium V7: false; imported D&D 3.5 SRD: true
+- **Mage Hand** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mage Hand** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Magic Jar** - `level`: existing Wizard Compendium V7: 6; imported D&D 3.5 SRD: 5
+- **Magic Jar** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported D&D 3.5 SRD: "None"
+- **Magic Jar** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Magic Jar** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "1 hour/level or until you return to your body"
+- **Magic Jar** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Magic Jar** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Magic Jar** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Magic Missile** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Magic Missile** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Magic Mouth** - `level`: existing Wizard Compendium V7: 2; imported D&D 3.5 SRD: 1
+- **Magic Mouth** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Magic Mouth** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Permanent until discharged"
+- **Magic Mouth** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Magic Mouth** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Magic Weapon** - `level`: existing Wizard Compendium V7: 2; imported D&D 3.5 SRD: 1
+- **Magic Weapon** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "1 min./level"
+- **Magic Weapon** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Magic Weapon** - `castingTime`: existing Wizard Compendium V7: "1 Bonus Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Magic Weapon** - `components`: existing Wizard Compendium V7: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Magic Weapon** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Paladin","Sorcerer","Wizard"]
+- **Major Image** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "None"
+- **Major Image** - `areaSound`: existing Wizard Compendium V7: "cube (20)"; imported D&D 3.5 SRD: "None"
+- **Major Image** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Major Image** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "Concentration + 3 rounds"
+- **Major Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Major Image** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Major Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Maze** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Maze** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "See text"
+- **Maze** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Maze** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Maze** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Mending** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "10 ft."
+- **Mending** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Mending** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Mending** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Sorcerer","Wizard"]
+- **Message** - `areaShape`: existing Wizard Compendium V7: "Line"; imported D&D 3.5 SRD: "None"
+- **Message** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Message** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "10 min./level"
+- **Message** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Message** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Message** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Meteor Swarm** - `areaSound`: existing Wizard Compendium V7: "sphere (40)"; imported D&D 3.5 SRD: "Four 40-ft.-radius spreads; see text"
+- **Meteor Swarm** - `range`: existing Wizard Compendium V7: "1 mile"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Meteor Swarm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mind Blank** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Mind Blank** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mind Blank** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Mirror Image** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal; see text"
+- **Mirror Image** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Mirror Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mirror Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Mislead** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Mislead** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "1 round/level (D) and concentration + 3 rounds; see text"
+- **Mislead** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Mislead** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Modify Memory** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 4
+- **Modify Memory** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Modify Memory** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Permanent"
+- **Modify Memory** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Modify Memory** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 round; see text"
+- **Modify Memory** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard"]
+- **Move Earth** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Move Earth** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Dirt in an area up to 750 ft. square and up to 10 ft. deep (S)"
+- **Move Earth** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Move Earth** - `duration`: existing Wizard Compendium V7: "Up to 2 hours"; imported D&D 3.5 SRD: "Instantaneous"
+- **Move Earth** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Move Earth** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "See text"
+- **Nondetection** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "1 hour/level"
+- **Nondetection** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Nondetection** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Ranger","Sorcerer","Wizard"]
+- **Pass without Trace** - `level`: existing Druid Book: 2; imported D&D 3.5 SRD: 1
+- **Pass without Trace** - `school`: existing Druid Book: "Abjuration"; imported D&D 3.5 SRD: "Transmutation"
+- **Pass without Trace** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Touch"
+- **Pass without Trace** - `duration`: existing Druid Book: "Up to 1 hour"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Pass without Trace** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Pass without Trace** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Pass without Trace** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Pass without Trace** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Passwall** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Passwall** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels"
+- **Passwall** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Passwall** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Passwall** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Passwall** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Phantasmal Killer** - `damage`: existing Wizard Compendium V7: "Psychic"; imported D&D 3.5 SRD: "None"
+- **Phantasmal Killer** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Phantasmal Killer** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous"
+- **Phantasmal Killer** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Phantasmal Killer** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Phantasmal Killer** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Phantom Steed** - `school`: existing Wizard Compendium V7: "Illusion"; imported D&D 3.5 SRD: "Conjuration"
+- **Phantom Steed** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One quasi-real, horselike creature"
+- **Phantom Steed** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Self"
+- **Phantom Steed** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Phantom Steed** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "10 minutes"
+- **Phantom Steed** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Planar Binding** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 6
+- **Planar Binding** - `school`: existing Wizard Compendium V7: "Abjuration"; imported D&D 3.5 SRD: "Conjuration"
+- **Planar Binding** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported D&D 3.5 SRD: "None"
+- **Planar Binding** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels); see text"
+- **Planar Binding** - `duration`: existing Wizard Compendium V7: "24 hours"; imported D&D 3.5 SRD: "Instantaneous"
+- **Planar Binding** - `castingTime`: existing Wizard Compendium V7: "1 Hour"; imported D&D 3.5 SRD: "10 minutes"
+- **Planar Binding** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Planar Binding** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Plane Shift** - `level`: existing Wizard Compendium V7: 7; imported D&D 3.5 SRD: 5
+- **Plane Shift** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported D&D 3.5 SRD: "None"
+- **Plane Shift** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Plane Shift** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Plane Shift** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Plant Growth** - `range`: existing Druid Book: "150 feet"; imported D&D 3.5 SRD: "See text"
+- **Plant Growth** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Plant Growth** - `components`: existing Druid Book: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Plant Growth** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Polymorph** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Touch"
+- **Polymorph** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Polymorph** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Polymorph** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Polymorph** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Power Word Kill** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Power Word Kill** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Power Word Kill** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Power Word Stun** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Power Word Stun** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "See text"
+- **Power Word Stun** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Power Word Stun** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Prestidigitation** - `school`: existing Wizard Compendium V7: "Transmutation"; imported D&D 3.5 SRD: "Universal"
+- **Prestidigitation** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "10 ft."
+- **Prestidigitation** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Prestidigitation** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Prismatic Spray** - `damage`: existing Wizard Compendium V7: "Cold"; imported D&D 3.5 SRD: "None"
+- **Prismatic Spray** - `areaSound`: existing Wizard Compendium V7: "cone (60)"; imported D&D 3.5 SRD: "Cone-shaped burst"
+- **Prismatic Spray** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Prismatic Spray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Prismatic Wall** - `level`: existing Wizard Compendium V7: 9; imported D&D 3.5 SRD: 8
+- **Prismatic Wall** - `damage`: existing Wizard Compendium V7: "Cold"; imported D&D 3.5 SRD: "None"
+- **Prismatic Wall** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Wall 4 ft./level wide, 2 ft./level high"
+- **Prismatic Wall** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Prismatic Wall** - `duration`: existing Wizard Compendium V7: "10 minutes"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Prismatic Wall** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Prismatic Wall** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Produce Flame** - `level`: existing Druid Book: 0; imported D&D 3.5 SRD: 1
+- **Produce Flame** - `school`: existing Druid Book: "Conjuration"; imported D&D 3.5 SRD: "Evocation"
+- **Produce Flame** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Flame in your palm"
+- **Produce Flame** - `duration`: existing Druid Book: "10 minutes"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Produce Flame** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Project Image** - `level`: existing Wizard Compendium V7: 7; imported D&D 3.5 SRD: 6
+- **Project Image** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One shadow duplicate"
+- **Project Image** - `range`: existing Wizard Compendium V7: "500 miles"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Project Image** - `duration`: existing Wizard Compendium V7: "Up to 24 hours"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Project Image** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Project Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Project Image** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Protection from Energy** - `level`: existing Wizard Compendium V7: 3; imported D&D 3.5 SRD: 2
+- **Protection from Energy** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level or until discharged"
+- **Protection from Energy** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Protection from Energy** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Protection from Energy** - `components`: existing Wizard Compendium V7: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Protection from Energy** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Ranger","Sorcerer","Wizard"]
+- **Purify Food and Drink** - `level`: existing Druid Book: 1; imported D&D 3.5 SRD: 0
+- **Purify Food and Drink** - `areaShape`: existing Druid Book: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Purify Food and Drink** - `areaSound`: existing Druid Book: "sphere (5)"; imported D&D 3.5 SRD: "None"
+- **Purify Food and Drink** - `range`: existing Druid Book: "10 feet"; imported D&D 3.5 SRD: "10 ft."
+- **Purify Food and Drink** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Purify Food and Drink** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Ray of Enfeeblement** - `level`: existing Wizard Compendium V7: 2; imported D&D 3.5 SRD: 1
+- **Ray of Enfeeblement** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Single target"
+- **Ray of Enfeeblement** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Ray"
+- **Ray of Enfeeblement** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Ray of Enfeeblement** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 min./level"
+- **Ray of Enfeeblement** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Ray of Enfeeblement** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Ray of Enfeeblement** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Ray of Frost** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Single target"
+- **Ray of Frost** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Ray"
+- **Ray of Frost** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Ray of Frost** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Regenerate** - `school`: existing Druid Book: "Transmutation"; imported D&D 3.5 SRD: "Conjuration"
+- **Regenerate** - `duration`: existing Druid Book: "1 hour"; imported D&D 3.5 SRD: "Instantaneous"
+- **Regenerate** - `castingTime`: existing Druid Book: "1 Minute"; imported D&D 3.5 SRD: "3 full rounds"
+- **Regenerate** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Regenerate** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Reincarnate** - `level`: existing Druid Book: 5; imported D&D 3.5 SRD: 4
+- **Reincarnate** - `castingTime`: existing Druid Book: "1 Hour"; imported D&D 3.5 SRD: "10 minutes"
+- **Reincarnate** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, DF"
+- **Remove Curse** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Remove Curse** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Paladin","Sorcerer","Wizard"]
+- **Resilient Sphere** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Sphere"
+- **Resilient Sphere** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "1-ft.-diameter/level sphere, centered around a creature"
+- **Resilient Sphere** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Resilient Sphere** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Resilient Sphere** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Resilient Sphere** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Resilient Sphere** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Resistance** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 minute"
+- **Resistance** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Resistance** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Resistance** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Resistance** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Paladin","Sorcerer","Wizard"]
+- **Reverse Gravity** - `areaShape`: existing Wizard Compendium V7: "Cylinder"; imported D&D 3.5 SRD: "Cube"
+- **Reverse Gravity** - `areaSound`: existing Wizard Compendium V7: "cylinder (50)"; imported D&D 3.5 SRD: "Up to one 10-ft. cube per two levels (S)"
+- **Reverse Gravity** - `range`: existing Wizard Compendium V7: "100 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Reverse Gravity** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level (D)"
+- **Reverse Gravity** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Reverse Gravity** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Reverse Gravity** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Rope Trick** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Rope Trick** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Rope Trick** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Scorching Ray** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Single target"
+- **Scorching Ray** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One or more rays"
+- **Scorching Ray** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Scorching Ray** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Scrying** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 3
+- **Scrying** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Magical sensor"
+- **Scrying** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "See text"
+- **Scrying** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Scrying** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Scrying** - `castingTime`: existing Wizard Compendium V7: "10 Minutes"; imported D&D 3.5 SRD: "1 hour"
+- **Scrying** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF, F"
+- **Scrying** - `classes`: existing Wizard Compendium V7: ["Druid","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Druid","Sorcerer","Wizard"]
+- **Secret Chest** - `level`: existing Wizard Compendium V7: 4; imported D&D 3.5 SRD: 5
+- **Secret Chest** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "See text"
+- **Secret Chest** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "Sixty days or until discharged"
+- **Secret Chest** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "10 minutes"
+- **Secret Chest** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Secret Chest** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **See Invisibility** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **See Invisibility** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **See Invisibility** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **See Invisibility** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Seeming** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Seeming** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "12 hours (D)"
+- **Seeming** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Seeming** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Sending** - `level`: existing Wizard Compendium V7: 3; imported D&D 3.5 SRD: 4
+- **Sending** - `range`: existing Wizard Compendium V7: "Unlimited"; imported D&D 3.5 SRD: "See text"
+- **Sending** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "1 round; see text"
+- **Sending** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "10 minutes"
+- **Sending** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Sending** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Cleric","Sorcerer","Wizard"]
+- **Sequester** - `school`: existing Wizard Compendium V7: "Transmutation"; imported D&D 3.5 SRD: "Abjuration"
+- **Sequester** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "One day/level (D)"
+- **Sequester** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Sequester** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Shapechange** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Shapechange** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Shapechange** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Shapechange** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Shapechange** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Shapechange** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Shatter** - `damage`: existing Wizard Compendium V7: "Thunder"; imported D&D 3.5 SRD: "None"
+- **Shatter** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Shatter** - `areaSound`: existing Wizard Compendium V7: "sphere (10)"; imported D&D 3.5 SRD: "None"
+- **Shatter** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Shatter** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Shatter** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Shatter** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Shield** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Shield** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "1 min./level (D)"
+- **Shield** - `castingTime`: existing Wizard Compendium V7: "1 Reaction"; imported D&D 3.5 SRD: "1 standard action"
+- **Shillelagh** - `level`: existing Druid Book: 0; imported D&D 3.5 SRD: 1
+- **Shillelagh** - `duration`: existing Druid Book: "1 minute"; imported D&D 3.5 SRD: "1 min./level"
+- **Shillelagh** - `castingTime`: existing Druid Book: "1 Bonus Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Shillelagh** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Shocking Grasp** - `level`: existing Wizard Compendium V7: 0; imported D&D 3.5 SRD: 1
+- **Shocking Grasp** - `damage`: existing Wizard Compendium V7: "Lightning"; imported D&D 3.5 SRD: "None"
+- **Shocking Grasp** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Silent Image** - `areaSound`: existing Wizard Compendium V7: "cube (15)"; imported D&D 3.5 SRD: "Visual figment that cannot extend beyond four 10-ft. cubes + one 10-ft. cube/level (S)"
+- **Silent Image** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Silent Image** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "Concentration"
+- **Silent Image** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Silent Image** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, F"
+- **Silent Image** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Simulacrum** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One duplicate creature"
+- **Simulacrum** - `range`: existing Wizard Compendium V7: "Touch"; imported D&D 3.5 SRD: "Self"
+- **Simulacrum** - `duration`: existing Wizard Compendium V7: "Until dispelled"; imported D&D 3.5 SRD: "Instantaneous"
+- **Simulacrum** - `castingTime`: existing Wizard Compendium V7: "12 Hours"; imported D&D 3.5 SRD: "12 hours"
+- **Simulacrum** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, XP"
+- **Simulacrum** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Sleep** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One or more living creatures within a 10-ft.-radius burst"
+- **Sleep** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Sleep** - `duration`: existing Wizard Compendium V7: "1 minute"; imported D&D 3.5 SRD: "1 min./level"
+- **Sleep** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Sleep** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Sleet Storm** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "cylinder (40)"
+- **Sleet Storm** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Sleet Storm** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Sleet Storm** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Sleet Storm** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Sleet Storm** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Slow** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "None"
+- **Slow** - `areaSound`: existing Wizard Compendium V7: "cube (40)"; imported D&D 3.5 SRD: "None"
+- **Slow** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Slow** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Slow** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Slow** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Slow** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Speak with Animals** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Speak with Animals** - `duration`: existing Druid Book: "10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Speak with Animals** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Speak with Animals** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Druid","Ranger"]
+- **Speak with Plants** - `level`: existing Druid Book: 3; imported D&D 3.5 SRD: 2
+- **Speak with Plants** - `school`: existing Druid Book: "Transmutation"; imported D&D 3.5 SRD: "Divination"
+- **Speak with Plants** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Speak with Plants** - `duration`: existing Druid Book: "10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Speak with Plants** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Speak with Plants** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Bard","Druid","Ranger"]
+- **Spider Climb** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Spider Climb** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Spider Climb** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Spider Climb** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Druid","Sorcerer","Wizard"]
+- **Spike Growth** - `damage`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Piercing"
+- **Spike Growth** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "One 20-ft. square/level"
+- **Spike Growth** - `range`: existing Druid Book: "150 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Spike Growth** - `duration`: existing Druid Book: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 hour/level (D)"
+- **Spike Growth** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Spike Growth** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Spike Growth** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Spike Growth** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **Stinking Cloud** - `areaSound`: existing Wizard Compendium V7: "sphere (20)"; imported D&D 3.5 SRD: "Cloud spreads in 20-ft. radius, 20 ft. high"
+- **Stinking Cloud** - `range`: existing Wizard Compendium V7: "90 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Stinking Cloud** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Stinking Cloud** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Stinking Cloud** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Stone Shape** - `level`: existing Wizard Compendium V7: 4; imported D&D 3.5 SRD: 3
+- **Stone Shape** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Stone Shape** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Stone Shape** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Stone Shape** - `classes`: existing Wizard Compendium V7: ["Druid","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Stoneskin** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level or until discharged"
+- **Stoneskin** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Stoneskin** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Storm of Vengeance** - `damage`: existing Druid Book: "Bludgeoning"; imported D&D 3.5 SRD: "None"
+- **Storm of Vengeance** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "sphere (360)"
+- **Storm of Vengeance** - `range`: existing Druid Book: "Sight"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Storm of Vengeance** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "Concentration (maximum 10 rounds) (D)"
+- **Storm of Vengeance** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 round"
+- **Storm of Vengeance** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Suggestion** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Suggestion** - `duration`: existing Wizard Compendium V7: "Up to 8 hours"; imported D&D 3.5 SRD: "1 hour/level or until completed"
+- **Suggestion** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Suggestion** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Suggestion** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Sunbeam** - `level`: existing Wizard Compendium V7: 6; imported D&D 3.5 SRD: 7
+- **Sunbeam** - `damage`: existing Wizard Compendium V7: "Radiant"; imported D&D 3.5 SRD: "None"
+- **Sunbeam** - `areaSound`: existing Wizard Compendium V7: "line (60)"; imported D&D 3.5 SRD: "Line from your hand"
+- **Sunbeam** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "60 ft."
+- **Sunbeam** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level or until all beams are exhausted"
+- **Sunbeam** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Sunbeam** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Sunbeam** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Sunbeam** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Druid"]
+- **Sunburst** - `damage`: existing Wizard Compendium V7: "Radiant"; imported D&D 3.5 SRD: "None"
+- **Sunburst** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "sphere (80)"
+- **Sunburst** - `range`: existing Wizard Compendium V7: "150 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Sunburst** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Sunburst** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Telekinesis** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Long (400 ft. + 40 ft./level)"
+- **Telekinesis** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "Concentration (up to 1 round/ level) or instantaneous; see text"
+- **Telekinesis** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Telepathic Bond** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Telepathic Bond** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Telepathic Bond** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Telepathic Bond** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Teleport** - `level`: existing Wizard Compendium V7: 7; imported D&D 3.5 SRD: 5
+- **Teleport** - `areaShape`: existing Wizard Compendium V7: "Cube"; imported D&D 3.5 SRD: "None"
+- **Teleport** - `areaSound`: existing Wizard Compendium V7: "cube (10)"; imported D&D 3.5 SRD: "None"
+- **Teleport** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "Personal and touch"
+- **Teleport** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Teleportation Circle** - `level`: existing Wizard Compendium V7: 5; imported D&D 3.5 SRD: 9
+- **Teleportation Circle** - `areaShape`: existing Wizard Compendium V7: "Circle"; imported D&D 3.5 SRD: "None"
+- **Teleportation Circle** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "sphere (5)"
+- **Teleportation Circle** - `range`: existing Wizard Compendium V7: "10 feet"; imported D&D 3.5 SRD: "Self"
+- **Teleportation Circle** - `duration`: existing Wizard Compendium V7: "1 round"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Teleportation Circle** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "10 minutes"
+- **Time Stop** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Time Stop** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "1d4+1 rounds (apparent time); see text"
+- **Time Stop** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Tiny Hut** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Sphere"
+- **Tiny Hut** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "sphere (20)"
+- **Tiny Hut** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "20 ft."
+- **Tiny Hut** - `duration`: existing Wizard Compendium V7: "8 hours"; imported D&D 3.5 SRD: "2 hours/level (D)"
+- **Tiny Hut** - `castingTime`: existing Wizard Compendium V7: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Tiny Hut** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Tongues** - `level`: existing Wizard Compendium V7: 3; imported D&D 3.5 SRD: 2
+- **Tongues** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "10 min./level"
+- **Tongues** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Tongues** - `components`: existing Wizard Compendium V7: "V, M"; imported D&D 3.5 SRD: "V, M/DF"
+- **Tongues** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Cleric","Sorcerer","Wizard"]
+- **Transformation** - `level`: existing Spell Compendium (3.5): 5; imported D&D 3.5 SRD: 6
+- **Transformation** - `areaSound`: existing Spell Compendium (3.5): undefined; imported D&D 3.5 SRD: "None"
+- **Transformation** - `duration`: existing Spell Compendium (3.5): "1 round/level (D)"; imported D&D 3.5 SRD: "1 round/level"
+- **Transport via Plants** - `range`: existing Druid Book: "10 feet"; imported D&D 3.5 SRD: "Unlimited"
+- **Transport via Plants** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Tree Stride** - `level`: existing Druid Book: 5; imported D&D 3.5 SRD: 4
+- **Tree Stride** - `range`: existing Druid Book: "Self"; imported D&D 3.5 SRD: "Personal"
+- **Tree Stride** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 hour/level or until expended; see text"
+- **Tree Stride** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Tree Stride** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Tree Stride** - `components`: existing Druid Book: "V, S"; imported D&D 3.5 SRD: "V, S, DF"
+- **Tree Stride** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Druid","Ranger"]
+- **True Resurrection** - `school`: existing Druid Book: "Necromancy"; imported D&D 3.5 SRD: "Conjuration"
+- **True Resurrection** - `castingTime`: existing Druid Book: "1 Hour"; imported D&D 3.5 SRD: "10 minutes"
+- **True Resurrection** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, M, DF"
+- **True Resurrection** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric"]
+- **True Seeing** - `level`: existing Wizard Compendium V7: 6; imported D&D 3.5 SRD: 5
+- **True Seeing** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 min./level"
+- **True Seeing** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **True Seeing** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **True Strike** - `level`: existing Wizard Compendium V7: 0; imported D&D 3.5 SRD: 1
+- **True Strike** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Personal"
+- **True Strike** - `duration`: existing Wizard Compendium V7: "Up to 1 round"; imported D&D 3.5 SRD: "See text"
+- **True Strike** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **True Strike** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **True Strike** - `components`: existing Wizard Compendium V7: "S"; imported D&D 3.5 SRD: "V, F"
+- **True Strike** - `classes`: existing Wizard Compendium V7: ["Sorcerer","Warlock","Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Unseen Servant** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "One invisible, mindless, shapeless servant"
+- **Unseen Servant** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Unseen Servant** - `duration`: existing Wizard Compendium V7: "1 hour"; imported D&D 3.5 SRD: "1 hour/level"
+- **Unseen Servant** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Unseen Servant** - `classes`: existing Wizard Compendium V7: ["Warlock","Wizard"]; imported D&D 3.5 SRD: ["Bard","Sorcerer","Wizard"]
+- **Vampiric Touch** - `range`: existing Warlock Spell Compendium v1.3: "Self"; imported D&D 3.5 SRD: "Touch"
+- **Vampiric Touch** - `duration`: existing Warlock Spell Compendium v1.3: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous/1 hour; see text"
+- **Vampiric Touch** - `concentration`: existing Warlock Spell Compendium v1.3: true; imported D&D 3.5 SRD: false
+- **Vampiric Touch** - `castingTime`: existing Warlock Spell Compendium v1.3: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Vampiric Touch** - `classes`: existing Warlock Spell Compendium v1.3: ["Warlock"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Vampiric Touch** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Vampiric Touch** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "Touch"
+- **Vampiric Touch** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous/1 hour; see text"
+- **Vampiric Touch** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Vampiric Touch** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Vampiric Touch** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Wall of Fire** - `damage`: existing Wizard Compendium V7: "Fire"; imported D&D 3.5 SRD: "Cold"
+- **Wall of Fire** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "None"
+- **Wall of Fire** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Opaque sheet of flame up to 20 ft. long/level or a ring of fire with a radius of up to 5 ft. per two levels; either form 20 ft. high"
+- **Wall of Fire** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Wall of Fire** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Concentration + 1 round/level"
+- **Wall of Fire** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wall of Fire** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Wall of Force** - `areaShape`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Wall"
+- **Wall of Force** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Wall whose area is up to one 10-ft. square/level"
+- **Wall of Force** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Close (25 ft. + 5 ft./2 levels)"
+- **Wall of Force** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 round /level (D)"
+- **Wall of Force** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Wall of Force** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wall of Force** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Wall of Ice** - `level`: existing Wizard Compendium V7: 6; imported D&D 3.5 SRD: 4
+- **Wall of Ice** - `damage`: existing Wizard Compendium V7: "Cold"; imported D&D 3.5 SRD: "None"
+- **Wall of Ice** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "Sphere"
+- **Wall of Ice** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Anchored plane of ice, up to one 10-ft. square/level, or hemisphere of ice with a radius of up to 3 ft. + 1 ft./level"
+- **Wall of Ice** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Wall of Ice** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "1 min./level"
+- **Wall of Ice** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Wall of Ice** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wall of Ice** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Wall of Stone** - `school`: existing Wizard Compendium V7: "Evocation"; imported D&D 3.5 SRD: "Conjuration"
+- **Wall of Stone** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Stone wall whose area is up to one 5-ft. square/level (S)"
+- **Wall of Stone** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Wall of Stone** - `duration`: existing Wizard Compendium V7: "Up to 10 minutes"; imported D&D 3.5 SRD: "Instantaneous"
+- **Wall of Stone** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Wall of Stone** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wall of Stone** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Wall of Stone** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Wall of Thorns** - `level`: existing Druid Book: 6; imported D&D 3.5 SRD: 5
+- **Wall of Thorns** - `areaShape`: existing Druid Book: "Wall"; imported D&D 3.5 SRD: "Cube"
+- **Wall of Thorns** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Wall of thorny brush, up to one 10-ft. cube/level (S)"
+- **Wall of Thorns** - `range`: existing Druid Book: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Wall of Thorns** - `duration`: existing Druid Book: "Up to 10 minutes"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Wall of Thorns** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Wall of Thorns** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wall of Thorns** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S"
+- **Water Breathing** - `range`: existing Wizard Compendium V7: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Water Breathing** - `duration`: existing Wizard Compendium V7: "24 hours"; imported D&D 3.5 SRD: "2 hours/level; see text"
+- **Water Breathing** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Water Breathing** - `components`: existing Wizard Compendium V7: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Water Breathing** - `classes`: existing Wizard Compendium V7: ["Druid","Sorcerer","Wizard"]; imported D&D 3.5 SRD: ["Cleric","Druid","Sorcerer","Wizard"]
+- **Water Walk** - `range`: existing Sorcerer Compendium: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Water Walk** - `duration`: existing Sorcerer Compendium: "1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Water Walk** - `castingTime`: existing Sorcerer Compendium: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Water Walk** - `components`: existing Sorcerer Compendium: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Water Walk** - `classes`: existing Sorcerer Compendium: ["Druid","Sorcerer"]; imported D&D 3.5 SRD: ["Cleric","Ranger"]
+- **Web** - `areaShape`: existing Wizard Compendium V7: "Wall"; imported D&D 3.5 SRD: "Sphere"
+- **Web** - `areaSound`: existing Wizard Compendium V7: "None"; imported D&D 3.5 SRD: "Webs in a 20-ft.-radius spread"
+- **Web** - `range`: existing Wizard Compendium V7: "60 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Web** - `duration`: existing Wizard Compendium V7: "Up to 1 hour"; imported D&D 3.5 SRD: "10 min./level (D)"
+- **Web** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Web** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Weird** - `damage`: existing Wizard Compendium V7: "Psychic"; imported D&D 3.5 SRD: "None"
+- **Weird** - `areaShape`: existing Wizard Compendium V7: "Sphere"; imported D&D 3.5 SRD: "None"
+- **Weird** - `areaSound`: existing Wizard Compendium V7: "sphere (30)"; imported D&D 3.5 SRD: "None"
+- **Weird** - `range`: existing Wizard Compendium V7: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Weird** - `duration`: existing Wizard Compendium V7: "Up to 1 minute"; imported D&D 3.5 SRD: "Instantaneous"
+- **Weird** - `concentration`: existing Wizard Compendium V7: true; imported D&D 3.5 SRD: false
+- **Weird** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Weird** - `classes`: existing Wizard Compendium V7: ["Wizard"]; imported D&D 3.5 SRD: ["Sorcerer","Wizard"]
+- **Wind Walk** - `range`: existing Druid Book: "30 feet"; imported D&D 3.5 SRD: "Touch"
+- **Wind Walk** - `duration`: existing Druid Book: "8 hours"; imported D&D 3.5 SRD: "1 hour/level (D); see text"
+- **Wind Walk** - `castingTime`: existing Druid Book: "1 Minute"; imported D&D 3.5 SRD: "1 standard action"
+- **Wind Walk** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, DF"
+- **Wind Walk** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid"]
+- **Wind Wall** - `level`: existing Druid Book: 3; imported D&D 3.5 SRD: 2
+- **Wind Wall** - `damage`: existing Druid Book: "Bludgeoning"; imported D&D 3.5 SRD: "None"
+- **Wind Wall** - `areaSound`: existing Druid Book: "None"; imported D&D 3.5 SRD: "Wall up to 10 ft./level long and 5 ft./level high (S)"
+- **Wind Wall** - `range`: existing Druid Book: "120 feet"; imported D&D 3.5 SRD: "Medium (100 ft. + 10 ft./level)"
+- **Wind Wall** - `duration`: existing Druid Book: "Up to 1 minute"; imported D&D 3.5 SRD: "1 round/level"
+- **Wind Wall** - `concentration`: existing Druid Book: true; imported D&D 3.5 SRD: false
+- **Wind Wall** - `castingTime`: existing Druid Book: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wind Wall** - `components`: existing Druid Book: "V, S, M"; imported D&D 3.5 SRD: "V, S, M/DF"
+- **Wind Wall** - `classes`: existing Druid Book: ["Druid"]; imported D&D 3.5 SRD: ["Cleric","Druid","Ranger","Sorcerer","Wizard"]
+- **Wish** - `school`: existing Wizard Compendium V7: "Conjuration"; imported D&D 3.5 SRD: "Universal"
+- **Wish** - `damage`: existing Wizard Compendium V7: "Necrotic"; imported D&D 3.5 SRD: "None"
+- **Wish** - `range`: existing Wizard Compendium V7: "Self"; imported D&D 3.5 SRD: "See text"
+- **Wish** - `duration`: existing Wizard Compendium V7: "Instantaneous"; imported D&D 3.5 SRD: "See text"
+- **Wish** - `castingTime`: existing Wizard Compendium V7: "1 Action"; imported D&D 3.5 SRD: "1 standard action"
+- **Wish** - `components`: existing Wizard Compendium V7: "V"; imported D&D 3.5 SRD: "V, XP"

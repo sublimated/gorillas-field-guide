@@ -1,0 +1,16 @@
+node_modules/
+dist/
+app/node_modules/
+app/dist/
+app/.vite/
+.claude/
+.agents/
+*.log
+
+# scratch dir for rendered sigil PNGs during visual work
+app/.visual-checks/
+
+# local source material, extraction data, and agent workspaces
+tmp/
+Source PDFs/
+app/src/data/spells.BACKUP-*.json
