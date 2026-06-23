@@ -21,6 +21,13 @@ app/.vite/
 /app/*-proof.png
 /app/public/glyphs/warlock/_corrupted_backup/
 /app/public/glyphs/warlock/_oldnumbers_backup/
+/app/public/fonts/Abigaila.otf
+/app/public/fonts/Blacksword.otf
+/app/public/fonts/Cream Cake.otf
+/app/public/fonts/Get Show.otf
+/app/public/fonts/Mystical.otf
+/app/public/fonts/Spell of Asia.ttf
+/app/public/fonts/Warlock_Untitled1.ttf
 
 # scratch dir for rendered sigil PNGs during visual work
 app/.visual-checks/
