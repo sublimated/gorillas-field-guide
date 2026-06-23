@@ -45,6 +45,9 @@ export function SealView({
   };
 
   useEffect(() => {
+    // Intentional: re-trigger the draw-on CSS transition (toggle off, then on next frame)
+    // whenever the spell/recast key changes — not deriving state from props.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDrawn(false);
     const t = requestAnimationFrame(() => requestAnimationFrame(() => setDrawn(true)));
     return () => cancelAnimationFrame(t);
@@ -69,6 +72,9 @@ export function SealView({
     return () => {
       cancelled = true;
     };
+    // segmentValue is derived purely from areaNotation (already a dependency); omitted to
+    // avoid re-running this effect on every render from its unmemoized function identity.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [areaNotation, alphabet, seal]);
 
   // The seal's centre mandala (the Sorcerer's signature mark).

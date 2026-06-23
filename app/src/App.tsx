@@ -16,6 +16,7 @@ import { collisionVariantFor } from './data/collisionVariants';
 import { hasScalingAttributeValue } from './data/normalizeAttributes';
 import { useColorMode, customColorFor, CUSTOMIZABLE_ATTRS, type ColorMode } from './engines/colorModes';
 import type { AttributeKey } from './engines/attributes';
+import type { CSSVars } from './cssVars';
 
 const CANTRIP_BREAKPOINTS = [1, 5, 11, 17];
 const INITIAL_SPELL_GROUP_KEY = SPELLS.find((s) => s.name.toLowerCase() === 'fireball')?.name.toLowerCase() ?? SPELLS[0].name.toLowerCase();
@@ -130,7 +131,7 @@ function StatRow({
 }
 
 export default function App() {
-  const savedState = useMemo(readSavedAppState, []);
+  const savedState = useMemo(() => readSavedAppState(), []);
   const [activeSources, setActiveSources] = useState<Set<string>>(
     () => new Set(savedState.activeSources ?? SOURCE_CONFIG.filter((s) => s.defaultOn).map((s) => s.id)),
   );
@@ -318,10 +319,13 @@ export default function App() {
   const tint = rgbCss(spellColor(castAttrs));
 
   useEffect(() => {
+    // Intentional: falls back to a valid spell/version when the active source toggles make
+    // the current selection disappear — reacting to external state, not deriving render state.
     if (activeSpellGroups.length === 0) return;
     if (!spellGroup) {
       const nextGroup = activeSpellGroups[0];
       const nextSpell = nextGroup.versions[0];
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSpellGroupKey(nextGroup.key);
       setSpellVersionSource(nextSpell.source);
       setCastLevel(nextSpell.level);
@@ -407,7 +411,7 @@ export default function App() {
   const isUpcast = !isCantrip && castLevel > fallbackSpell.level;
 
   return (
-    <div className="page" style={{ ['--tint' as any]: tint, ['--display-font' as any]: displayFont }}>
+    <div className="page" style={{ '--tint': tint, '--display-font': displayFont } as CSSVars}>
       <header className="masthead">
         <h1>Gorilla&apos;s field guide</h1>
         <p className="subtitle">A working theory of practical magic</p>

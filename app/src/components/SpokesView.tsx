@@ -47,6 +47,9 @@ export function SpokesView({
   const [drawn, setDrawn] = useState(false);
 
   useEffect(() => {
+    // Intentional: re-trigger the draw-on CSS transition (toggle off, then on next frame)
+    // whenever the spell/recast key changes — not deriving state from props.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDrawn(false);
     const t = requestAnimationFrame(() => requestAnimationFrame(() => setDrawn(true)));
     return () => cancelAnimationFrame(t);

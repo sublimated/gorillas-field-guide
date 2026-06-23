@@ -3,6 +3,7 @@ import { buildRune } from '../engines/rune';
 import { WIZARD_K_VALUES, WIZARD_ATTRIBUTE_ORDER } from '../engines/wizardTopology';
 import type { SpellAttributes } from '../engines/attributes';
 import { resolveAttrColor, type ColorMode, type CustomColors, DEFAULT_CUSTOM_COLORS } from '../engines/colorModes';
+import type { CSSVars } from '../cssVars';
 
 // Concrete value of --ink so SVG feFlood (which doesn't resolve CSS var()) gets a real colour.
 const WIZARD_INK = '#2c2013';
@@ -64,6 +65,9 @@ export function RuneView({
   const [drawn, setDrawn] = useState(false);
 
   useEffect(() => {
+    // Intentional: re-trigger the draw-on CSS transition (toggle off, then on next frame)
+    // whenever the spell/recast key changes — not deriving state from props.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDrawn(false);
     const t = requestAnimationFrame(() => requestAnimationFrame(() => setDrawn(true)));
     return () => cancelAnimationFrame(t);
@@ -165,9 +169,9 @@ export function RuneView({
               className={`rune-chord${state}`}
               style={{
                 transitionDelay: `${i * STAGGER}ms`,
-                ['--draw' as any]: drawn ? 1 : 0,
-                ['--rune-opacity' as any]: ATTRIBUTE_OPACITY[c.key] ?? 0.88,
-              }}
+                '--draw': drawn ? 1 : 0,
+                '--rune-opacity': ATTRIBUTE_OPACITY[c.key] ?? 0.88,
+              } as CSSVars}
               data-attr={c.key}
               onMouseEnter={() => onHighlight?.(c.key)}
               onMouseLeave={() => onHighlight?.(null)}

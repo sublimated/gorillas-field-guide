@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { spectrum, luminosity, rgbCss } from '../engines/spectrum';
 import type { SpellAttributes } from '../engines/attributes';
 import { customColorFor, type ColorMode, type CustomColors, DEFAULT_CUSTOM_COLORS } from '../engines/colorModes';
+import type { CSSVars } from '../cssVars';
 
 type Props = {
   attrs: SpellAttributes;
@@ -33,7 +34,7 @@ export function SpectrumView({
   const glow = useMemo(() => luminosity(attrs), [attrs]);
 
   return (
-    <div className="spectrum" key={replayKey} style={{ ['--glow' as any]: glow }}>
+    <div className="spectrum" key={replayKey} style={{ '--glow': glow } as CSSVars}>
       <div className="spectrum-band">
         {lines.map((l, i) => {
           const isHot = highlight === l.key;

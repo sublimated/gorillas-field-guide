@@ -38,7 +38,7 @@ const SIGMA = 1;
 export function spectrum(attrs: SpellAttributes): SpectralLine[] {
   const levelPos = attrs.level / 9;
   return ATTRIBUTE_ORDER.map((key) => {
-    const value = key === 'level' ? String(attrs.level) : (attrs as any)[key];
+    const value = key === 'level' ? String(attrs.level) : attrs[key];
     const x = featureFraction(key, value);
     const brightness = Math.exp(-((x - levelPos) ** 2) / (2 * SIGMA * SIGMA));
     return { key, x, color: gistRainbow(1 - x), brightness };

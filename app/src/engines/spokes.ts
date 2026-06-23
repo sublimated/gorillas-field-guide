@@ -53,7 +53,7 @@ function normalized(value: string): string {
 
 function druidIndex(key: AttributeKey, attrs: SpellAttributes, topologyIndex: number): number {
   if (key === 'level') return Math.max(0, Math.min(9, attrs.level));
-  const value = key === 'area' ? (attrs.areaNotation ?? attrs.area) : (attrs as any)[key];
+  const value = key === 'area' ? (attrs.areaNotation ?? attrs.area) : attrs[key];
   const found = DRUID_VALUES[key].findIndex((v) => normalized(v) === normalized(value));
   if (found >= 0) return found;
   if (key === 'school') return topologyIndex + 1; // Druid's school dictionary has Blank at zero.

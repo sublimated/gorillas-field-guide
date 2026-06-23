@@ -34,6 +34,7 @@ export function GlyphAuthor({ alphabet, setGlyph, removeGlyph, replaceAll }: Pro
 
   // Load the existing glyph (if any) whenever the selected value changes.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDraft(getGlyph(alphabet, attr, value)?.paths ?? []);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attr, value]);

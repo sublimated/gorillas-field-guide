@@ -38,6 +38,9 @@ export function WarlockView({
   const [drawn, setDrawn] = useState(false);
 
   useEffect(() => {
+    // Intentional: re-trigger the draw-on CSS transition (toggle off, then on next frame)
+    // whenever the spell/recast key changes — not deriving state from props.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDrawn(false);
     const t = requestAnimationFrame(() => requestAnimationFrame(() => setDrawn(true)));
     return () => cancelAnimationFrame(t);
@@ -46,7 +49,7 @@ export function WarlockView({
   const { center, rOuter, rInner, rText, rFrameInner, rFrameOuter } = sigil;
   // The spectroscopy colour of an attribute (same derivation as engines/spectrum.ts).
   const spectrumColorFor = (key: AttributeKey): string => {
-    const value = key === 'level' ? String(attrs.level) : (attrs as any)[key];
+    const value = key === 'level' ? String(attrs.level) : attrs[key];
     return rgbCss(colorFor(key, value));
   };
   // Per-segment ink so spectroscopy / custom modes can colour each attribute distinctly.

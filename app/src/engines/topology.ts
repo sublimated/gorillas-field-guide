@@ -36,7 +36,7 @@ export function spellTopology(attrs: SpellAttributes): SpellTopology {
   const n = RUNE_N;
   const symbols = uniqueBinaries(n);
   const layers: AttrLayer[] = ATTRIBUTE_ORDER.map((key) => {
-    const value = key === 'level' ? String(attrs.level) : (attrs as any)[key];
+    const value = key === 'level' ? String(attrs.level) : attrs[key];
     const index = featureIndex(key, value);
     const bits = symbols[index] ?? symbols[0];
     return { key, value, index, k: K_VALUES[key], bits, color: rgbCss(colorFor(key, value)) };
