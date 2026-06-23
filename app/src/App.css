@@ -1,34 +1,4 @@
 @font-face {
-  font-family: 'Abigaila';
-  src: url('/fonts/Abigaila.otf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Get Show';
-  src: url('/fonts/Get%20Show.otf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Mystical';
-  src: url('/fonts/Mystical.otf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Blacksword';
-  src: url('/fonts/Blacksword.otf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Cream Cake';
-  src: url('/fonts/Cream%20Cake.otf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Spell of Asia';
-  src: url('/fonts/Spell%20of%20Asia.ttf') format('truetype');
-  font-display: swap;
-}
-@font-face {
   font-family: 'Warlock Font';
   src: url('/fonts/Warlock%20Font.ttf?v=3') format('truetype');
   font-display: swap;

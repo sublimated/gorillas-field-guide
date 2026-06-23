@@ -6,6 +6,21 @@ app/.vite/
 .claude/
 .agents/
 *.log
+/Fonts/
+/Sorcerer/
+/BG Paper.jpeg
+/Boxes*.svg
+/Line.svg
+/Search Bar*
+/Sorcerer Script Start.ai
+/Square.svg
+/CLAUDE_HANDOFF.md
+/CLAUDE_PROGRESS_HANDOFF_*.md
+/HANDOFF*.md
+/app/tmp_*.png
+/app/*-proof.png
+/app/public/glyphs/warlock/_corrupted_backup/
+/app/public/glyphs/warlock/_oldnumbers_backup/
 
 # scratch dir for rendered sigil PNGs during visual work
 app/.visual-checks/
