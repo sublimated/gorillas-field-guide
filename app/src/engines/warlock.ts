@@ -146,6 +146,10 @@ export type WarlockSegment = {
   a0: number;
   a1: number;
   mid: number;
+  // For a spell dealing two damage types at once, the lower-potential type's own code —
+  // rendered smaller, alongside the primary, in the damage segment only.
+  minorValue?: string;
+  minorParts?: WarlockCodePart[];
 };
 
 export type WarlockCodePart =
@@ -317,7 +321,13 @@ export function buildWarlockSigil(
     const a1 = a0 + span;
     const { value, code } = codeFor(key, attrs, casterLevel);
     const color = rgbCss(colorFor(key, key === 'level' ? String(attrs.level) : value));
-    return { key, value, code, parts: parseWarlockCode(code), color, a0, a1, mid: (a0 + a1) / 2 };
+    const minorValue = key === 'damage' ? attrs.damageSecondary : undefined;
+    const minorCode = minorValue ? DAMAGE[minorValue] ?? DAMAGE.None : undefined;
+    return {
+      key, value, code, parts: parseWarlockCode(code), color, a0, a1, mid: (a0 + a1) / 2,
+      minorValue,
+      minorParts: minorCode ? parseWarlockCode(minorCode) : undefined,
+    };
   });
 
   return {

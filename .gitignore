@@ -37,3 +37,4 @@ app/.visual-checks/
 tmp/
 Source PDFs/
 app/src/data/spells.BACKUP-*.json
+scripts/__pycache__/

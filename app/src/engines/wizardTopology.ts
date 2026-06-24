@@ -79,10 +79,21 @@ function wizardValue(key: AttributeKey, attrs: SpellAttributes): string {
   return attrs[key];
 }
 
-export function wizardFeatureIndex(key: AttributeKey, attrs: SpellAttributes): number {
-  const value = wizardValue(key, attrs);
+function valueIndex(key: AttributeKey, value: string): number {
   const index = WIZARD_VALUES[key].findIndex((candidate) => normal(candidate) === normal(value));
   return index < 0 ? 0 : index;
+}
+
+export function wizardFeatureIndex(key: AttributeKey, attrs: SpellAttributes): number {
+  return valueIndex(key, wizardValue(key, attrs));
+}
+
+// A layer for an explicit value rather than attrs[key] — used for the minor type of a
+// spell dealing two damage types at once (see data/spells.ts damageSecondary).
+export function wizardLayerForValue(key: AttributeKey, value: string): WizardLayer {
+  const symbols = uniqueBinaries(WIZARD_RUNE_N);
+  const index = valueIndex(key, value);
+  return { key, value, index, k: WIZARD_K_VALUES[key], bits: symbols[index], color: rgbCss(colorFor(key, value)) };
 }
 
 export function wizardTopology(attrs: SpellAttributes): WizardTopology {

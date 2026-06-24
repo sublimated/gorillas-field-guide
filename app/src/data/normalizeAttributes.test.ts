@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import {
   formatResolvedFormula,
   hasScalingAttributeValue,
+  normalizeAreaNotation,
+  normalizeAreaShape,
   normalizeDuration,
   normalizeRange,
   parseDurationFormula,
@@ -17,6 +19,15 @@ describe('normalizeAttributes', () => {
     expect(normalizeRange('Personal; see text')).toBe('Self');
     expect(normalizeDuration('Concentration, up to 1 minute')).toBe('Up to 1 minute');
     expect(normalizeDuration('Permanent')).toBe('Until dispelled');
+  });
+
+  it('resolves range phrasings that mean Touch or Self rather than a literal distance', () => {
+    expect(normalizeRange('One willing creature touched')).toBe('Touch');
+    expect(normalizeRange('A creature touched')).toBe('Touch');
+    expect(normalizeRange('0 ft.')).toBe('Self');
+    expect(normalizeRange('0 ft.; see text')).toBe('Self');
+    expect(normalizeRange('Medium')).toBe('120 feet');
+    expect(normalizeRange('Medium (100 + 10 ft./level)')).toBe('120 feet');
   });
 
   it('parses and resolves scaling ranges', () => {
@@ -42,5 +53,21 @@ describe('normalizeAttributes', () => {
     expect(hasScalingAttributeValue('1 round/level')).toBe(true);
     expect(hasScalingAttributeValue('60 feet')).toBe(false);
     expect(resolveAreaNotation('sphere (20)', 7, 'Sphere')).toBe('sphere (20)');
+  });
+
+  it('interprets the agreed area families', () => {
+    expect(normalizeAreaNotation('Ray', 1, 'Ray')).toBe('Line');
+    expect(normalizeAreaNotation('Cone-shaped burst', 1, 'None')).toBe('Cone');
+    expect(normalizeAreaNotation('20-ft.-radius emanation', 1, 'Emanation')).toBe('emanation (20)');
+    expect(normalizeAreaNotation('One missile of acid', 1, 'None')).toBe('Single target');
+    expect(normalizeAreaNotation('One or more creatures, no two of which can be more than 30 ft. apart', 1, 'None')).toBe('Multiple targets');
+    expect(normalizeAreaNotation('Wall 4 ft./level wide, 2 ft./level high', 3, 'Wall')).toBe('wall (12)');
+  });
+
+  it('normalizes coarse area shapes for engine lookup', () => {
+    expect(normalizeAreaShape('Emanation', '20-ft.-radius emanation')).toBe('Sphere');
+    expect(normalizeAreaShape('Ray', 'Ray')).toBe('Line');
+    expect(normalizeAreaShape('None', 'One missile of acid')).toBe('Single target');
+    expect(normalizeAreaShape('Wall', 'Wall 4 ft./level wide, 2 ft./level high')).toBe('Wall');
   });
 });

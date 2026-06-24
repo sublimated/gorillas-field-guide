@@ -4,8 +4,8 @@ import { buildSorcererSeal } from '../engines/seal';
 import { buildDruidSpokes } from '../engines/spokes';
 import { buildWarlockSigil } from '../engines/warlock';
 import { toAttributes, type Spell } from '../data/spells';
-import { loadDefaultGlyph, type ResolvedDefault } from '../alphabet/defaults';
-import { titleAreaNotation } from '../alphabet/numerals';
+import { loadDefaultGlyph, loadSorcererAreaGlyph, type ResolvedDefault } from '../alphabet/defaults';
+import { glyphAreaNotation } from '../alphabet/numerals';
 
 type Props = {
   spell: Spell;
@@ -50,11 +50,14 @@ function MiniSigilBase({ spell, mode, size = 90, colored = true }: Props) {
     // so the area glyph file resolves.
     const segValue = (key: string, value: string) =>
       key === 'area' && attrs.areaNotation && attrs.areaNotation !== 'None'
-        ? titleAreaNotation(attrs.areaNotation)
+        ? glyphAreaNotation(attrs.areaNotation)
         : value;
     Promise.all(
       seal.segments.map(async (seg) => {
-        const r = await loadDefaultGlyph('sorcerer', seg.key, segValue(seg.key, seg.value));
+        const value = segValue(seg.key, seg.value);
+        const r = seg.key === 'area'
+          ? await loadSorcererAreaGlyph(value)
+          : await loadDefaultGlyph('sorcerer', seg.key, value);
         return [seg.key, r] as const;
       }),
     ).then((entries) => {

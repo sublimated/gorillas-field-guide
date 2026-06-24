@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { spectrum, spellColor, luminosity, gistRainbow, colorFor } from './spectrum';
+import { spectrum, spellColor, luminosity, visibleSpectrum, colorFor } from './spectrum';
 import { ATTRIBUTE_ORDER } from './attributes';
 import type { SpellAttributes } from './attributes';
 
@@ -41,9 +41,9 @@ describe('spectrum()', () => {
     }
   });
 
-  it('color matches gistRainbow(1 - x) for each line', () => {
+  it('color matches visibleSpectrum(x) for each line', () => {
     for (const line of spectrum(FIREBALL)) {
-      const expected = gistRainbow(1 - line.x);
+      const expected = visibleSpectrum(line.x);
       expect(line.color).toEqual(expected);
     }
   });
@@ -77,30 +77,38 @@ describe('luminosity()', () => {
   });
 });
 
-describe('gistRainbow()', () => {
-  it('clamps t < 0 to the first entry', () => {
-    expect(gistRainbow(-1)).toEqual(gistRainbow(0));
+describe('visibleSpectrum()', () => {
+  it('clamps t < 0 to the red end', () => {
+    expect(visibleSpectrum(-1)).toEqual(visibleSpectrum(0));
   });
 
-  it('clamps t > 1 to the last entry', () => {
-    expect(gistRainbow(2)).toEqual(gistRainbow(1));
+  it('clamps t > 1 to the violet end', () => {
+    expect(visibleSpectrum(2)).toEqual(visibleSpectrum(1));
   });
 
   it('returns an [R, G, B] triple with values in 0..255', () => {
-    const [r, g, b] = gistRainbow(0.5);
+    const [r, g, b] = visibleSpectrum(0.5);
     [r, g, b].forEach((v) => {
       expect(v).toBeGreaterThanOrEqual(0);
       expect(v).toBeLessThanOrEqual(255);
     });
   });
+
+  it('t=0 is red-dominant and t=1 is violet (blue+red present, low green)', () => {
+    const red = visibleSpectrum(0);
+    const violet = visibleSpectrum(1);
+    expect(red[0]).toBeGreaterThan(red[1]);
+    expect(red[0]).toBeGreaterThan(red[2]);
+    expect(violet[2]).toBeGreaterThan(violet[1]);
+  });
 });
 
 describe('colorFor()', () => {
-  it('level 0 (x=0/9=0) → gistRainbow(1)', () => {
-    expect(colorFor('level', '0')).toEqual(gistRainbow(1));
+  it('level 0 (x=0/9=0) → visibleSpectrum(0), the red end', () => {
+    expect(colorFor('level', '0')).toEqual(visibleSpectrum(0));
   });
 
-  it('level 9 (x=9/9=1) → gistRainbow(0)', () => {
-    expect(colorFor('level', '9')).toEqual(gistRainbow(0));
+  it('level 9 (x=9/9=1) → visibleSpectrum(1), the violet end', () => {
+    expect(colorFor('level', '9')).toEqual(visibleSpectrum(1));
   });
 });

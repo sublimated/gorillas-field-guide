@@ -12,9 +12,17 @@ export type NumberedGlyphValue =
 const ATOMS: NumeralAtom[] = [500, 300, 200, 100, 60, 50, 40, 30, 15, 10, 5];
 
 export function titleAreaNotation(areaNotation: string): string {
-  const m = areaNotation.match(/^([a-z]+)\s+\((\d+)\)$/i);
+  const m = areaNotation.match(/^([a-z]+(?:\s+[a-z]+)*)\s+\((\d+)\)$/i);
   if (!m) return areaNotation;
-  return `${m[1][0].toUpperCase()}${m[1].slice(1).toLowerCase()} (${m[2]})`;
+  return `${m[1].split(/\s+/).map((part) => part[0].toUpperCase() + part.slice(1).toLowerCase()).join(' ')} (${m[2]})`;
+}
+
+export function glyphAreaNotation(areaNotation: string): string {
+  const titled = titleAreaNotation(areaNotation);
+  if (/^Emanation\s+\((\d+)\)$/i.test(titled)) return titled.replace(/^Emanation/i, 'Sphere');
+  if (/^Circle\s+\((\d+)\)$/i.test(titled)) return titled.replace(/^Circle/i, 'Sphere');
+  if (/^Square\s+\((\d+)\)$/i.test(titled)) return titled.replace(/^Square/i, 'Cube');
+  return titled;
 }
 
 export function decomposeNumber(value: number): NumeralAtom[] {
@@ -32,7 +40,7 @@ export function decomposeNumber(value: number): NumeralAtom[] {
 
 export function parseNumberedGlyphValue(attr: AttributeKey, value: string): NumberedGlyphValue | null {
   if (attr === 'area') {
-    const m = value.match(/^(Cone|Cube|Cylinder|Line|Sphere)\s+\((\d+)\)$/i);
+    const m = value.match(/^(Cone|Cube|Cylinder|Line|Sphere|Circle|Emanation|Wall|Square)\s+\((\d+)\)$/i);
     if (!m) return null;
     return { kind: 'area', shape: `${m[1][0].toUpperCase()}${m[1].slice(1).toLowerCase()}`, number: Number(m[2]) };
   }

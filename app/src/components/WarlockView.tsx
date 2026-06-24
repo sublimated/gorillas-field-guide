@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useState } from 'react';
-import { buildWarlockSigil } from '../engines/warlock';
+import { buildWarlockSigil, type WarlockCodePart } from '../engines/warlock';
 import type { AttributeKey, SpellAttributes } from '../engines/attributes';
 import { colorFor, rgbCss } from '../engines/spectrum';
 import { resolveAttrColor, type ColorMode, type CustomColors, DEFAULT_CUSTOM_COLORS } from '../engines/colorModes';
@@ -57,6 +57,7 @@ export function WarlockView({
     resolveAttrColor(key, mode, custom, WARLOCK_INK, spectrumColorFor(key));
   const centerSrc = centerGlyph?.src ?? '/glyphs/warlock/Warlock_Center_Default.png';
   const centerScale = centerGlyph?.scale ?? 1;
+  const defaultCenterScale = centerGlyph ? 1 : 0.65;
   const pt = (angle: number, r: number) => ({ x: center.x + r * Math.cos(angle), y: center.y + r * Math.sin(angle) });
   const wedgePath = (seg: { a0: number; a1: number }) => {
     const o0 = pt(seg.a0, rOuter), o1 = pt(seg.a1, rOuter);
@@ -113,17 +114,19 @@ export function WarlockView({
     );
   };
 
-  const renderSegmentCode = (seg: (typeof sigil.segments)[number], i: number) => {
-    const state = highlight ? (seg.key === highlight ? ' hot' : ' dim') : '';
-    const ink = inkFor(seg.key);
-    // Group the parsed code per the book's number rules (p31): a multiplier dₙ and the
-    // n-runes after it form ONE composite glyph — the digit-runes superimposed (= summed),
-    // wrapped in a circle of n dots. Durations have n-runes with no multiplier (just summed).
-    type Group =
-      | { kind: 'aspect'; text: string }
-      | { kind: 'num'; multiplier?: number; digits: number[] };
+  // Group the parsed code per the book's number rules (p31): a multiplier dₙ and the
+  // n-runes after it form ONE composite glyph — the digit-runes superimposed (= summed),
+  // wrapped in a circle of n dots. Durations have n-runes with no multiplier (just summed).
+  type Group =
+    | { kind: 'aspect'; text: string }
+    | { kind: 'num'; multiplier?: number; digits: number[] };
+  type Item =
+    | { kind: 'rune'; ch: string }
+    | { kind: 'num'; multiplier?: number; digits: number[] };
+
+  const itemsFor = (parts: WarlockCodePart[]): Item[] => {
     const groups: Group[] = [];
-    for (const part of seg.parts) {
+    for (const part of parts) {
       if (part.kind === 'aspect') {
         groups.push({ kind: 'aspect', text: part.text });
       } else if (part.kind === 'multiplier') {
@@ -148,29 +151,95 @@ export function WarlockView({
 
     // Expand groups into individual items laid out along the arc: each aspect rune is its own
     // item; a number group (circle + superimposed digits) is one item.
-    type Item =
-      | { kind: 'rune'; ch: string }
-      | { kind: 'num'; multiplier?: number; digits: number[] };
     const items: Item[] = [];
     for (const g of groups) {
       if (g.kind === 'aspect') for (const ch of g.text) items.push({ kind: 'rune', ch });
       else items.push({ kind: 'num', multiplier: g.multiplier, digits: g.digits });
     }
+    return items;
+  };
 
-    // Lay the items out along the arc with an EQUAL gap between every glyph, the whole group
-    // centred on the segment midline. This way the spacing on both sides of a number reads the
-    // same regardless of how wide the number is versus the runes flanking it.
-    const RUNE_W = 23; // approx tangential width of a rune at the current font size
-    const GAP = 6; // arc-length gap between adjacent glyphs
+  // Lay items out along the arc with an EQUAL gap between every glyph, the whole group
+  // centred on the segment midline. This way the spacing on both sides of a number reads the
+  // same regardless of how wide the number is versus the runes flanking it.
+  const RUNE_W = 23; // approx tangential width of a rune at the current font size
+  const GAP = 6; // arc-length gap between adjacent glyphs
+  const anglesFor = (items: Item[], mid: number, radius: number): number[] => {
     const widthOf = (it: Item) => (it.kind === 'rune' ? RUNE_W : it.multiplier != null ? 52 : 26);
     const widths = items.map(widthOf);
     const totalSpan = widths.reduce((s, w) => s + w, 0) + GAP * Math.max(0, items.length - 1);
     let cursor = -totalSpan / 2; // arc-length offset from the segment midline
-    const angles = items.map((_, idx) => {
+    return items.map((_, idx) => {
       const center = cursor + widths[idx] / 2;
       cursor += widths[idx] + GAP;
-      return seg.mid + center / rText; // arc-length → angle
+      return mid + center / radius; // arc-length → angle
     });
+  };
+
+  // Renders one row of items (the primary code, or — for damage with a second type — the
+  // smaller minor-type row nested closer to the inner ring). `scale` shrinks runes/numbers
+  // uniformly without changing the underlying CSS font-size.
+  const renderItems = (items: Item[], angles: number[], radius: number, ink: string, scale: number, keyPrefix: string) =>
+    items.map((it, idx) => {
+      const ang = angles[idx];
+      const p = pt(ang, radius);
+      if (it.kind === 'rune') {
+        // aspect runes follow the curve — tangent to the circle, tops pointing outward
+        return (
+          <text
+            key={`${keyPrefix}${idx}`}
+            x={0}
+            y={0}
+            transform={`translate(${p.x} ${p.y}) rotate(${groupRotation(ang)}) scale(${scale})`}
+            className="warlock-text"
+            fill={ink}
+            textAnchor="middle"
+            dominantBaseline="middle"
+          >
+            {it.ch}
+          </text>
+        );
+      }
+      // Numbers rotate WITH the segment, same as the runes beside them — their magnitude is
+      // read relative to the box's orientation, so they must share it (not stand upright).
+      const hasMult = it.multiplier != null;
+      const R = 22; // multiplier circle radius — kept inside the rune band
+      const nw = hasMult ? 16 : 23; // the inner sigil is small; the circle stays full-size
+      const nh = hasMult ? 19 : 28;
+      return (
+        <g
+          key={`${keyPrefix}${idx}`}
+          transform={`translate(${p.x} ${p.y}) rotate(${groupRotation(ang) + 180}) scale(${scale})`}
+          className={hasMult ? 'warlock-multiplier' : undefined}
+        >
+          {hasMult && <circle cx="0" cy="0" r={R} />}
+          {it.digits.map((d, di) => (
+            <image key={di} href={numberHref(d)} x={-nw / 2} y={-nh / 2} width={nw} height={nh} preserveAspectRatio="xMidYMid meet" className="warlock-number" />
+          ))}
+          {hasMult &&
+            Array.from({ length: it.multiplier as number }, (_, dot) => {
+              // dots sit ON the circle, stepping 72° clockwise (d5 = full pentagon). The
+              // pattern is rotated 180° from the top so it reads right within the glyph.
+              const a = Math.PI / 2 + dot * ((2 * Math.PI) / 5);
+              return <circle key={dot} cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="3.2" className="warlock-multiplier-dot" />;
+            })}
+        </g>
+      );
+    });
+
+  const renderSegmentCode = (seg: (typeof sigil.segments)[number], i: number) => {
+    const state = highlight ? (seg.key === highlight ? ' hot' : ' dim') : '';
+    const ink = inkFor(seg.key);
+    const items = itemsFor(seg.parts);
+    const angles = anglesFor(items, seg.mid, rText);
+    // A spell dealing two damage types at once (e.g. Ice Storm's Cold + Bludgeoning) shows
+    // its lower-potential type's own code as a second, smaller row nested closer to the
+    // inner ring. The runes must never touch the primary row, so this sits well inside it
+    // (close to rInner) and at a noticeably smaller scale — unlike the Sorcerer seal, a
+    // little crossover here is not acceptable.
+    const minorItems = seg.minorParts ? itemsFor(seg.minorParts) : null;
+    const rTextMinor = rInner + (rText - rInner) * 0.22;
+    const minorAngles = minorItems ? anglesFor(minorItems, seg.mid, rTextMinor) : null;
 
     return (
       <g
@@ -181,48 +250,8 @@ export function WarlockView({
           transitionDelay: `${i * 130}ms`,
         }}
       >
-        {items.map((it, idx) => {
-          const ang = angles[idx];
-          const p = pt(ang, rText);
-          if (it.kind === 'rune') {
-            // aspect runes follow the curve — tangent to the circle, tops pointing outward
-            return (
-              <text
-                key={idx}
-                x={p.x}
-                y={p.y}
-                transform={`rotate(${groupRotation(ang)} ${p.x} ${p.y})`}
-                className="warlock-text"
-                fill={ink}
-                textAnchor="middle"
-                dominantBaseline="middle"
-              >
-                {it.ch}
-              </text>
-            );
-          }
-          // Numbers rotate WITH the segment, same as the runes beside them — their magnitude is
-          // read relative to the box's orientation, so they must share it (not stand upright).
-          const hasMult = it.multiplier != null;
-          const R = 22; // multiplier circle radius — kept inside the rune band
-          const nw = hasMult ? 16 : 23; // the inner sigil is small; the circle stays full-size
-          const nh = hasMult ? 19 : 28;
-          return (
-            <g key={idx} transform={`translate(${p.x} ${p.y}) rotate(${groupRotation(ang) + 180})`} className={hasMult ? 'warlock-multiplier' : undefined}>
-              {hasMult && <circle cx="0" cy="0" r={R} />}
-              {it.digits.map((d, di) => (
-                <image key={di} href={numberHref(d)} x={-nw / 2} y={-nh / 2} width={nw} height={nh} preserveAspectRatio="xMidYMid meet" className="warlock-number" />
-              ))}
-              {hasMult &&
-                Array.from({ length: it.multiplier as number }, (_, dot) => {
-                  // dots sit ON the circle, stepping 72° clockwise (d5 = full pentagon). The
-                  // pattern is rotated 180° from the top so it reads right within the glyph.
-                  const a = Math.PI / 2 + dot * ((2 * Math.PI) / 5);
-                  return <circle key={dot} cx={Math.cos(a) * R} cy={Math.sin(a) * R} r="3.2" className="warlock-multiplier-dot" />;
-                })}
-            </g>
-          );
-        })}
+        {renderItems(items, angles, rText, ink, 1, 'maj')}
+        {minorItems && minorAngles && renderItems(minorItems, minorAngles, rTextMinor, ink, 0.5, 'min')}
       </g>
     );
   };
@@ -270,7 +299,7 @@ export function WarlockView({
           control); clipped to the inner ring so it can never spill into the rune band */}
       <g clipPath={`url(#${id}-center-clip)`}>
         {(() => {
-          const s = rInner * 1.7 * centerScale;
+          const s = rInner * 1.7 * centerScale * defaultCenterScale;
           return (
             <image
               href={centerSrc}

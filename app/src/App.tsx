@@ -13,7 +13,7 @@ import { WarlockView } from './components/WarlockView';
 import { getGlyph, useAlphabet } from './alphabet/glyphStore';
 import { spellColor, rgbCss } from './engines/spectrum';
 import { collisionVariantFor } from './data/collisionVariants';
-import { hasScalingAttributeValue } from './data/normalizeAttributes';
+import { hasScalingAttributeValue, normalizeAreaNotation } from './data/normalizeAttributes';
 import { useColorMode, customColorFor, CUSTOMIZABLE_ATTRS, type ColorMode } from './engines/colorModes';
 import type { AttributeKey } from './engines/attributes';
 import type { CSSVars } from './cssVars';
@@ -103,6 +103,10 @@ function sourceIsAvailable(source: string, activeSources: Set<string>): boolean 
   if (FIVE_E_COMPENDIUM_SOURCES.includes(source)) return FIVE_E_BASE_SOURCES.some((id) => activeSources.has(id));
   if (THREE_FIVE_SUPPLEMENT_SOURCES.includes(source)) return activeSources.has(THREE_FIVE_BASE_SOURCE);
   return true;
+}
+
+function formatDamageLabel(damage: string, damageSecondary?: string): string {
+  return damageSecondary ? `${damage} and ${damageSecondary}` : damage;
 }
 
 function StatRow({
@@ -309,6 +313,10 @@ export default function App() {
     () => (isCantrip ? sound : { ...sound, castLevel }),
     [sound, castLevel, isCantrip],
   );
+  const displayArea = useMemo(() => {
+    const resolved = normalizeAreaNotation(fallbackSpell.areaNotation, charLevel, fallbackSpell.areaShape);
+    return resolved === 'None' ? fallbackSpell.areaShape : resolved;
+  }, [fallbackSpell, charLevel]);
   const activeCenterMode = mode === 'wizard' ? null : mode;
   const activeCenterGlyph =
     activeCenterMode === 'sorcerer' ? sorcererCenter :
@@ -571,7 +579,16 @@ export default function App() {
                   <nav className="sigil-grid" aria-label="Spell pages">
                     {filteredSpellGroups.map((group, i) => {
                       const representative = group.versions[0];
-                      const previewMode = glyphModeForSpell(representative, classFilter);
+                      // A group can be present because one edition/version belongs to the
+                      // selected class while its default representative does not. Preview
+                      // the matching version in that case, so Warlock (and the other
+                      // dedicated class systems) never silently fall back to Wizard.
+                      const previewSpell = classFilter === ALL_CLASSES
+                        ? representative
+                        : group.versions.find((version) =>
+                          version.classes.some((cls) => classNameClean(cls) === classFilter),
+                        ) ?? representative;
+                      const previewMode = glyphModeForSpell(previewSpell, classFilter);
                       return (
                         <button
                           key={group.key}
@@ -580,7 +597,7 @@ export default function App() {
                           onClick={() => choose(group.key)}
                         >
                           <span className="sigil-cell-art">
-                            <MiniSigil spell={representative} mode={previewMode} colored={colorMode === 'spectroscopy'} />
+                            <MiniSigil spell={previewSpell} mode={previewMode} colored={colorMode === 'spectroscopy'} />
                           </span>
                           <span className="tab-name">{group.name}</span>
                           <span className="tab-meta">
@@ -646,7 +663,7 @@ export default function App() {
                         highlight={highlight}
                         onHighlight={setHighlight}
                         alphabet={alphabet}
-                        areaNotation={fallbackSpell.areaNotation}
+                        areaNotation={castAttrs.areaNotation}
                         centerGlyph={sorcererCenter}
                         onRequestCenterChange={() => sorcererCenterInput.current?.click()}
                       />
@@ -868,11 +885,17 @@ export default function App() {
                   <StatRow k="range" dt="Range" dd={fallbackSpell.range} hi={highlight} on={setHighlight} />
                   <div><dt>Components</dt><dd>{fallbackSpell.components}</dd></div>
                   <StatRow k="duration" dt="Duration" dd={fallbackSpell.duration} hi={highlight} on={setHighlight} />
-                  <StatRow k="damage" dt="Damage" dd={fallbackSpell.damage} hi={highlight} on={setHighlight} />
+                  <StatRow
+                    k="damage"
+                    dt="Damage"
+                    dd={formatDamageLabel(fallbackSpell.damage, fallbackSpell.damageSecondary)}
+                    hi={highlight}
+                    on={setHighlight}
+                  />
                   <StatRow
                     k="area"
                     dt="Area"
-                    dd={fallbackSpell.areaNotation === 'None' ? fallbackSpell.areaShape : fallbackSpell.areaNotation}
+                    dd={displayArea}
                     hi={highlight}
                     on={setHighlight}
                   />

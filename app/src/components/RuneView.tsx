@@ -154,10 +154,13 @@ export function RuneView({
       <g filter="url(#rune-glow)">
         {rune.chords.map((c, i) => {
           const state = highlight ? (c.key === highlight ? ' hot' : ' dim') : '';
-          const thickness = ATTRIBUTE_WEIGHT[c.key] ?? 2.4;
+          // The minor type of a dual-damage spell draws thinner and fainter, alongside
+          // (not replacing) the primary type's chords.
+          const thickness = (ATTRIBUTE_WEIGHT[c.key] ?? 2.4) * (c.minor ? 0.55 : 1);
+          const opacity = (ATTRIBUTE_OPACITY[c.key] ?? 0.88) * (c.minor ? 0.6 : 1);
           return (
             <image
-              key={`${c.key}-${c.from}-${c.to}-${i}`}
+              key={`${c.key}-${c.from}-${c.to}-${i}${c.minor ? '-minor' : ''}`}
               href={CHORD_ART}
               x={0}
               y={0}
@@ -170,7 +173,7 @@ export function RuneView({
               style={{
                 transitionDelay: `${i * STAGGER}ms`,
                 '--draw': drawn ? 1 : 0,
-                '--rune-opacity': ATTRIBUTE_OPACITY[c.key] ?? 0.88,
+                '--rune-opacity': opacity,
               } as CSSVars}
               data-attr={c.key}
               onMouseEnter={() => onHighlight?.(c.key)}

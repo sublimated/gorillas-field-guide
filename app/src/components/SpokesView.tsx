@@ -99,14 +99,15 @@ export function SpokesView({
             />
             {sp.marks.map((m, i) => {
               const style = {
-                opacity: drawn ? undefined : 0,
+                opacity: drawn ? (m.minor ? 0.55 : undefined) : 0,
                 transitionDelay: `${s * STAGGER + 280 + i * 70}ms`,
               };
+              const thickness = m.minor ? 1.7 : 2.8;
               if (m.kind === 'circle') {
-                return <circle key={i} cx={m.cx} cy={m.cy} r={m.r} className="spoke-mark" fill="none" stroke={markInk} style={style} />;
+                return <circle key={i} cx={m.cx} cy={m.cy} r={m.r} className="spoke-mark" fill="none" stroke={markInk} strokeWidth={m.minor ? 1.6 : undefined} style={style} />;
               }
               if (m.kind === 'triangle') {
-                return <polygon key={i} points={m.points} className="spoke-mark" fill="none" stroke={markInk} strokeLinejoin="round" style={style} />;
+                return <polygon key={i} points={m.points} className="spoke-mark" fill="none" stroke={markInk} strokeWidth={m.minor ? 1.6 : undefined} strokeLinejoin="round" style={style} />;
               }
               if (m.kind === 'cycloid') {
                 return (
@@ -120,7 +121,7 @@ export function SpokesView({
                         width={STROKE_ART_W}
                         height={STROKE_ART_H}
                         preserveAspectRatio="none"
-                        transform={strokeArtTransform({ x: line.x1, y: line.y1 }, { x: line.x2, y: line.y2 }, 2.8)}
+                        transform={strokeArtTransform({ x: line.x1, y: line.y1 }, { x: line.x2, y: line.y2 }, thickness)}
                         filter={`url(#spoke-ink-${sp.key})`}
                         className="spoke-stroke mark"
                       />
@@ -137,7 +138,7 @@ export function SpokesView({
                   width={STROKE_ART_W}
                   height={STROKE_ART_H}
                   preserveAspectRatio="none"
-                  transform={strokeArtTransform({ x: m.x1, y: m.y1 }, { x: m.x2, y: m.y2 }, 2.8)}
+                  transform={strokeArtTransform({ x: m.x1, y: m.y1 }, { x: m.x2, y: m.y2 }, thickness)}
                   filter={`url(#spoke-ink-${sp.key})`}
                   className="spoke-stroke mark"
                   style={style}

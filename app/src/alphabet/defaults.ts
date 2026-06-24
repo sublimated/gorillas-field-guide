@@ -5,6 +5,7 @@
 // Defaults are human-made art (never AI). Resolution at render time is:
 //   user glyph  →  default file  →  procedural placeholder.
 
+import { decomposeNumber, glyphAreaNotation, parseNumberedGlyphValue, titleAreaNotation } from './numerals';
 import type { AttributeKey } from '../engines/attributes';
 
 export type ClassName = 'wizard' | 'sorcerer' | 'warlock' | 'druid';
@@ -60,6 +61,61 @@ export function loadDefaultGlyph(
   const key = `d:${cls}:${attr}:${value}`;
   if (!cache.has(key)) cache.set(key, resolveUrls(defaultGlyphUrls(cls, attr, value)));
   return cache.get(key)!;
+}
+
+function mergeResolvedDefaults(parts: ResolvedDefault[]): ResolvedDefault | null {
+  if (parts.length === 0) return null;
+  const inners = parts.map((part) => {
+    if (part.kind === 'svg') return part.inner;
+    return `<image href="${part.url}" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid meet" />`;
+  });
+  return { kind: 'svg', inner: inners.join('') };
+}
+
+function areaGlyphShapeAlias(shape: string): string {
+  if (shape === 'Emanation' || shape === 'Circle') return 'Sphere';
+  if (shape === 'Square') return 'Cube';
+  if (shape === 'Wall') return 'None';
+  return shape;
+}
+
+function sorcererAreaBaseUrls(shape: string): string[] {
+  if (shape === 'None') return defaultGlyphUrls('sorcerer', 'area', 'None');
+  const stems = [
+    `/glyphs/sorcerer/Sorcerer_Area_${shape}-Base`,
+    `/glyphs/sorcerer/Sorcerer_Area_${shape}-base`,
+  ];
+  return stems.flatMap((stem) => DEFAULT_GLYPH_EXTS.map((ext) => `${stem}.${ext}`));
+}
+
+function loadSorcererAreaBaseGlyph(shape: string): Promise<ResolvedDefault | null> {
+  const key = `base:sorcerer:area:${shape}`;
+  if (!cache.has(key)) cache.set(key, resolveUrls(sorcererAreaBaseUrls(shape)));
+  return cache.get(key)!;
+}
+
+export async function loadSorcererAreaGlyph(value: string): Promise<ResolvedDefault | null> {
+  const exact = await loadDefaultGlyph('sorcerer', 'area', glyphAreaNotation(value));
+  if (exact) return exact;
+
+  const parsed = parseNumberedGlyphValue('area', titleAreaNotation(value));
+  if (!parsed || parsed.kind !== 'area') return null;
+
+  const atoms = decomposeNumber(parsed.number);
+  const aliasedShape = areaGlyphShapeAlias(parsed.shape);
+  if (aliasedShape === 'None') {
+    return loadDefaultGlyph('sorcerer', 'area', 'None');
+  }
+  if (atoms.length === 0) {
+    return loadSorcererAreaBaseGlyph(aliasedShape);
+  }
+
+  const parts = await Promise.all(
+    atoms.map((atom) => loadDefaultGlyph('sorcerer', 'area', `${aliasedShape} (${atom})`)),
+  );
+  const resolved = parts.filter((part): part is ResolvedDefault => part !== null);
+  if (resolved.length === parts.length && resolved.length > 0) return mergeResolvedDefaults(resolved);
+  return loadSorcererAreaBaseGlyph(aliasedShape);
 }
 
 // Load a glyph by explicit filename stem, e.g. the seal centre `Sorcerer_Center`.

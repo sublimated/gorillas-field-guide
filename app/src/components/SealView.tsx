@@ -1,9 +1,9 @@
 import { useEffect, useId, useMemo, useState } from 'react';
 import { buildSorcererSeal } from '../engines/seal';
-import type { SpellAttributes } from '../engines/attributes';
+import type { AttributeKey, SpellAttributes } from '../engines/attributes';
 import { getGlyph, glyphKey, hasGlyph, isImageGlyph, type Alphabet, type Glyph } from '../alphabet/glyphStore';
-import { titleAreaNotation } from '../alphabet/numerals';
-import { loadDefaultGlyph, loadGlyphByName, type ResolvedDefault } from '../alphabet/defaults';
+import { glyphAreaNotation } from '../alphabet/numerals';
+import { loadDefaultGlyph, loadGlyphByName, loadSorcererAreaGlyph, type ResolvedDefault } from '../alphabet/defaults';
 import { resolveAttrColor, type ColorMode, type CustomColors, DEFAULT_CUSTOM_COLORS } from '../engines/colorModes';
 
 type Props = {
@@ -21,6 +21,41 @@ type Props = {
 };
 
 const SORCERER_INK = 'var(--sorcerer-ink)';
+
+// Renders the user's own glyph for (key, value) if drawn, else shipped default art, at the
+// given box transform. Shared between a segment's primary mark and (for damage) its minor mark.
+function renderMark(
+  key: string,
+  value: string,
+  boxTransform: string,
+  ink: string,
+  alphabet: Alphabet,
+  defaults: Record<string, ResolvedDefault | null>,
+) {
+  const glyph = getGlyph(alphabet, key, value);
+  if (hasGlyph(glyph)) {
+    return (
+      <g transform={boxTransform}>
+        {isImageGlyph(glyph) ? (
+          <image href={glyph.src} x={0} y={0} width={100} height={100} preserveAspectRatio="xMidYMid meet" />
+        ) : (
+          glyph!.paths!.map((d, i) => <path key={i} d={d} className="seal-glyph" stroke={ink} />)
+        )}
+      </g>
+    );
+  }
+  const def = defaults[glyphKey(key, value)];
+  if (!def) return null;
+  return (
+    <g transform={boxTransform}>
+      {def.kind === 'svg' ? (
+        <g fill={ink} dangerouslySetInnerHTML={{ __html: def.inner }} />
+      ) : (
+        <image href={def.url} x={0} y={0} width={100} height={100} preserveAspectRatio="xMidYMid meet" />
+      )}
+    </g>
+  );
+}
 
 export function SealView({
   attrs,
@@ -40,7 +75,7 @@ export function SealView({
   const [drawn, setDrawn] = useState(false);
 
   const segmentValue = (key: string, value: string) => {
-    if (key === 'area' && areaNotation) return areaNotation === 'None' ? 'None' : titleAreaNotation(areaNotation);
+    if (key === 'area' && areaNotation) return areaNotation === 'None' ? 'None' : glyphAreaNotation(areaNotation);
     return value;
   };
 
@@ -56,12 +91,19 @@ export function SealView({
   const [defaults, setDefaults] = useState<Record<string, ResolvedDefault | null>>({});
   useEffect(() => {
     let cancelled = false;
+    const lookups: Array<{ key: AttributeKey; value: string }> = seal.segments.map((seg) => ({
+      key: seg.key,
+      value: segmentValue(seg.key, seg.value),
+    }));
+    // A spell dealing two damage types at once also needs the minor type's glyph resolved.
+    if (attrs.damageSecondary) lookups.push({ key: 'damage', value: attrs.damageSecondary });
     Promise.all(
-      seal.segments.map(async (seg) => {
-        const value = segmentValue(seg.key, seg.value);
-        if (hasGlyph(getGlyph(alphabet, seg.key, value))) return null;
-        const r = await loadDefaultGlyph('sorcerer', seg.key, value);
-        return [glyphKey(seg.key, value), r] as const;
+      lookups.map(async ({ key, value }) => {
+        if (hasGlyph(getGlyph(alphabet, key, value))) return null;
+        const r = key === 'area'
+          ? await loadSorcererAreaGlyph(value)
+          : await loadDefaultGlyph('sorcerer', key, value);
+        return [glyphKey(key, value), r] as const;
       }),
     ).then((entries) => {
       if (cancelled) return;
@@ -184,8 +226,6 @@ export function SealView({
         {seal.segments.map((seg, s) => {
           const state = highlight ? (seg.key === highlight ? ' hot' : ' dim') : '';
           const value = segmentValue(seg.key, seg.value);
-          const glyph = getGlyph(alphabet, seg.key, value);
-          const def = defaults[glyphKey(seg.key, value)];
           // Spectroscopy uses the per-segment rainbow gradient; normal/custom use a flat colour.
           const ink =
             mode === 'spectroscopy'
@@ -194,6 +234,14 @@ export function SealView({
           // Keep the glyph's native orientation and center it on its ring point.
           const c = pt(seg.mid, glyphRadius);
           const boxTransform = `translate(${c.x} ${c.y}) translate(${-glyphSize / 2} ${-glyphSize / 2}) scale(${glyphSize / 100})`;
+          // A spell dealing two damage types at once (e.g. Ice Storm's Cold + Bludgeoning)
+          // shows its lower-potential type as a compact second mark that leans toward the
+          // school wedge while staying tucked inside the damage sector.
+          const minorValue = seg.key === 'damage' ? attrs.damageSecondary : undefined;
+          const minorSize = glyphSize * 0.42;
+          const minorAngle = seg.mid - (seg.a1 - seg.a0) * 0.24;
+          const cMinor = pt(minorAngle, glyphRadius - glyphSize * 0.08);
+          const minorBoxTransform = `translate(${cMinor.x} ${cMinor.y}) translate(${-minorSize / 2} ${-minorSize / 2}) scale(${minorSize / 100})`;
           return (
             <g
               key={seg.key}
@@ -203,25 +251,8 @@ export function SealView({
                 transition: `opacity 0.5s ease ${s * STAGGER}ms`,
               }}
             >
-              {hasGlyph(glyph) ? (
-                <g transform={boxTransform}>
-                  {isImageGlyph(glyph) ? (
-                    <image href={glyph.src} x={0} y={0} width={100} height={100} preserveAspectRatio="xMidYMid meet" />
-                  ) : (
-                    glyph!.paths!.map((d, i) => (
-                      <path key={i} d={d} className="seal-glyph" stroke={ink} />
-                    ))
-                  )}
-                </g>
-              ) : def ? (
-                <g transform={boxTransform}>
-                  {def.kind === 'svg' ? (
-                    <g fill={ink} dangerouslySetInnerHTML={{ __html: def.inner }} />
-                  ) : (
-                    <image href={def.url} x={0} y={0} width={100} height={100} preserveAspectRatio="xMidYMid meet" />
-                  )}
-                </g>
-              ) : null}
+              {renderMark(seg.key, value, boxTransform, ink, alphabet, defaults)}
+              {minorValue && renderMark(seg.key, minorValue, minorBoxTransform, ink, alphabet, defaults)}
             </g>
           );
         })}

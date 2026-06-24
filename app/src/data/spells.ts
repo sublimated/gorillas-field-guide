@@ -1,6 +1,6 @@
 import type { SpellAttributes } from '../engines/attributes';
 import type { SoundInput } from '../engines/sound';
-import { normalizeDuration, normalizeRange } from './normalizeAttributes';
+import { normalizeAreaNotation, normalizeAreaShape, normalizeDuration, normalizeRange } from './normalizeAttributes';
 import spellsJson from './spells.json';
 
 export const PSIONIC_SCHOOLS = [
@@ -18,7 +18,10 @@ export type Spell = {
   source: string;
   level: number;
   school: string;
-  damage: string; // primary damage type or "None"
+  damage: string; // primary (higher-potential) damage type, or "None"
+  // For the small set of spells that deal two damage types in the same instance (e.g. Ice
+  // Storm's Bludgeoning + Cold), the lower-potential type. Undefined for single-type spells.
+  damageSecondary?: string;
   areaShape: string; // coarse, for rune + spectrum (must be in FEATURES.area)
   areaNotation: string; // full Area slot notation, e.g. "sphere (20)", or "None"
   range: string;
@@ -157,12 +160,12 @@ function normalizeSchool(school: string): string {
 
 function normalizeSpell(spell: RawSpell): Spell {
   const { areaSound, ...rest } = spell;
-  const areaNotation = (spell.areaNotation ?? areaSound ?? 'None').replace(/^emanation\s*\(/i, 'sphere (');
+  const areaNotation = spell.areaNotation ?? areaSound ?? 'None';
   return {
     ...rest,
     name: normalizeName(spell.name),
     school: normalizeSchool(spell.school),
-    areaShape: spell.areaShape === 'Emanation' ? 'Sphere' : spell.areaShape,
+    areaShape: spell.areaShape,
     areaNotation,
     range: normalizeRange(RANGE_ALIASES[spell.range] ?? spell.range),
     duration: normalizeDuration(DURATION_ALIASES[spell.duration] ?? spell.duration),
@@ -202,12 +205,14 @@ export function groupSpells(spells: Spell[]): SpellGroup[] {
 }
 
 export function toAttributes(s: Spell): SpellAttributes {
+  const casterLevel = Math.max(1, s.level);
   return {
     level: s.level,
     school: s.school,
     damage: s.damage,
-    area: s.areaShape,
-    areaNotation: s.areaNotation,
+    damageSecondary: s.damageSecondary,
+    area: normalizeAreaShape(s.areaShape, s.areaNotation),
+    areaNotation: normalizeAreaNotation(s.areaNotation, casterLevel, s.areaShape),
     range: s.range,
     duration: s.duration,
     concentration: s.concentration,
@@ -216,11 +221,12 @@ export function toAttributes(s: Spell): SpellAttributes {
 }
 
 export function toSoundInput(s: Spell): SoundInput {
+  const casterLevel = Math.max(1, s.level);
   return {
     level: s.level,
     school: s.school,
     damage: s.damage,
-    areaNotation: s.areaNotation,
+    areaNotation: normalizeAreaNotation(s.areaNotation, casterLevel, s.areaShape).replace(/^emanation\s*\(/i, 'sphere ('),
     range: s.range,
     duration: s.duration,
   };

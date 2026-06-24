@@ -60,11 +60,13 @@ function druidIndex(key: AttributeKey, attrs: SpellAttributes, topologyIndex: nu
   return topologyIndex;
 }
 
+// `minor` marks (see damageSecondary in data/spells.ts) draw fainter alongside the primary
+// damage symbol — the lower-potential type of a spell dealing two damage types at once.
 export type DruidMark =
-  | { kind: 'line'; x1: number; y1: number; x2: number; y2: number }
-  | { kind: 'circle'; cx: number; cy: number; r: number }
-  | { kind: 'triangle'; points: string }
-  | { kind: 'cycloid'; lines: { x1: number; y1: number; x2: number; y2: number }[] };
+  | { kind: 'line'; x1: number; y1: number; x2: number; y2: number; minor?: boolean }
+  | { kind: 'circle'; cx: number; cy: number; r: number; minor?: boolean }
+  | { kind: 'triangle'; points: string; minor?: boolean }
+  | { kind: 'cycloid'; lines: { x1: number; y1: number; x2: number; y2: number }[]; minor?: boolean };
 
 export type DruidSpoke = {
   key: AttributeKey;
@@ -277,23 +279,35 @@ function symbolTokens(key: AttributeKey, attrs: SpellAttributes): DruidToken[] {
   return [];
 }
 
+// A token can carry its own `minor` flag — the lower-potential type of a spell dealing two
+// damage types at once (see data/spells.ts damageSecondary) draws smaller and fainter,
+// sequenced onto the SAME staff right after the primary symbol. Only number marks
+// (numberMarks/areaNumber/range magnitude) are pinned to a fixed spot via `anchors`; runes
+// flow one after another and size their own gaps so they make room for each other.
+type ScaledToken = { token: DruidToken; minor?: boolean };
+
 function symbolMarks(
-  tokens: DruidToken[],
+  tokensIn: (DruidToken | ScaledToken)[],
   center: Point,
   ux: number, uy: number, px: number, py: number,
   rHub: number, rOuter: number, half: number,
   anchors?: number[],
 ): DruidMark[] {
+  const scaled: ScaledToken[] = tokensIn.map((t) => (typeof t === 'string' ? { token: t } : t));
+  const tokens = scaled.map((t) => t.token);
   const usable = rOuter - rHub;
-  const symbolHalf = half * 1.65;
-  const step = tokens.length > 1
-    ? Math.min(usable * 0.2, Math.max(usable * 0.09, symbolHalf * 1.25))
-    : 0;
+  const halfFor = (slot: number) => (scaled[slot]?.minor ? half * 0.58 : half);
+  const symbolHalfFor = (slot: number) => halfFor(slot) * 1.65;
   const crowdedTokens = new Set<DruidToken>(['slash', 'cross', 'triangle']);
-  const crowdedBuffer = symbolHalf * 0.364;
-  const gaps = tokens.slice(1).map((token, index) => (
-    step + (crowdedTokens.has(token) || crowdedTokens.has(tokens[index]) ? crowdedBuffer : 0)
-  ));
+  // Gap between slot i and i+1 sizes itself off BOTH neighbours' own half-widths, so a
+  // smaller minor symbol next to a full-size one still gets a proportionate, non-touching gap.
+  const gapBetween = (i: number) => {
+    const pairHalf = symbolHalfFor(i) + symbolHalfFor(i + 1);
+    const step = Math.min(usable * 0.2, Math.max(usable * 0.09, pairHalf * 0.625));
+    const crowdedBuffer = pairHalf * 0.182;
+    return step + (crowdedTokens.has(tokens[i + 1]) || crowdedTokens.has(tokens[i]) ? crowdedBuffer : 0);
+  };
+  const gaps = tokens.length > 1 ? tokens.slice(1).map((_, index) => gapBetween(index)) : [];
   const runLength = gaps.reduce((sum, gap) => sum + gap, 0);
   const start = rHub + (usable - runLength) / 2;
   const marks: DruidMark[] = [];
@@ -302,61 +316,64 @@ function symbolMarks(
     x: center.x + ux * (anchors?.[slot] === undefined ? start + offsetFor(slot) : rHub + usable * anchors[slot]) + px * side,
     y: center.y + uy * (anchors?.[slot] === undefined ? start + offsetFor(slot) : rHub + usable * anchors[slot]) + py * side,
   });
-  const line = (slot: number, sx: number, sy: number, length = symbolHalf): DruidMark => {
+  const line = (slot: number, sx: number, sy: number, length = symbolHalfFor(slot)): DruidMark => {
     const c = point(slot);
     return { kind: 'line', x1: c.x - sx * length, y1: c.y - sy * length, x2: c.x + sx * length, y2: c.y + sy * length };
   };
 
   tokens.forEach((token, slot) => {
     const c = point(slot);
-    if (token === 'circle') marks.push({ kind: 'circle', cx: c.x, cy: c.y, r: symbolHalf * 0.72 });
+    const symbolHalf = symbolHalfFor(slot);
+    const minor = scaled[slot].minor;
+    const tag = <T extends DruidMark>(m: T): T => (minor ? { ...m, minor: true } : m);
+    if (token === 'circle') marks.push(tag({ kind: 'circle', cx: c.x, cy: c.y, r: symbolHalf * 0.72 }));
     if (token === 'circleStem') {
       const r = symbolHalf * 0.72;
-      marks.push({ kind: 'circle', cx: c.x, cy: c.y, r });
+      marks.push(tag({ kind: 'circle', cx: c.x, cy: c.y, r }));
       const stemCenter = { x: c.x + ux * (r + symbolHalf * 0.5), y: c.y + uy * (r + symbolHalf * 0.5) };
-      marks.push({ kind: 'line', x1: stemCenter.x - px * symbolHalf, y1: stemCenter.y - py * symbolHalf, x2: stemCenter.x + px * symbolHalf, y2: stemCenter.y + py * symbolHalf });
+      marks.push(tag({ kind: 'line', x1: stemCenter.x - px * symbolHalf, y1: stemCenter.y - py * symbolHalf, x2: stemCenter.x + px * symbolHalf, y2: stemCenter.y + py * symbolHalf }));
     }
     if (token === 'circleCross') {
       const r = symbolHalf * 0.72;
       const diagonal = r * 0.72;
-      marks.push({ kind: 'circle', cx: c.x, cy: c.y, r });
-      marks.push({
+      marks.push(tag({ kind: 'circle', cx: c.x, cy: c.y, r }));
+      marks.push(tag({
         kind: 'cycloid',
         lines: [
           { x1: c.x - px * diagonal - ux * diagonal, y1: c.y - py * diagonal - uy * diagonal, x2: c.x + px * diagonal + ux * diagonal, y2: c.y + py * diagonal + uy * diagonal },
           { x1: c.x - px * diagonal + ux * diagonal, y1: c.y - py * diagonal + uy * diagonal, x2: c.x + px * diagonal - ux * diagonal, y2: c.y + py * diagonal - uy * diagonal },
         ],
-      });
+      }));
     }
     if (token === 'doubleCircle') {
       const r = symbolHalf * 0.72;
       const offset = r * 0.58;
-      marks.push({ kind: 'circle', cx: c.x - ux * offset, cy: c.y - uy * offset, r });
-      marks.push({ kind: 'circle', cx: c.x + ux * offset, cy: c.y + uy * offset, r });
+      marks.push(tag({ kind: 'circle', cx: c.x - ux * offset, cy: c.y - uy * offset, r }));
+      marks.push(tag({ kind: 'circle', cx: c.x + ux * offset, cy: c.y + uy * offset, r }));
     }
     if (token === 'triangle') {
       const tip = point(slot, symbolHalf * 0.9);
       const baseA = point(slot, -symbolHalf * 0.65);
       const baseB = { x: c.x + ux * symbolHalf * 0.95, y: c.y + uy * symbolHalf * 0.95 };
-      marks.push({ kind: 'triangle', points: `${tip.x},${tip.y} ${baseA.x},${baseA.y} ${baseB.x},${baseB.y}` });
+      marks.push(tag({ kind: 'triangle', points: `${tip.x},${tip.y} ${baseA.x},${baseA.y} ${baseB.x},${baseB.y}` }));
     }
-    if (token === 'bar') marks.push(line(slot, px, py));
+    if (token === 'bar') marks.push(tag(line(slot, px, py)));
     if (token === 'doubleBar') {
       [-symbolHalf * 0.28, symbolHalf * 0.28].forEach((offset) => {
         const c2 = {
           x: c.x + ux * offset,
           y: c.y + uy * offset,
         };
-        marks.push({ kind: 'line', x1: c2.x - px * symbolHalf, y1: c2.y - py * symbolHalf, x2: c2.x + px * symbolHalf, y2: c2.y + py * symbolHalf });
+        marks.push(tag({ kind: 'line', x1: c2.x - px * symbolHalf, y1: c2.y - py * symbolHalf, x2: c2.x + px * symbolHalf, y2: c2.y + py * symbolHalf }));
       });
     }
-    if (token === 'slash') marks.push(line(slot, px * 0.55 - ux * 0.8, py * 0.55 - uy * 0.8));
+    if (token === 'slash') marks.push(tag(line(slot, px * 0.55 - ux * 0.8, py * 0.55 - uy * 0.8)));
     if (token === 'doubleSlash') {
       [-symbolHalf * 0.28, symbolHalf * 0.28].forEach((side) => {
         const c2 = point(slot, side);
         const sx = px * 0.55 - ux * 0.8;
         const sy = py * 0.55 - uy * 0.8;
-        marks.push({ kind: 'line', x1: c2.x - sx * symbolHalf, y1: c2.y - sy * symbolHalf, x2: c2.x + sx * symbolHalf, y2: c2.y + sy * symbolHalf });
+        marks.push(tag({ kind: 'line', x1: c2.x - sx * symbolHalf, y1: c2.y - sy * symbolHalf, x2: c2.x + sx * symbolHalf, y2: c2.y + sy * symbolHalf }));
       });
     }
     if (token === 'cross') {
@@ -364,13 +381,13 @@ function symbolMarks(
       const sy1 = py * 0.58 + uy * 0.8;
       const sx2 = px * 0.58 - ux * 0.8;
       const sy2 = py * 0.58 - uy * 0.8;
-      marks.push({
+      marks.push(tag({
         kind: 'cycloid',
         lines: [
           { x1: c.x - sx1 * symbolHalf, y1: c.y - sy1 * symbolHalf, x2: c.x + sx1 * symbolHalf, y2: c.y + sy1 * symbolHalf },
           { x1: c.x - sx2 * symbolHalf, y1: c.y - sy2 * symbolHalf, x2: c.x + sx2 * symbolHalf, y2: c.y + sy2 * symbolHalf },
         ],
-      });
+      }));
     }
   });
   return marks;
@@ -424,6 +441,15 @@ export function buildDruidSpokes(
       if (range.miles) {
         marks.push(...symbolMarks(['cross'], center, ux, uy, px, py, rHub, rOuter, half, [0.96]));
       }
+    } else if (layer.key === 'damage' && attrs.damageSecondary) {
+      // A spell dealing two damage types at once (see data/spells.ts damageSecondary) draws
+      // its lower-potential type's symbol smaller, sequenced onto the SAME staff right after
+      // the primary symbol — symbolMarks sizes the gap between them off both symbols' own
+      // widths so they make room for each other rather than landing on a fixed spot.
+      const majorTokens: ScaledToken[] = symbolTokens(layer.key, attrs).map((token) => ({ token }));
+      const minorTokens: ScaledToken[] = (DAMAGE_SYMBOLS[attrs.damageSecondary] ?? DAMAGE_SYMBOLS.None)
+        .map((token) => ({ token, minor: true }));
+      marks = symbolMarks([...majorTokens, ...minorTokens], center, ux, uy, px, py, rHub, rOuter, half);
     } else {
       marks = symbolMarks(symbolTokens(layer.key, attrs), center, ux, uy, px, py, rHub, rOuter, half);
     }

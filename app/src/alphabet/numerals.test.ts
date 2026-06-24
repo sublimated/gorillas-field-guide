@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { decomposeNumber, parseNumberedGlyphValue, titleAreaNotation } from './numerals';
+import { decomposeNumber, glyphAreaNotation, parseNumberedGlyphValue, titleAreaNotation } from './numerals';
 
 describe('sorcerer numeral composition', () => {
   it('decomposes additive legend values', () => {
@@ -30,5 +30,7 @@ describe('sorcerer numeral composition', () => {
 
   it('normalizes extracted area sound casing for glyph identity', () => {
     expect(titleAreaNotation('sphere (20)')).toBe('Sphere (20)');
+    expect(glyphAreaNotation('emanation (30)')).toBe('Sphere (30)');
+    expect(glyphAreaNotation('wall (12)')).toBe('Wall (12)');
   });
 });

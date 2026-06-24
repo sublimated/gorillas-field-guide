@@ -151,7 +151,8 @@ export const FEATURES: Record<AttributeKey, string[]> = {
 export type SpellAttributes = {
   level: number; // 0..9
   school: string;
-  damage: string; // single primary damage type, or "None"
+  damage: string; // primary (higher-potential) damage type, or "None"
+  damageSecondary?: string; // for spells dealing two damage types at once; see data/spells.ts
   area: string;
   areaNotation?: string; // fine Area slot notation, e.g. "sphere (20)", when a renderer needs it
   range: string;

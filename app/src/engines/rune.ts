@@ -5,7 +5,7 @@
 // module is purely the chord/polygon presentation of it.
 
 import type { AttributeKey, SpellAttributes } from './attributes';
-import { wizardTopology } from './wizardTopology';
+import { wizardLayerForValue, wizardTopology } from './wizardTopology';
 
 export { WIZARD_RUNE_N as RUNE_N } from './wizardTopology';
 
@@ -19,6 +19,9 @@ export type RuneChord = {
   b: Point;
   color: string; // tied to the attribute's spectrum colour
   length: number; // px, for draw-on animation timing
+  // A spell dealing two damage types at once (see data/spells.ts damageSecondary) draws
+  // its lower-potential type's chords thinner/fainter alongside the primary's.
+  minor?: boolean;
 };
 
 export type Rune = {
@@ -64,6 +67,18 @@ export function buildRune(
         const b = vertices[(i + k) % n];
         const length = Math.hypot(b.x - a.x, b.y - a.y);
         chords.push({ key, from: i, to: (i + k) % n, a, b, color, length });
+      }
+    }
+  }
+
+  if (attrs.damageSecondary) {
+    const minorLayer = wizardLayerForValue('damage', attrs.damageSecondary);
+    for (let i = 0; i < n; i++) {
+      if (minorLayer.bits[i] === 1) {
+        const a = vertices[i];
+        const b = vertices[(i + minorLayer.k) % n];
+        const length = Math.hypot(b.x - a.x, b.y - a.y);
+        chords.push({ key: 'damage', from: i, to: (i + minorLayer.k) % n, a, b, color: minorLayer.color, length, minor: true });
       }
     }
   }

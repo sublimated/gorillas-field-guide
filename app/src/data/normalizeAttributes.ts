@@ -25,6 +25,18 @@ export type AreaScaling = {
   formula: ScalingFormula;
 };
 
+const AREA_NUMERIC_SHAPES = new Set([
+  'Cone',
+  'Cube',
+  'Cylinder',
+  'Line',
+  'Sphere',
+  'Circle',
+  'Emanation',
+  'Wall',
+  'Square',
+]);
+
 const stripTails = (s: string): string =>
   s
     .replace(/\s*\((?:D|M)\)\s*$/i, '') // trailing (D) dismissible / (M) material markers
@@ -55,6 +67,15 @@ function unitFromWord(word: string): ScalingUnit | null {
   return null;
 }
 
+function titleCase(value: string) {
+  return value
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 export function resolveScalingFormula(formula: ScalingFormula, level: number): number {
   const resolved = formula.base + Math.floor(level / formula.perLevelDivisor) * formula.perLevel;
   return formula.cap == null ? resolved : Math.min(resolved, formula.cap);
@@ -76,9 +97,10 @@ export function formatResolvedFormula(formula: ScalingFormula, level: number): s
 
 // Formulaic 3.5 range categories → representative fixed value (REVIEW THESE).
 const RANGE_POLICY: Array<[RegExp, string]> = [
-  [/^close \(25 ft/i, '30 feet'], //  Close (25 ft. + 5 ft./2 levels)
-  [/^medium \(100 ft/i, '120 feet'], //  Medium (100 ft. + 10 ft./level)
-  [/^long \(400 ft/i, '500 feet'], //  Long (400 ft. + 40 ft./level)
+  [/^close\s*\(25 ft/i, '30 feet'], //  Close (25 ft. + 5 ft./2 levels)
+  [/^medium\s*\(100/i, '120 feet'], //  Medium (100 ft. + 10 ft./level), Medium (100 + 10 ft./level)
+  [/^medium$/i, '120 feet'], //  bare "Medium" band, no formula text
+  [/^long\s*\(400/i, '500 feet'], //  Long (400 ft. + 40 ft./level)
   [/^\d+\s*miles?\b/i, 'Unlimited'],
   [/^up to\s+\d+\s*ft/i, 'Special'],
   [/^personal/i, 'Self'],
@@ -90,13 +112,13 @@ const FEET_RE = /^(\d+)\s*(?:ft\.?|feet)\b/i;
 
 export function parseRangeFormula(raw: string): ScalingFormula | null {
   const s = stripTails(raw);
-  if (/^close \(25 ft\.? \+ 5 ft\.?\/2 levels?\)$/i.test(s)) {
+  if (/^close \(25\s*(?:ft\.?|feet)?\s*\+\s*5\s*(?:ft\.?|feet)\/2 levels?\)$/i.test(s)) {
     return { base: 25, perLevel: 5, perLevelDivisor: 2, unit: 'feet' };
   }
-  if (/^medium \(100 ft\.? \+ 10 ft\.?\/level\)$/i.test(s)) {
+  if (/^medium \(100\s*(?:ft\.?|feet)?\s*\+\s*10\s*(?:ft\.?|feet)\/level\)$/i.test(s)) {
     return { base: 100, perLevel: 10, perLevelDivisor: 1, unit: 'feet' };
   }
-  if (/^long \(400 ft\.? \+ 40 ft\.?\/level\)$/i.test(s)) {
+  if (/^long \(400\s*(?:ft\.?|feet)?\s*\+\s*40\s*(?:ft\.?|feet)\/level\)$/i.test(s)) {
     return { base: 400, perLevel: 40, perLevelDivisor: 1, unit: 'feet' };
   }
   const generic = s.match(/^(\d+)\s*(ft\.?|feet|miles?)\/(\d+)?\s*levels?$/i);
@@ -115,6 +137,10 @@ export function normalizeRange(raw: string): string {
   const s = stripTails(raw);
   if (s.length === 0) return 'Special';
   if (/^up to\s+\d+\s*ft/i.test(s)) return 'Special';
+  // "0 ft." is how several 3.5 imports (psionic powers especially) extracted a personal-only
+  // effect as a literal distance — it means the power affects only the manifester, same as
+  // "Personal". Must be checked before the generic feet match below, or it'd become "0 feet".
+  if (/^0\s*(?:ft\.?|feet)\b/i.test(s)) return 'Self';
   // "30 ft." → "30 feet" (the most common skew: 3.5 uses ft., the engines use feet)
   const feet = s.match(FEET_RE);
   if (feet) return `${feet[1]} feet`;
@@ -127,6 +153,9 @@ export function normalizeRange(raw: string): string {
     return 'Unlimited';
   }
   if (/^touch/i.test(s)) return 'Touch';
+  // "One willing creature touched", "X creature(s) touched" — the target is touched, the
+  // caster isn't standing at range 0 of themselves.
+  if (/\btouched\b/i.test(s)) return 'Touch';
   if (/^self/i.test(s) || /^personal/i.test(s)) return 'Self';
   if (/^sight/i.test(s)) return 'Sight';
   for (const [re, value] of RANGE_POLICY) if (re.test(s)) return value;
@@ -210,24 +239,48 @@ export function resolveDuration(raw: string, level: number): string {
 }
 
 function inferAreaShape(raw: string, shapeHint?: string): string | null {
+  if (/\bwall\b/i.test(raw)) return 'Wall';
+  if (/\bsquare\b/i.test(raw)) return 'Square';
   if (/emanation/i.test(raw)) return 'Emanation';
+  if (/\b(?:ray|beam)\b/i.test(raw)) return 'Line';
   if (/cone/i.test(raw)) return 'Cone';
   if (/cube/i.test(raw)) return 'Cube';
   if (/cylinder/i.test(raw)) return 'Cylinder';
   if (/\bline\b/i.test(raw)) return 'Line';
+  if (/\b(?:burst|spread)\b/i.test(raw)) return /circle/i.test(raw) ? 'Circle' : 'Sphere';
   if (/sphere/i.test(raw)) return 'Sphere';
   if (/circle/i.test(raw)) return 'Circle';
   return shapeHint && shapeHint !== 'None' ? shapeHint : null;
+}
+
+function targetAreaNotation(raw: string): string | null {
+  if (/^(one|a|an)\s+(?:missile|arrow|ray|beam|sword|symbol|mount|clone|duplicate creature|shadow duplicate|spectral hand|summoned creature|called elemental|called outsider)\b/i.test(raw)) {
+    return 'Single target';
+  }
+  if (/^(?:one or more|two or more|three or more|several)\b/i.test(raw)) return 'Multiple targets';
+  if (/^one or two\b/i.test(raw)) return 'Multiple targets';
+  if (/^all\b/i.test(raw)) return 'Multiple targets';
+  if (/no two of which can be more than \d+\s*ft/i.test(raw)) return 'Multiple targets';
+  return null;
+}
+
+export function normalizeAreaShape(shape: string, raw = 'None'): string {
+  const target = targetAreaNotation(raw);
+  if (target) return target;
+  const inferred = inferAreaShape(raw, shape);
+  if (!inferred) return shape;
+  if (inferred === 'Emanation') return 'Sphere';
+  return inferred;
 }
 
 export function parseAreaFormula(raw: string, shapeHint?: string): AreaScaling | null {
   const s = stripTails(raw);
   const shape = inferAreaShape(s, shapeHint);
   if (!shape) return null;
-  const canonical = s.match(/^(cone|cube|cylinder|line|sphere|circle)\s*\((\d+)\)$/i);
+  const canonical = s.match(/^(cone|cube|cylinder|line|sphere|circle|emanation|wall|square)\s*\((\d+)\)$/i);
   if (canonical) {
     return {
-      shape: canonical[1][0].toUpperCase() + canonical[1].slice(1).toLowerCase(),
+      shape: titleCase(canonical[1]),
       formula: { base: Number(canonical[2]), perLevel: 0, perLevelDivisor: 1, unit: 'feet' },
     };
   }
@@ -236,6 +289,13 @@ export function parseAreaFormula(raw: string, shapeHint?: string): AreaScaling |
     return {
       shape,
       formula: { base: 0, perLevel: Number(radiusPerLevel[1]), perLevelDivisor: 1, unit: 'feet' },
+    };
+  }
+  const sizePerLevel = s.match(/(\d+)\s*(?:-| )?(?:ft\.?|foot|feet)\s*\/\s*level\b/i);
+  if (sizePerLevel) {
+    return {
+      shape,
+      formula: { base: 0, perLevel: Number(sizePerLevel[1]), perLevelDivisor: 1, unit: 'feet' },
     };
   }
   const fixedRadius = s.match(/(\d+)\s*(?:-| )?(?:ft\.?|foot|feet)(?:-| )?radius/i);
@@ -255,7 +315,25 @@ export function parseAreaFormula(raw: string, shapeHint?: string): AreaScaling |
   return null;
 }
 
+export function normalizeAreaNotation(raw: string, level = 1, shapeHint?: string): string {
+  const s = stripTails(raw);
+  if (s.length === 0 || /^none$/i.test(s)) return 'None';
+  const target = targetAreaNotation(s);
+  if (target) return target;
+  const parsed = parseAreaFormula(s, shapeHint);
+  if (parsed && AREA_NUMERIC_SHAPES.has(parsed.shape)) {
+    const amount = resolveScalingFormula(parsed.formula, level);
+    return `${parsed.shape.toLowerCase()} (${amount})`;
+  }
+  const inferred = inferAreaShape(s, shapeHint);
+  if (inferred === 'Emanation') return 'Emanation';
+  if (inferred && AREA_NUMERIC_SHAPES.has(inferred)) return inferred;
+  return s;
+}
+
 export function resolveAreaNotation(raw: string, level: number, shapeHint?: string): string | null {
+  const target = targetAreaNotation(stripTails(raw));
+  if (target) return target;
   const parsed = parseAreaFormula(raw, shapeHint);
   if (!parsed) return null;
   const amount = resolveScalingFormula(parsed.formula, level);
