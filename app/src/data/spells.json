@@ -2461,7 +2461,7 @@
     "source": "SRD 5.2",
     "level": 0,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Acid",
     "areaShape": "None",
     "areaSound": "None",
     "range": "120 feet",
@@ -4440,7 +4440,7 @@
     "source": "SRD 5.2",
     "level": 1,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Acid",
     "areaShape": "None",
     "areaSound": "None",
     "range": "90 feet",
@@ -6916,7 +6916,7 @@
     "level": 1,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "90 feet",
     "duration": "Concentration, up to 1 minute",
@@ -6927,7 +6927,8 @@
     "classes": [
       "Druid"
     ],
-    "description": "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. When the spell ends, the conjured plants wilt away."
+    "description": "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. When the spell ends, the conjured plants wilt away.",
+    "areaNotation": "None"
   },
   {
     "id": "entangle-srd52",
@@ -6936,7 +6937,7 @@
     "level": 1,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "90 feet",
     "duration": "Concentration, up to 1 minute",
@@ -8116,7 +8117,7 @@
     "level": 1,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "1 minute",
@@ -8127,7 +8128,8 @@
     "classes": [
       "Wizard"
     ],
-    "description": "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration. When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone."
+    "description": "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration. When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.",
+    "areaNotation": "None"
   },
   {
     "id": "grease-srd52",
@@ -8136,7 +8138,7 @@
     "level": 1,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "1 minute",
@@ -12510,7 +12512,7 @@
     "source": "D&D 3.5 SRD",
     "level": 1,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "None",
     "areaSound": "None",
     "range": "Touch",
@@ -17732,7 +17734,7 @@
     "source": "SRD 5.2",
     "level": 2,
     "school": "Transmutation",
-    "damage": "None",
+    "damage": "Acid",
     "areaShape": "Cone",
     "areaSound": "cone (15)",
     "range": "Touch",
@@ -18960,7 +18962,7 @@
     "level": 2,
     "school": "Conjuration",
     "damage": "Fire",
-    "areaShape": "None",
+    "areaShape": "Sphere",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "Concentration, up to 1 minute",
@@ -18973,7 +18975,8 @@
       "Wizard"
     ],
     "description": "A 5-foot-diameter sphere of fire appears in an unoccupied space of your choice within range and lasts for the duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one. As a bonus action, you can move the sphere up to 30 feet. If you ram the sphere into a creature, that creature must make the saving throw against the sphere’s damage, and the sphere stops moving this turn. When you move the sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd."
+    "atHigherLevels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+    "areaNotation": "None"
   },
   {
     "id": "flaming-sphere-srd52",
@@ -18982,7 +18985,7 @@
     "level": 2,
     "school": "Conjuration",
     "damage": "Fire",
-    "areaShape": "None",
+    "areaShape": "Sphere",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "Concentration, up to 1 minute",
@@ -21601,7 +21604,7 @@
     "level": 2,
     "school": "Evocation",
     "damage": "Radiant",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 1 minute",
@@ -21613,7 +21616,8 @@
       "Druid"
     ],
     "description": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high cylinder centered on a point within range. Until the spell ends, dim light fills the cylinder. When a creature enters the spell’s area for the first time on a turn or starts its turn there, it is engulfed in ghostly flames that cause searing pain, and it must make a Constitution saving throw. It takes 2d10 radiant damage on a failed save, or half as much damage on a successful one. A shapechanger makes its saving throw with disadvantage. If it fails, it also instantly reverts to its original form and can’t assume a different form until it leaves the spell’s light. On each of your turns after you cast this spell, you can use an action to move the beam 60 feet in any direction.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd."
+    "atHigherLevels": "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.",
+    "areaNotation": "cylinder (5)"
   },
   {
     "id": "moonbeam-srd52",
@@ -21622,7 +21626,7 @@
     "level": 2,
     "school": "Evocation",
     "damage": "Radiant",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 1 minute",
@@ -21634,7 +21638,7 @@
     "classes": [
       "Druid"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (5)"
   },
   {
     "id": "mountain-stance-spellcompendium35",
@@ -23445,7 +23449,7 @@
     "source": "D&D 3.5 SRD",
     "level": 2,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Thunder",
     "areaShape": "None",
     "areaSound": "None",
     "range": "Close (25 ft. + 5 ft./2 levels)",
@@ -23912,7 +23916,7 @@
     "source": "D&D 3.5 SRD",
     "level": 2,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Thunder",
     "areaShape": "Sphere",
     "areaSound": "sphere (10)",
     "range": "Close (25 ft. + 5 ft./2 levels)",
@@ -26459,7 +26463,7 @@
     "source": "D&D 3.5 SRD",
     "level": 3,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "Line",
     "areaSound": "One or more 30-ft.-long vertical lines of lightning",
     "range": "Medium (100 ft. + 10 ft./level)",
@@ -26481,7 +26485,7 @@
     "level": 3,
     "school": "Conjuration",
     "damage": "Lightning",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -26493,7 +26497,8 @@
       "Druid"
     ],
     "description": "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can’t see a point in the air where the storm cloud could appear (for example, if you are in a room that can’t accommodate the cloud). When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one. If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell’s damage increases by 1d10.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd."
+    "atHigherLevels": "When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd.",
+    "areaNotation": "cylinder (60)"
   },
   {
     "id": "call-lightning-srd52",
@@ -26502,7 +26507,7 @@
     "level": 3,
     "school": "Conjuration",
     "damage": "Lightning",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -26514,7 +26519,7 @@
     "classes": [
       "Druid"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (60)"
   },
   {
     "id": "capricious-zephyr-spellcompendium35",
@@ -30223,7 +30228,7 @@
     "source": "D&D 3.5 SRD",
     "level": 3,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "Line",
     "areaSound": "line (120)",
     "range": "120 ft.",
@@ -30375,7 +30380,7 @@
     "level": 3,
     "school": "Abjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "10 feet",
     "duration": "1 hour",
@@ -30390,7 +30395,8 @@
       "Wizard"
     ],
     "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface. Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways: • The creature can’t willingly enter the cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw. • The creature has disadvantage on attack rolls against targets within the cylinder. • Targets within the cylinder can’t be charmed, frightened, or possessed by the creature. When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd."
+    "atHigherLevels": "When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd.",
+    "areaNotation": "cylinder (10)"
   },
   {
     "id": "magic-circle-srd52",
@@ -30399,7 +30405,7 @@
     "level": 3,
     "school": "Abjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "10 feet",
     "duration": "1 hour",
@@ -30414,7 +30420,7 @@
       "Warlock",
       "Wizard"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (10)"
   },
   {
     "id": "magic-circle-against-chaos-35srd",
@@ -32889,7 +32895,7 @@
     "level": 3,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "150 feet",
     "duration": "Concentration, up to 1 minute",
@@ -32902,7 +32908,8 @@
       "Sorcerer",
       "Wizard"
     ],
-    "description": "Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused. The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell’s area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls prone. If a creature is concentrating in the spell’s area, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration."
+    "description": "Until the spell ends, freezing rain and sleet fall in a 40-foot-tall cylinder with a 20-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused. The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell’s area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls prone. If a creature is concentrating in the spell’s area, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration.",
+    "areaNotation": "cylinder (20)"
   },
   {
     "id": "sleet-storm-srd52",
@@ -35743,7 +35750,7 @@
     "level": 4,
     "school": "Conjuration",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "90 feet",
     "duration": "Concentration, up to 1 minute",
@@ -35754,7 +35761,8 @@
     "classes": [
       "Wizard"
     ],
-    "description": "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends. A creature that starts its turn in the area and is already restrained by the tentacles takes 3d6 bludgeoning damage. A creature restrained by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself."
+    "description": "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends. A creature that starts its turn in the area and is already restrained by the tentacles takes 3d6 bludgeoning damage. A creature restrained by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.",
+    "areaNotation": "None"
   },
   {
     "id": "black-tentacles-srd52",
@@ -35763,7 +35771,7 @@
     "level": 4,
     "school": "Conjuration",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Square",
     "areaSound": "None",
     "range": "90 feet",
     "duration": "Concentration, up to 1 minute",
@@ -36368,7 +36376,7 @@
     "source": "SRD 5.2",
     "level": 4,
     "school": "Conjuration",
-    "damage": "None",
+    "damage": "Acid",
     "areaShape": "Emanation",
     "areaSound": "emanation (15)",
     "range": "Self",
@@ -36588,7 +36596,7 @@
     "level": 4,
     "school": "Transmutation",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "300 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -36601,7 +36609,8 @@
       "Druid",
       "Wizard"
     ],
-    "description": "Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one. Flood. You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land. If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave’s path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing. The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts. Part Water. You cause water in the area to move apart and create a trench. The trench extends across the spell’s area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored. Redirect Flow. You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell’s area, it resumes its flow based on the terrain conditions. The water continues to move in the direction you chose until the spell ends or you choose a different effect. Whirlpool. This effect requires a body of water at least 50 feet square and 25 feet deep. You cause a whirlpool to form in the center of the area. The whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature or object in the water and within 25 feet of the vortex is pulled 10 feet toward it. A creature can swim away from the vortex by making a Strength (Athletics) check against your spell save DC. When a creature enters the vortex for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends. On a successful save, the creature takes half damage, and isn’t caught in the vortex. A creature caught in the vortex can use its action to try to swim away from the vortex as described above, but has disadvantage on the Strength (Athletics) check to do so. The first time each turn that an object enters the vortex, the object takes 2d8 bludgeoning damage; this damage occurs each round it remains in the vortex."
+    "description": "Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one. Flood. You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land. If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave’s path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing. The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts. Part Water. You cause water in the area to move apart and create a trench. The trench extends across the spell’s area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored. Redirect Flow. You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell’s area, it resumes its flow based on the terrain conditions. The water continues to move in the direction you chose until the spell ends or you choose a different effect. Whirlpool. This effect requires a body of water at least 50 feet square and 25 feet deep. You cause a whirlpool to form in the center of the area. The whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature or object in the water and within 25 feet of the vortex is pulled 10 feet toward it. A creature can swim away from the vortex by making a Strength (Athletics) check against your spell save DC. When a creature enters the vortex for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends. On a successful save, the creature takes half damage, and isn’t caught in the vortex. A creature caught in the vortex can use its action to try to swim away from the vortex as described above, but has disadvantage on the Strength (Athletics) check to do so. The first time each turn that an object enters the vortex, the object takes 2d8 bludgeoning damage; this damage occurs each round it remains in the vortex.",
+    "areaNotation": "None"
   },
   {
     "id": "control-water-srd52",
@@ -38998,7 +39007,7 @@
     "level": 4,
     "school": "Evocation",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "300 feet",
     "duration": "Instantaneous",
@@ -39012,7 +39021,8 @@
       "Wizard"
     ],
     "description": "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6 cold damage on a failed save, or half as much damage on a successful one. Hailstones turn the storm’s area of effect into difficult terrain until the end of your next turn.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th."
+    "atHigherLevels": "When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th.",
+    "areaNotation": "cylinder (20)"
   },
   {
     "id": "ice-storm-srd52",
@@ -39021,7 +39031,7 @@
     "level": 4,
     "school": "Evocation",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "300 feet",
     "duration": "Instantaneous",
@@ -39035,7 +39045,7 @@
       "Sorcerer",
       "Wizard"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (20)"
   },
   {
     "id": "illusory-wall-35srd",
@@ -41585,7 +41595,7 @@
     "source": "D&D 3.5 SRD",
     "level": 4,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Thunder",
     "areaShape": "Cone",
     "areaSound": "Cone-shaped burst",
     "range": "30 ft.",
@@ -43109,7 +43119,7 @@
     "source": "Wizard Compendium V7",
     "level": 5,
     "school": "Transmutation",
-    "damage": "None",
+    "damage": "Bludgeoning",
     "areaShape": "None",
     "areaSound": "None",
     "range": "120 feet",
@@ -43669,7 +43679,7 @@
     "source": "D&D 3.5 SRD",
     "level": 5,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "None",
     "areaSound": "None",
     "range": "Long (400 ft. + 40 ft./level)",
@@ -44260,7 +44270,7 @@
     "source": "SRD 5.2",
     "level": 5,
     "school": "Conjuration",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "None",
     "areaSound": "None",
     "range": "60 feet",
@@ -45712,7 +45722,7 @@
     "level": 5,
     "school": "Evocation",
     "damage": "Fire",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "Instantaneous",
@@ -45724,7 +45734,8 @@
       "Cleric"
     ],
     "description": "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th."
+    "atHigherLevels": "When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th.",
+    "areaNotation": "cylinder (10)"
   },
   {
     "id": "flame-strike-srd52",
@@ -45733,7 +45744,7 @@
     "level": 5,
     "school": "Evocation",
     "damage": "Fire",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "60 feet",
     "duration": "Instantaneous",
@@ -45745,7 +45756,7 @@
     "classes": [
       "Cleric"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (10)"
   },
   {
     "id": "flaying-tendrils-completemage35",
@@ -49385,7 +49396,7 @@
     "level": 5,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Circle",
     "areaSound": "None",
     "range": "10 feet",
     "duration": "1 round",
@@ -49398,7 +49409,8 @@
       "Sorcerer",
       "Wizard"
     ],
-    "description": "As you cast the spell, you draw a 10-foot-diameter circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know and that is on the same plane of existence as you. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within 5 feet of the destination circle or in the nearest unoccupied space if that space is occupied. Many major temples, guilds, and other important places have permanent teleportation circles inscribed somewhere within their confines. Each such circle includes a unique sigil sequence-a string of magical runes arranged in a particular pattern. When you first gain the ability to cast this spell, you learn the sigil sequences for two destinations on the Material Plane, determined by the GM. You can learn additional sigil sequences during your adventures. You can commit a new sigil sequence to memory after studying it for 1 minute. You can create a permanent teleportation circle by casting this spell in the same location every day for one year. You need not use the circle to teleport when you cast the spell in this way."
+    "description": "As you cast the spell, you draw a 10-foot-diameter circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know and that is on the same plane of existence as you. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within 5 feet of the destination circle or in the nearest unoccupied space if that space is occupied. Many major temples, guilds, and other important places have permanent teleportation circles inscribed somewhere within their confines. Each such circle includes a unique sigil sequence-a string of magical runes arranged in a particular pattern. When you first gain the ability to cast this spell, you learn the sigil sequences for two destinations on the Material Plane, determined by the GM. You can learn additional sigil sequences during your adventures. You can commit a new sigil sequence to memory after studying it for 1 minute. You can create a permanent teleportation circle by casting this spell in the same location every day for one year. You need not use the circle to teleport when you cast the spell in this way.",
+    "areaNotation": "None"
   },
   {
     "id": "teleportation-circle-srd52",
@@ -49407,7 +49419,7 @@
     "level": 5,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Circle",
     "areaSound": "None",
     "range": "10 feet",
     "duration": "1 round",
@@ -50903,7 +50915,7 @@
     "source": "D&D 3.5 SRD",
     "level": 6,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "None",
     "areaSound": "None",
     "range": "Long (400 ft. + 40 ft./level)",
@@ -52727,7 +52739,7 @@
     "level": 6,
     "school": "Abjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "Touch",
     "duration": "24 hours",
@@ -52739,7 +52751,8 @@
       "Bard",
       "Wizard"
     ],
-    "description": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell. When you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects. Guards and wards creates the following effects within the warded area. Corridors. Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses. Doors. All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall. Stairs. Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts. Other Spell Effect. You can place your choice of one of the following magical effects within the warded area of the stronghold. • Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts. • Place magic mouth in two locations. • Place stinking cloud in two locations. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while guards and wards lasts. • Place a constant gust of wind in one corridor or room. • Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally. The whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect. You can create a permanently guarded and warded structure by casting this spell there every day for one year."
+    "description": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell. When you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects. Guards and wards creates the following effects within the warded area. Corridors. Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses. Doors. All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall. Stairs. Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts. Other Spell Effect. You can place your choice of one of the following magical effects within the warded area of the stronghold. • Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts. • Place magic mouth in two locations. • Place stinking cloud in two locations. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while guards and wards lasts. • Place a constant gust of wind in one corridor or room. • Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally. The whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect. You can create a permanently guarded and warded structure by casting this spell there every day for one year.",
+    "areaNotation": "None"
   },
   {
     "id": "guards-and-wards-srd52",
@@ -52748,7 +52761,7 @@
     "level": 6,
     "school": "Abjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "Touch",
     "duration": "24 hours",
@@ -53771,7 +53784,7 @@
     "level": 6,
     "school": "Transmutation",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 2 hours",
@@ -53784,7 +53797,8 @@
       "Sorcerer",
       "Wizard"
     ],
-    "description": "Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can’t exceed half the area’s largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square’s elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete. At the end of every 10 minutes you spend concentrating on the spell, you can choose a new area of terrain to affect. Because the terrain’s transformation occurs slowly, creatures in the area can’t usually be trapped or injured by the ground’s movement. This spell can’t manipulate natural stone or stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape the terrain would make a structure unstable, it might collapse. Similarly, this spell doesn’t directly affect plant growth. The moved earth carries any plants along with it."
+    "description": "Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can’t exceed half the area’s largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square’s elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete. At the end of every 10 minutes you spend concentrating on the spell, you can choose a new area of terrain to affect. Because the terrain’s transformation occurs slowly, creatures in the area can’t usually be trapped or injured by the ground’s movement. This spell can’t manipulate natural stone or stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape the terrain would make a structure unstable, it might collapse. Similarly, this spell doesn’t directly affect plant growth. The moved earth carries any plants along with it.",
+    "areaNotation": "None"
   },
   {
     "id": "move-earth-srd52",
@@ -53793,7 +53807,7 @@
     "level": 6,
     "school": "Transmutation",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 2 hours",
@@ -54632,7 +54646,7 @@
     "source": "D&D 3.5 SRD",
     "level": 6,
     "school": "Evocation",
-    "damage": "None",
+    "damage": "Thunder",
     "areaShape": "None",
     "areaSound": "None",
     "range": "60 ft.",
@@ -55606,7 +55620,7 @@
     "level": 6,
     "school": "Evocation",
     "damage": "Cold",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -55618,7 +55632,8 @@
       "Wizard"
     ],
     "description": "You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration. If the wall cuts through a creature’s space when it appears, the creature within its area is pushed to one side of the wall and must make a Dexterity saving throw. On a failed save, the creature takes 10d6 cold damage, or half as much damage on a successful save. The wall is an object that can be damaged and thus breached. It has AC 12 and 30 hit points per 10-foot section, and it is vulnerable to fire damage. Reducing a 10-foot section of wall to 0 hit points destroys it and leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw. That creature takes 5d6 cold damage on a failed save, or half as much damage on a successful one.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6, for each slot level above 6th."
+    "atHigherLevels": "When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6, for each slot level above 6th.",
+    "areaNotation": "None"
   },
   {
     "id": "wall-of-ice-srd52",
@@ -55627,7 +55642,7 @@
     "level": 6,
     "school": "Evocation",
     "damage": "Cold",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -55692,7 +55707,7 @@
     "level": 6,
     "school": "Conjuration",
     "damage": "Piercing",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -55704,7 +55719,8 @@
       "Druid"
     ],
     "description": "You create a wall of tough, pliable, tangled brush bristling with needle-sharp thorns. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight. When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 7d8 piercing damage, or half as much damage on a successful save. A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters the wall on a turn or ends its turn there, the creature must make a Dexterity saving throw. It takes 7d8 slashing damage on a failed save, or half as much damage on a successful one.",
-    "atHigherLevels": "When you cast this spell using a spell slot of 7th level or higher, both types of damage increase by 1d8 for each slot level above 6th."
+    "atHigherLevels": "When you cast this spell using a spell slot of 7th level or higher, both types of damage increase by 1d8 for each slot level above 6th.",
+    "areaNotation": "None"
   },
   {
     "id": "wall-of-thorns-srd52",
@@ -55713,7 +55729,7 @@
     "level": 6,
     "school": "Conjuration",
     "damage": "Piercing",
-    "areaShape": "None",
+    "areaShape": "Wall",
     "areaSound": "None",
     "range": "120 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -56435,7 +56451,7 @@
     "level": 7,
     "school": "Conjuration",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "90 feet",
     "duration": "Concentration, up to 10 minutes",
@@ -56447,7 +56463,7 @@
     "classes": [
       "Cleric"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (10)"
   },
   {
     "id": "consumptive-field-greater-spellcompendium35",
@@ -58950,7 +58966,7 @@
     "level": 7,
     "school": "Transmutation",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "100 feet",
     "duration": "Concentration, up to 1 minute",
@@ -58963,7 +58979,8 @@
       "Sorcerer",
       "Wizard"
     ],
-    "description": "This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered on a point within range. All creatures and objects that aren’t somehow anchored to the ground in the area fall upward and reach the top of the area when you cast this spell. A creature can make a Dexterity saving throw to grab onto a fixed object it can reach, thus avoiding the fall. If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it just as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, for the duration. At the end of the duration, affected objects and creatures fall back down."
+    "description": "This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered on a point within range. All creatures and objects that aren’t somehow anchored to the ground in the area fall upward and reach the top of the area when you cast this spell. A creature can make a Dexterity saving throw to grab onto a fixed object it can reach, thus avoiding the fall. If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it just as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, for the duration. At the end of the duration, affected objects and creatures fall back down.",
+    "areaNotation": "cylinder (50)"
   },
   {
     "id": "reverse-gravity-srd52",
@@ -58972,7 +58989,7 @@
     "level": 7,
     "school": "Transmutation",
     "damage": "None",
-    "areaShape": "None",
+    "areaShape": "Cylinder",
     "areaSound": "None",
     "range": "100 feet",
     "duration": "Concentration, up to 1 minute",
@@ -58986,7 +59003,7 @@
       "Sorcerer",
       "Wizard"
     ],
-    "areaNotation": "None"
+    "areaNotation": "cylinder (50)"
   },
   {
     "id": "screen-35srd",
@@ -61091,7 +61108,7 @@
     "level": 8,
     "school": "Evocation",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Circle",
     "areaSound": "None",
     "range": "500 feet",
     "duration": "Concentration, up to 1 minute",
@@ -61104,7 +61121,8 @@
       "Druid",
       "Sorcerer"
     ],
-    "description": "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area. The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature’s concentration is broken. When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone. This spell can have additional effects depending on the terrain in the area, as determined by the GM. Fissures. Fissures open throughout the spell’s area at the start of your next turn after you cast the spell. A total of 1d6 such fissures open in locations chosen by the GM. Each is 1d10 × 10 feet deep, 10 feet wide, and extends from one edge of the spell’s area to the opposite side. A creature standing on a spot where a fissure opens must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens. A fissure that opens beneath a structure causes it to automatically collapse (see below). Structures. The tremor deals 50 bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the start of each of your turns until the spell ends. If a structure drops to 0 hit points, it collapses and potentially damages nearby creatures. A creature within half the distance of a structure’s height must make a Dexterity saving throw. On a failed save, the creature takes 5d6 bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The GM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn’t fall prone or become buried."
+    "description": "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area. The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature’s concentration is broken. When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone. This spell can have additional effects depending on the terrain in the area, as determined by the GM. Fissures. Fissures open throughout the spell’s area at the start of your next turn after you cast the spell. A total of 1d6 such fissures open in locations chosen by the GM. Each is 1d10 × 10 feet deep, 10 feet wide, and extends from one edge of the spell’s area to the opposite side. A creature standing on a spot where a fissure opens must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens. A fissure that opens beneath a structure causes it to automatically collapse (see below). Structures. The tremor deals 50 bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the start of each of your turns until the spell ends. If a structure drops to 0 hit points, it collapses and potentially damages nearby creatures. A creature within half the distance of a structure’s height must make a Dexterity saving throw. On a failed save, the creature takes 5d6 bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The GM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn’t fall prone or become buried.",
+    "areaNotation": "None"
   },
   {
     "id": "earthquake-srd52",
@@ -61113,7 +61131,7 @@
     "level": 8,
     "school": "Transmutation",
     "damage": "Bludgeoning",
-    "areaShape": "None",
+    "areaShape": "Circle",
     "areaSound": "None",
     "range": "500 feet",
     "duration": "Concentration, up to 1 minute",
@@ -62860,7 +62878,7 @@
     "level": 8,
     "school": "Evocation",
     "damage": "Radiant",
-    "areaShape": "None",
+    "areaShape": "Sphere",
     "areaSound": "None",
     "range": "150 feet",
     "duration": "Instantaneous",
@@ -62873,7 +62891,8 @@
       "Sorcerer",
       "Wizard"
     ],
-    "description": "Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn’t blinded by this spell. Undead and oozes have disadvantage on this saving throw. A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded. This spell dispels any darkness in its area that was created by a spell."
+    "description": "Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn’t blinded by this spell. Undead and oozes have disadvantage on this saving throw. A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded. This spell dispels any darkness in its area that was created by a spell.",
+    "areaNotation": "sphere (60)"
   },
   {
     "id": "sunburst-srd52",
@@ -65596,7 +65615,7 @@
     "source": "D&D 3.5 SRD",
     "level": 9,
     "school": "Conjuration",
-    "damage": "None",
+    "damage": "Lightning",
     "areaShape": "None",
     "areaSound": "sphere (360)",
     "range": "Long (400 ft. + 40 ft./level)",
@@ -65605,7 +65624,7 @@
     "ritual": false,
     "castingTime": "1 round",
     "components": "V, S",
-    "description": "This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 1d4 &times;10 minutes. If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates additional effects in each following round, as noted below. Each effect occurs during your turn.",
+    "description": "This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 1d4x10 minutes. If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates additional effects in each following round, as noted below. Each effect occurs during your turn. 2nd Round: Acid rains down in the area, dealing 1d6 points of acid damage (no save). 3rd Round: You call six bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may be directed at the same target. Each bolt deals 10d6 points of electricity damage. A creature struck can attempt a Reflex save for half damage. 4th Round: Hailstones rain down in the area, dealing 5d6 points of bludgeoning damage (no save). 5th through 10th Rounds: Violent rain and wind gusts reduce visibility. The rain obscures all sight, including darkvision, beyond 5 feet. A creature 5 feet away has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target). Speed is reduced by three-quarters. Ranged attacks within the area of the storm are impossible. Spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to the storm of vengeance's save DC plus the level of the spell the caster is trying to cast.",
     "classes": [
       "Cleric",
       "Druid"

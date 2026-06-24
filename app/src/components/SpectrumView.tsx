@@ -50,7 +50,9 @@ export function SpectrumView({
               className={`spectral-line${isHot ? ' hot' : ''}${isDim ? ' dim' : ''}`}
               title={`${LABELS[l.key]} — brightness ${(l.brightness * 100).toFixed(0)}%`}
               style={{
-                left: `${l.x * 100}%`,
+                // Inset from the band edges by half the widest (hot) line state so a line at
+                // x=0 or x=1 never gets clipped in half by .spectrum-band's overflow:hidden.
+                left: `calc(6px + (100% - 12px) * ${l.x})`,
                 background: lineColor,
                 opacity: isDim ? 0.18 : 0.5 + 0.5 * l.brightness,
                 // drop-shadow (not box-shadow) so the glow follows the hand-drawn line mask
