@@ -1,7 +1,6 @@
 import type { SpellAttributes } from '../engines/attributes';
 import type { SoundInput } from '../engines/sound';
 import { normalizeAreaNotation, normalizeAreaShape, normalizeDuration, normalizeRange } from './normalizeAttributes';
-import spellsJson from './spells.json';
 
 export const PSIONIC_SCHOOLS = [
   'Clairsentience',
@@ -116,7 +115,7 @@ export type SpellGroup = {
   versions: Spell[];
 };
 
-type RawSpell = Omit<Spell, 'areaNotation'> & {
+export type RawSpell = Omit<Spell, 'areaNotation'> & {
   areaNotation?: string;
   areaSound?: string; // legacy extraction field; kept for JSON compatibility
 };
@@ -158,7 +157,7 @@ function normalizeSchool(school: string): string {
   return /^Psychokinetic$/i.test(school) ? 'Psychokinesis' : school;
 }
 
-function normalizeSpell(spell: RawSpell): Spell {
+export function normalizeSpellRecord(spell: RawSpell): Spell {
   const { areaSound, ...rest } = spell;
   const areaNotation = spell.areaNotation ?? areaSound ?? 'None';
   return {
@@ -173,7 +172,9 @@ function normalizeSpell(spell: RawSpell): Spell {
   };
 }
 
-export const SPELLS: Spell[] = (spellsJson as RawSpell[]).map(normalizeSpell);
+export function prepareSpellLibrary(spells: RawSpell[]): Spell[] {
+  return spells.map(normalizeSpellRecord);
+}
 
 function sourcePriority(source: string) {
   const index = SOURCE_PRIORITY.indexOf(source);

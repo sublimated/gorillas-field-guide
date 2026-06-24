@@ -1,4 +1,4 @@
-import { SPELLS, type Spell } from './spells';
+import type { Spell } from './spells';
 
 export type CollisionVariant = {
   signature: string;
@@ -50,10 +50,10 @@ function spellCastLevels(spell: Spell) {
   return Array.from({ length: MAX_CAST_LEVEL - spell.level + 1 }, (_, i) => spell.level + i);
 }
 
-function buildVariantIndex() {
+export function buildCollisionVariantIndex(spells: Spell[]) {
   const bySignature = new Map<string, VariantRecord[]>();
 
-  for (const spell of SPELLS) {
+  for (const spell of spells) {
     for (const castLevel of spellCastLevels(spell)) {
       if (castLevel > MAX_CAST_LEVEL) continue;
       const signature = notationSignature(spell, castLevel);
@@ -100,8 +100,10 @@ function buildVariantIndex() {
   return bySpellCast;
 }
 
-const VARIANTS = buildVariantIndex();
-
-export function collisionVariantFor(spell: Spell, castLevel: number): CollisionVariant | null {
-  return VARIANTS.get(`${spell.id}@${castLevel}`) ?? null;
+export function collisionVariantFor(
+  spell: Spell,
+  castLevel: number,
+  variants: Map<string, CollisionVariant>,
+): CollisionVariant | null {
+  return variants.get(`${spell.id}@${castLevel}`) ?? null;
 }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
 import { fileToGlyphSrc } from './alphabet/glyphImage';
-import { PSIONIC_SCHOOLS, SOURCE_CONFIG, SPELLS, groupSpells, toAttributes, toSoundInput, versionTabsFor, type Spell } from './data/spells';
+import { PSIONIC_SCHOOLS, SOURCE_CONFIG, groupSpells, toAttributes, toSoundInput, versionTabsFor, type Spell } from './data/spells';
 import { RuneView } from './components/RuneView';
 import { SealView } from './components/SealView';
 import { SpectrumView } from './components/SpectrumView';
@@ -12,19 +12,18 @@ import { SpokesView } from './components/SpokesView';
 import { WarlockView } from './components/WarlockView';
 import { getGlyph, useAlphabet } from './alphabet/glyphStore';
 import { spellColor, rgbCss } from './engines/spectrum';
-import { collisionVariantFor } from './data/collisionVariants';
+import { buildCollisionVariantIndex, collisionVariantFor } from './data/collisionVariants';
 import { hasScalingAttributeValue, normalizeAreaNotation } from './data/normalizeAttributes';
 import { useColorMode, customColorFor, CUSTOMIZABLE_ATTRS, type ColorMode } from './engines/colorModes';
 import type { AttributeKey } from './engines/attributes';
+import { notationSupportForMode, type GlyphMode } from './engines/notationSupport';
 import type { CSSVars } from './cssVars';
 
 const CANTRIP_BREAKPOINTS = [1, 5, 11, 17];
-const INITIAL_SPELL_GROUP_KEY = SPELLS.find((s) => s.name.toLowerCase() === 'fireball')?.name.toLowerCase() ?? SPELLS[0].name.toLowerCase();
 const ALL_CLASSES = 'All classes';
 const ALL_LEVELS = 'All levels';
 const ALL_SCHOOLS = 'All schools';
 const PSIONICS_MENU = '__psionics_menu__';
-type GlyphMode = 'wizard' | 'sorcerer' | 'druid' | 'warlock';
 const PSIONIC_CLASSES = new Set(['Psion', 'Psychic Warrior', 'Wilder', 'Lurk', 'Ardent', 'Divine Mind']);
 const FIVE_E_BASE_SOURCES = ['SRD 5.1', 'SRD 5.2'];
 const FIVE_E_COMPENDIUM_SOURCES = ['Wizard Compendium V7', 'Druid Book', 'Warlock Spell Compendium v1.3', 'Sorcerer Compendium', 'ScienceSpellbook'];
@@ -135,18 +134,72 @@ function StatRow({
 }
 
 export default function App() {
+  const [spells, setSpells] = useState<Spell[] | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    import('./data/spellLibrary')
+      .then((module) => {
+        if (!cancelled) setSpells(module.SPELLS);
+      })
+      .catch((error: unknown) => {
+        if (!cancelled) setLoadError(error instanceof Error ? error.message : 'Unknown error');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (loadError) {
+    return (
+      <div className="page">
+        <header className="masthead">
+          <h1>Gorilla&apos;s field guide</h1>
+          <p className="subtitle">A working theory of practical magic</p>
+        </header>
+        <main className="paper-sheet loading-sheet">
+          <p>Spell library failed to load.</p>
+          <p className="loading-note">{loadError}</p>
+        </main>
+      </div>
+    );
+  }
+
+  if (!spells) {
+    return (
+      <div className="page">
+        <header className="masthead">
+          <h1>Gorilla&apos;s field guide</h1>
+          <p className="subtitle">A working theory of practical magic</p>
+        </header>
+        <main className="paper-sheet loading-sheet">
+          <p>Loading the field notes…</p>
+        </main>
+      </div>
+    );
+  }
+
+  return <LoadedApp spells={spells} />;
+}
+
+function LoadedApp({ spells }: { spells: Spell[] }) {
   const savedState = useMemo(() => readSavedAppState(), []);
+  const initialSpellGroupKey = useMemo(
+    () => spells.find((s) => s.name.toLowerCase() === 'fireball')?.name.toLowerCase() ?? spells[0].name.toLowerCase(),
+    [spells],
+  );
   const [activeSources, setActiveSources] = useState<Set<string>>(
     () => new Set(savedState.activeSources ?? SOURCE_CONFIG.filter((s) => s.defaultOn).map((s) => s.id)),
   );
-  const [spellGroupKey, setSpellGroupKey] = useState<string>(savedState.spellGroupKey ?? INITIAL_SPELL_GROUP_KEY);
+  const [spellGroupKey, setSpellGroupKey] = useState<string>(savedState.spellGroupKey ?? initialSpellGroupKey);
   const [spellVersionSource, setSpellVersionSource] = useState<string>(
     savedState.spellVersionSource ?? SOURCE_CONFIG.find((s) => s.defaultOn)?.id ?? 'SRD 5.2',
   );
   const [replay, setReplay] = useState(0);
   const { mode: colorMode, custom: customColors, setMode: setColorMode, setAllColor, setAttrColor } = useColorMode();
   const [castLevel, setCastLevel] = useState(
-    savedState.castLevel ?? SPELLS.find((s) => s.name.toLowerCase() === INITIAL_SPELL_GROUP_KEY)?.level ?? SPELLS[0].level,
+    savedState.castLevel ?? spells.find((s) => s.name.toLowerCase() === initialSpellGroupKey)?.level ?? spells[0].level,
   );
   const [charLevel, setCharLevel] = useState(savedState.charLevel ?? 1);
   const [highlight, setHighlight] = useState<string | null>(null);
@@ -158,7 +211,7 @@ export default function App() {
     () => PSIONIC_CLASSES.has(savedState.classFilter ?? ALL_CLASSES),
   );
   const [levelFilter, setLevelFilter] = useState<number | typeof ALL_LEVELS>(
-    savedState.levelFilter ?? SPELLS.find((s) => s.name.toLowerCase() === INITIAL_SPELL_GROUP_KEY)?.level ?? ALL_LEVELS,
+    savedState.levelFilter ?? spells.find((s) => s.name.toLowerCase() === initialSpellGroupKey)?.level ?? ALL_LEVELS,
   );
   const [schoolFilter, setSchoolFilter] = useState(savedState.schoolFilter ?? ALL_SCHOOLS);
   const [displayFont, setDisplayFont] = useState(
@@ -200,10 +253,10 @@ export default function App() {
     setGlyph(attr, 'center', { ...glyph, scale });
   };
 
-  const spellGroups = useMemo(() => groupSpells(SPELLS), []);
+  const spellGroups = useMemo(() => groupSpells(spells), [spells]);
   const activeSpells = useMemo(
-    () => SPELLS.filter((s) => activeSources.has(s.source) && sourceIsAvailable(s.source, activeSources)),
-    [activeSources],
+    () => spells.filter((s) => activeSources.has(s.source) && sourceIsAvailable(s.source, activeSources)),
+    [activeSources, spells],
   );
   const activeSpellGroups = useMemo(
     () => groupSpells(activeSpells),
@@ -217,7 +270,7 @@ export default function App() {
     () => spellGroup?.versions.find((version) => version.source === spellVersionSource) ?? spellGroup?.versions[0],
     [spellGroup, spellVersionSource],
   );
-  const fallbackSpell = spell ?? activeSpellGroups[0]?.versions[0] ?? spellGroups[0]?.versions[0] ?? SPELLS[0];
+  const fallbackSpell = spell ?? activeSpellGroups[0]?.versions[0] ?? spellGroups[0]?.versions[0] ?? spells[0];
   const versionTabs = useMemo(
     () => (spellGroup ? versionTabsFor(spellGroup.versions) : []),
     [spellGroup],
@@ -235,8 +288,8 @@ export default function App() {
     classFilter === ALL_CLASSES ? glyphModeForSpell(fallbackSpell, classFilter) :
     'wizard';
   const classOptions = useMemo(
-    () => [ALL_CLASSES, ...Array.from(new Set(SPELLS.flatMap((s) => s.classes.map(classNameClean)))).sort()],
-    [],
+    () => [ALL_CLASSES, ...Array.from(new Set(spells.flatMap((s) => s.classes.map(classNameClean)))).sort()],
+    [spells],
   );
   const psionicClassOptions = useMemo(
     () => classOptions.filter((option) => PSIONIC_CLASSES.has(option)),
@@ -300,9 +353,10 @@ export default function App() {
   );
 
   const isCantrip = fallbackSpell.level === 0;
+  const collisionVariants = useMemo(() => buildCollisionVariantIndex(spells), [spells]);
   const collisionVariant = useMemo(
-    () => collisionVariantFor(fallbackSpell, isCantrip ? fallbackSpell.level : castLevel),
-    [fallbackSpell, castLevel, isCantrip],
+    () => collisionVariantFor(fallbackSpell, isCantrip ? fallbackSpell.level : castLevel, collisionVariants),
+    [fallbackSpell, castLevel, collisionVariants, isCantrip],
   );
 
   const castAttrs = useMemo(
@@ -323,6 +377,11 @@ export default function App() {
     activeCenterMode === 'druid' ? druidCenter :
     activeCenterMode === 'warlock' ? warlockCenter :
     undefined;
+  const notationSupport = useMemo(
+    () => notationSupportForMode(mode, castAttrs, charLevel),
+    [castAttrs, charLevel, mode],
+  );
+  const unsupportedLabels = notationSupport.unsupported.map((key) => ATTR_LABELS[key]);
 
   const tint = rgbCss(spellColor(castAttrs));
 
@@ -589,6 +648,7 @@ export default function App() {
                           version.classes.some((cls) => classNameClean(cls) === classFilter),
                         ) ?? representative;
                       const previewMode = glyphModeForSpell(previewSpell, classFilter);
+                      const previewSupport = notationSupportForMode(previewMode, toAttributes(previewSpell));
                       return (
                         <button
                           key={group.key}
@@ -603,6 +663,11 @@ export default function App() {
                           <span className="tab-meta">
                             {representative.level === 0 ? 'Cantrip' : `L${representative.level}`} · {representative.school}
                           </span>
+                          {previewSupport.unsupported.length > 0 && (
+                            <span className="notation-flag" aria-label={`Notation incomplete: ${previewSupport.unsupported.join(', ')}`}>
+                              notation gap
+                            </span>
+                          )}
                         </button>
                       );
                     })}
@@ -900,6 +965,11 @@ export default function App() {
                     on={setHighlight}
                   />
                 </dl>
+                {unsupportedLabels.length > 0 && (
+                  <p className="notation-warning draw-item" style={{ animationDelay: '4740ms' }} data-testid="notation-warning">
+                    Notation incomplete in this renderer: {unsupportedLabels.join(', ')}.
+                  </p>
+                )}
                 <p className="desc draw-item" style={{ animationDelay: '4920ms' }}>{fallbackSpell.description}</p>
                 {fallbackSpell.atHigherLevels && (
                   <p className={`desc higher draw-item${isUpcast || (isCantrip && charLevel > 1) ? ' higher-active' : ''}`} style={{ animationDelay: '5220ms' }}>

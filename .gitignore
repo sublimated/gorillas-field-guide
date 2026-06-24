@@ -32,6 +32,8 @@ app/.vite/
 
 # scratch dir for rendered sigil PNGs during visual work
 app/.visual-checks/
+app/test-results/
+app/playwright-report/
 
 # local source material, extraction data, and agent workspaces
 tmp/

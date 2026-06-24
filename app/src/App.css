@@ -387,6 +387,13 @@ body {
     url('/textures/boxes/line.svg') center bottom / 92% 2px no-repeat;
 }
 .sigil-cell .tab-name { font-size: 17px; line-height: 1.1; }
+.notation-flag {
+  margin-top: 2px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 .mini-sigil { width: 74px; height: 74px; display: block; }
 .mini-ring { fill: none; stroke: rgba(99, 94, 86, 0.4); stroke-width: 0.8; }
 .mini-seal-tick { stroke: var(--sorcerer-ink); stroke-width: 1.4; stroke-linecap: round; }
@@ -1016,6 +1023,14 @@ body {
 .meta-stat { cursor: pointer; border-radius: 4px; padding: 0 3px; transition: color 0.15s ease, text-shadow 0.15s ease; }
 .meta-stat.hot { color: var(--leather); text-shadow: 0 0 12px rgba(199,154,75,0.7); }
 .desc { line-height: 1.6; font-size: 22px; }
+.notation-warning {
+  margin: 0 0 14px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(156,107,47,0.16), transparent);
+  color: var(--ink-soft);
+  font-size: 18px;
+}
 .desc.higher { color: var(--ink-soft); }
 .desc.higher.higher-active {
   color: var(--ink);
@@ -1067,6 +1082,18 @@ body {
   min-height: 620px;
   padding: clamp(18px, 3vw, 34px);
   overflow: hidden;
+}
+
+.loading-sheet {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 320px;
+  color: var(--ink-soft);
+}
+
+.loading-note {
+  font-size: 16px;
 }
 
 .paper-sheet > * {
