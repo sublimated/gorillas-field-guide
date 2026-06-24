@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { spokenName } from '../engines/sound';
 import type { SoundInput } from '../engines/sound';
+import { spokenIpa, diphthongIpa } from '../engines/soundIpa';
+import { useKokoroSpeak } from '../engines/kokoroClient';
 import type { CollisionVariant } from '../data/collisionVariants';
 
 type Props = {
@@ -15,22 +17,27 @@ export function SpokenNameView({ input, highlight = null, onHighlight, variant =
 
   // Collisions get a quiet diphthong woven onto the end of the name so they sound distinct.
   const displayName = spoken.name + (variant?.diphthong ?? '');
+  const phonemes = useMemo(
+    () => spokenIpa(input) + diphthongIpa(variant?.diphthong ?? ''),
+    [input, variant],
+  );
 
-  const speak = () => {
-    if (!('speechSynthesis' in window)) return;
-    const u = new SpeechSynthesisUtterance(displayName.replace(/'/g, ' '));
-    u.rate = 0.85;
-    u.pitch = 0.9;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(u);
-  };
+  const { status, speak } = useKokoroSpeak();
+  const loading = status === 'loading';
+  const speaking = status === 'speaking';
+  const label = loading ? 'loading voice…' : status === 'error' ? 'speak (retry)' : '◈ speak';
 
   return (
     <div className="spoken">
       <div className="spoken-row">
         <span className="spoken-name">{displayName}</span>
-        <button className="speak-btn" onClick={speak} aria-label="Speak the name">
-          ◈ speak
+        <button
+          className={`speak-btn${loading || speaking ? ' busy' : ''}`}
+          onClick={() => speak(phonemes)}
+          disabled={loading || speaking}
+          aria-label="Speak the name"
+        >
+          {label}
         </button>
       </div>
       <div className="spoken-parts">
